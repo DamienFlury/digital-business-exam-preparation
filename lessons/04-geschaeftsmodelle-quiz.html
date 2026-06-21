@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz-Lektion 4 — Geschäftsmodelle im Digital Business</title>
+<style>
+  :root{--ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66; --line:#e3e3ea; --bg:#fbfafc; --ok:#1a7f4b; --no:#b5491f; --accent:#0a7c7c;}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); margin:0; line-height:1.55}
+  .wrap{max-width:820px; margin:0 auto; padding:36px 24px 90px}
+  header.q{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:18px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.6rem; margin:.15em 0}
+  .sub{color:var(--muted); font-size:.92rem}
+  .progress{font-size:.8rem; color:var(--muted); margin-top:8px}
+  .q-card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin:20px 0; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .q-num{font-size:.74rem; font-weight:700; color:var(--ost); letter-spacing:.08em; text-transform:uppercase}
+  .pts{float:right; font-size:.74rem; color:var(--muted); font-weight:600}
+  .q-text{font-size:1.05rem; font-weight:600; margin:6px 0 14px}
+  .opt{display:block; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:7px 0; cursor:pointer; background:#fff; transition:.12s}
+  .opt:hover{border-color:var(--ost)}
+  .opt input{margin-right:9px}
+  .opt.correct{background:#e9f7ef; border-color:var(--ok)}
+  .opt.wrong{background:#fdeee7; border-color:var(--no)}
+  textarea{width:100%; border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:inherit; font-size:.95rem; min-height:90px; resize:vertical}
+  button{background:var(--ost); color:#fff; border:0; border-radius:8px; padding:9px 18px; font-size:.9rem; font-weight:600; cursor:pointer; margin-top:10px}
+  button.ghost{background:#fff; color:var(--ost); border:1px solid var(--ost)}
+  button:hover{opacity:.92}
+  .feedback{display:none; margin-top:14px; padding:13px 16px; border-radius:8px; font-size:.9rem; background:var(--ost-light); border-left:4px solid var(--ost)}
+  .feedback.show{display:block}
+  .feedback h4{margin:0 0 6px; color:var(--ost); font-size:.82rem; text-transform:uppercase; letter-spacing:.06em}
+  .model{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:.88rem}
+  .model b{color:var(--accent)}
+  .tag{display:inline-block; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--ost-light); color:var(--ost); margin-bottom:6px}
+  .self{font-size:.84rem; color:var(--muted); margin-top:10px}
+  .self button{font-size:.8rem; padding:5px 12px; margin:4px 6px 0 0}
+  .checklist{margin-top:12px; font-size:.85rem; background:#fff; border:1px dashed var(--ost); border-radius:8px; padding:10px 14px}
+  .checklist label{display:block; margin:4px 0; cursor:pointer}
+  .checklist input{margin-right:8px}
+  .match-row{border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:8px 0}
+  .match-row .stmt{font-weight:600; font-size:.92rem; margin-bottom:6px}
+  .match-opts{display:flex; flex-wrap:wrap; gap:6px}
+  .match-opts label{font-size:.8rem; border:1px solid var(--line); border-radius:6px; padding:4px 9px; cursor:pointer}
+  .match-opts label.correct{background:#e9f7ef; border-color:var(--ok)}
+  .match-opts label.wrong{background:#fdeee7; border-color:var(--no)}
+  .match-opts input{margin-right:5px}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted)}
+  a{color:var(--accent)}
+  .intro{background:var(--ost-light); border-radius:10px; padding:14px 18px; font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="q">
+  <div class="kicker">DigiBusI · Quiz-Lektion 4 von 11</div>
+  <h1>Geschäftsmodelle im Digital Business</h1>
+  <div class="sub">Aktives Abfragen im Prüfungsformat. Antworte zuerst selbst — <b>in ganzen Sätzen</b> — dann aufdecken.</div>
+  <div class="progress">Kern: <b>9 BMC-Bausteine</b> · <b>WER-WAS-WIE-WERT</b> · <b>4 Elemente (Johnson)</b> · <b>Muster (Razor&amp;Blade, Freemium…)</b> · <b>Amazon-Phasen</b>. Hinweis: zu diesem Thema gibt es <b>zwei offizielle Musterfragen à 10 P</b> — die Fragen 1, 2 &amp; 7 bilden sie direkt nach.</div>
+</header>
+
+<div class="intro">
+  <b>So funktioniert's:</b> Bei MC/Zuordnung anklicken → «Antwort prüfen». Bei offenen Fragen erst selbst tippen, dann «Musterantwort zeigen» und ehrlich selbst bewerten. <b>Tipp:</b> Schreib deine offene Antwort auch in den Chat — ich benote sie nach Rubrik. Begleitendes <a href="../reference/04-geschaeftsmodelle.html">Studienblatt 4</a>.
+</div>
+
+<!-- Q1 Zuordnung — Bestandteil? (Musterfrage 5b) -->
+<div class="q-card" id="q1">
+  <div class="q-num">Frage 1 · Zuordnung <span class="pts">4 P · Musterfrage</span></div>
+  <div class="q-text">Ist das genannte Element gemäss gängigem Begriffsverständnis (Business Model Canvas / Navigator) ein <b>Bestandteil</b> eines Geschäftsmodells — oder <b>nicht</b>? Genau ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="JA">
+    <div class="stmt">Einnahmenmodell (Revenue Streams)</div>
+    <div class="match-opts"><label><input type="radio" name="m1" value="JA">Bestandteil</label><label><input type="radio" name="m1" value="NEIN">Kein Bestandteil</label></div>
+  </div>
+  <div class="match-row" data-correct="NEIN">
+    <div class="stmt">Unternehmenskultur</div>
+    <div class="match-opts"><label><input type="radio" name="m2" value="JA">Bestandteil</label><label><input type="radio" name="m2" value="NEIN">Kein Bestandteil</label></div>
+  </div>
+  <div class="match-row" data-correct="JA">
+    <div class="stmt">Leistungsversprechen (Value Proposition)</div>
+    <div class="match-opts"><label><input type="radio" name="m3" value="JA">Bestandteil</label><label><input type="radio" name="m3" value="NEIN">Kein Bestandteil</label></div>
+  </div>
+  <div class="match-row" data-correct="NEIN">
+    <div class="stmt">Investitionsplan</div>
+    <div class="match-opts"><label><input type="radio" name="m4" value="JA">Bestandteil</label><label><input type="radio" name="m4" value="NEIN">Kein Bestandteil</label></div>
+  </div>
+  <div class="match-row" data-correct="JA">
+    <div class="stmt">Schlüsselaktivitäten (Key Activities)</div>
+    <div class="match-opts"><label><input type="radio" name="m5" value="JA">Bestandteil</label><label><input type="radio" name="m5" value="NEIN">Kein Bestandteil</label></div>
+  </div>
+  <div class="match-row" data-correct="NEIN">
+    <div class="stmt">Unternehmensvision</div>
+    <div class="match-opts"><label><input type="radio" name="m6" value="JA">Bestandteil</label><label><input type="radio" name="m6" value="NEIN">Kein Bestandteil</label></div>
+  </div>
+  <div class="match-row" data-correct="JA">
+    <div class="stmt">Kundensegmente (Customer Segments)</div>
+    <div class="match-opts"><label><input type="radio" name="m7" value="JA">Bestandteil</label><label><input type="radio" name="m7" value="NEIN">Kein Bestandteil</label></div>
+  </div>
+  <div class="match-row" data-correct="NEIN">
+    <div class="stmt">Organisationsstruktur</div>
+    <div class="match-opts"><label><input type="radio" name="m8" value="JA">Bestandteil</label><label><input type="radio" name="m8" value="NEIN">Kein Bestandteil</label></div>
+  </div>
+
+  <button onclick="checkMatch('q1',8)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q1"><h4>Auflösung</h4>
+    <span id="score-q1"></span> <b>Bestandteile</b> sind die Bausteine von BMC/Navigator: Einnahmenmodell, Leistungsversprechen, Schlüsselaktivitäten, Kundensegmente (auch Kanäle, Ressourcen, Kostenstruktur). <b>KEINE Bestandteile</b> sind übergeordnete bzw. losgelöste Konzepte: <b>Unternehmenskultur, Unternehmensvision, Organisationsstruktur, Investitionsplan</b>. Faustregel: Das GM beschreibt die <b>WER-WAS-WIE-WERT-Logik</b> — Kultur, Vision und reine Finanzpläne gehören nicht dazu.
+  </div>
+</div>
+
+<!-- Q2 Zuordnung — R/F (Musterfrage 5a) -->
+<div class="q-card" id="q2">
+  <div class="q-num">Frage 2 · Richtig / Falsch <span class="pts">4 P · Musterfrage</span></div>
+  <div class="q-text">Bewerten Sie die folgenden Aussagen zu Geschäftsmodellen mit <b>Richtig</b> oder <b>Falsch</b>. Genau ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="F">
+    <div class="stmt">Ein Geschäftsmodell ist nur für Start-ups relevant, nicht für etablierte Unternehmen.</div>
+    <div class="match-opts"><label><input type="radio" name="r1" value="R">Richtig</label><label><input type="radio" name="r1" value="F">Falsch</label></div>
+  </div>
+  <div class="match-row" data-correct="F">
+    <div class="stmt">Ein Geschäftsmodell kann nicht mehr angepasst werden, sobald es einmal festgelegt ist.</div>
+    <div class="match-opts"><label><input type="radio" name="r2" value="R">Richtig</label><label><input type="radio" name="r2" value="F">Falsch</label></div>
+  </div>
+  <div class="match-row" data-correct="R">
+    <div class="stmt">Geschäftsmodelle können als das fehlende Bindeglied zwischen Strategie und Geschäftsprozessen betrachtet werden.</div>
+    <div class="match-opts"><label><input type="radio" name="r3" value="R">Richtig</label><label><input type="radio" name="r3" value="F">Falsch</label></div>
+  </div>
+  <div class="match-row" data-correct="R">
+    <div class="stmt">Geschäftsmodelle dienen besonders in digitalen Unternehmen der Abbildung, Innovation und Evaluation der Geschäftslogik.</div>
+    <div class="match-opts"><label><input type="radio" name="r4" value="R">Richtig</label><label><input type="radio" name="r4" value="F">Falsch</label></div>
+  </div>
+
+  <button onclick="checkMatch('q2',4)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q2"><h4>Auflösung</h4>
+    <span id="score-q2"></span> Die beiden Aussagen über «nur für Start-ups» und «nicht mehr änderbar» sind <b>falsch</b> — ein GM gilt für <b>alle</b> Unternehmen und ist ein <b>iterativer Prozess</b> (erstellen → überprüfen → verbessern → erneuern). Die beiden anderen Aussagen sind <b>richtig</b> (Al-Debei/Avison; Veit et al.). <i>Achtung: In der Original-Musterfrage waren alle aufgeführten Aussagen so formuliert, dass sie falsch sind — lies jede Aussage genau!</i>
+  </div>
+</div>
+
+<!-- Q3 MC — Innovation = mind. 2 Elemente -->
+<div class="q-card" id="q3">
+  <div class="q-num">Frage 3 · Multiple Choice <span class="pts">2 P</span></div>
+  <div class="q-text">Ab wann spricht der Business Model Navigator von einer <b>Geschäftsmodellinnovation</b>?</div>
+  <label class="opt"><input type="radio" name="q3"> A) Sobald ein neues Produkt eingeführt wird</label>
+  <label class="opt"><input type="radio" name="q3"> B) Sobald mindestens zwei der vier Elemente verändert werden</label>
+  <label class="opt"><input type="radio" name="q3"> C) Sobald ein Geschäftsprozess digitalisiert wird</label>
+  <label class="opt"><input type="radio" name="q3"> D) Sobald alle vier Elemente verändert werden</label>
+  <button onclick="checkMC('q3',1)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q3"><h4>Auflösung</h4><b>B</b> ist richtig. Eine Geschäftsmodellinnovation liegt vor, wenn <b>mindestens zwei</b> der vier Elemente (WER, WAS, WIE, WERT) verändert werden — typischerweise durch <b>kreative Imitation</b> und <b>Rekombination</b> bestehender Muster, nicht zwingend durch neue Produkte oder Prozesse.</div>
+</div>
+
+<!-- Q4 open — magisches Dreieck -->
+<div class="q-card" id="q4">
+  <div class="q-num">Frage 4 · Offen <span class="pts">5 P</span></div>
+  <div class="q-text">Nennen und erläutern Sie die <b>vier Dimensionen</b> des «magischen Dreiecks» im Business Model Navigator (WER-WAS-WIE-WERT). Warum heisst es «magisch»?</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> WER = Zielkunden / Kundensegmente?</label>
+    <label><input type="checkbox"> WAS = Nutzenversprechen (Value Proposition)?</label>
+    <label><input type="checkbox"> WIE = Wertschöpfungskette / Herstellung?</label>
+    <label><input type="checkbox"> WERT = Ertragsmechanik (Kosten + Umsatz)?</label>
+    <label><input type="checkbox"> «Magisch», weil Änderung an einem Eckpunkt die anderen erzwingt?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q4')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q4">
+    <h4>Musterantwort</h4>
+    <div class="model"><b>WER?</b> beschreibt die <b>Zielkunden</b> («Wer sind unsere Zielkunden?») — der Kunde steht im Zentrum jedes Geschäftsmodells.</div>
+    <div class="model"><b>WAS?</b> ist das <b>Nutzenversprechen</b> («Was bieten wir den Kunden an?») — alle Leistungen, die dem Kunden von Nutzen sind.</div>
+    <div class="model"><b>WIE?</b> ist die <b>Wertschöpfungskette</b> («Wie stellen wir die Leistung her?») — Prozesse, Aktivitäten, Ressourcen und ihre Koordination.</div>
+    <div class="model"><b>WERT?</b> ist die <b>Ertragsmechanik</b> («Wie wird der Wert erzielt?») — Kostenstruktur und Umsatzmechanismen, also die finanzielle Überlebensfähigkeit.</div>
+    <p><b>«Magisch»</b>, weil die Optimierung an einem Eckpunkt (z.B. der Ertragsmechanik) automatisch Anpassungen der beiden anderen Seiten (Nutzenversprechen oder Wertschöpfungskette) erfordert. WER + WAS = externe, WIE + WERT = interne Dimension.</p>
+  </div>
+</div>
+
+<!-- Q5 open — 2 Richtungen digitaler Innovation (Musterfrage 6) -->
+<div class="q-card" id="q5">
+  <div class="q-num">Frage 5 · Offen <span class="pts">4 P · Musterfrage</span></div>
+  <div class="q-text">Beschreiben Sie die <b>beiden Richtungen</b>, in denen eine digitale Innovation entstehen kann, und nennen Sie <b>je ein Beispiel</b>.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Richtung 1: aus einer neuen Geschäftsanforderung heraus (Bedarf treibt)?</label>
+    <label><input type="checkbox"> Richtung 2: aus einer neuen digitalen Technologie heraus (Technologie treibt)?</label>
+    <label><input type="checkbox"> Je ein konkretes Beispiel genannt?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q5')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q5">
+    <h4>Musterantwort</h4>
+    <div class="model"><b>Richtung 1 — aus neuen Geschäftsanforderungen:</b> Ein neuer geschäftlicher Bedarf entsteht zuerst, und es wird eine (digitale) Lösung dafür gesucht. <i>Beispiel: Ein Unternehmen führt ein neues Verkaufsdaten-/CRM-System ein, um die Kundenverwaltung und das Sales-Tracking zu verbessern.</i></div>
+    <div class="model"><b>Richtung 2 — aus neuen digitalen Technologien:</b> Eine neue Technologie ist vorhanden, und es wird eine Anwendung dafür gefunden, die Angebot, Prozesse oder das Geschäftsmodell verändert. <i>Beispiel: Einsatz von Künstlicher Intelligenz in der Autoproduktion für das autonome Steuern von Fahrzeugen.</i></div>
+  </div>
+</div>
+
+<!-- Q6 MC — Razor and Blade -->
+<div class="q-card" id="q6">
+  <div class="q-num">Frage 6 · Multiple Choice <span class="pts">2 P</span></div>
+  <div class="q-text">Welches Beispiel folgt <b>nicht</b> dem Muster «Razor and Blade» (Haken und Köder)?</div>
+  <label class="opt"><input type="radio" name="q6"> A) Nespresso — günstige Maschine, teure Kapseln</label>
+  <label class="opt"><input type="radio" name="q6"> B) HP — günstiger Drucker, teure Tintenpatronen</label>
+  <label class="opt"><input type="radio" name="q6"> C) Dropbox — Basisversion gratis, Premium kostenpflichtig</label>
+  <label class="opt"><input type="radio" name="q6"> D) Gillette — günstiger Rasierer, teure Klingen</label>
+  <button onclick="checkMC('q6',2)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q6"><h4>Auflösung</h4><b>C</b> ist richtig (= das Ausreisser-Beispiel). Dropbox folgt dem Muster <b>Freemium</b> (Basis gratis, Premium kostenpflichtig). «Razor and Blade» bedeutet: <b>Basisgerät billig</b>, <b>Verbrauchsmaterial teuer und margenstark</b> — das trifft auf Nespresso, HP und Gillette zu.</div>
+</div>
+
+<!-- Q7 open — Amazon 3 Phasen (Musterfrage-Logik) -->
+<div class="q-card" id="q7">
+  <div class="q-num">Frage 7 · Offen <span class="pts">6 P</span></div>
+  <div class="q-text">Amazon hat sein Geschäftsmodell in <b>drei Phasen</b> innoviert. Nennen und erläutern Sie diese drei Phasen und die jeweilige Veränderung im Geschäftsmodell.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Phase 1: Marktplatz-Erweiterung (Händler → zweiseitiger Marktplatz, Provisionen)?</label>
+    <label><input type="checkbox"> Phase 2: Service-Innovation Prime &amp; FBA (Abo/Lock-in, Logistik als Service)?</label>
+    <label><input type="checkbox"> Phase 3: AWS (interne Infrastruktur extern vermarktet, neues Geschäftsfeld)?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q7')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q7">
+    <h4>Musterantwort</h4>
+    <div class="model"><b>(1) Marktplatz-Erweiterung:</b> Amazon entwickelte sich vom reinen Händler (Bücher) zum <b>zweiseitigen Marktplatz</b>, indem es seine Plattform für Drittanbieter öffnete. Die Erlöse erweiterten sich von der Handelsmarge auf <b>Provisionen (~15%)</b> — so wuchs das Sortiment ohne grosses eigenes Inventarrisiko.</div>
+    <div class="model"><b>(2) Service-Innovation (Prime &amp; FBA):</b> <b>Prime</b> ergänzte das E-Commerce um ein <b>Abonnement-Modell</b> und erzeugt einen starken <b>Customer Lock-in</b>. Mit <b>FBA</b> monetarisiert Amazon seine Schlüsselressource Logistik als Service für Drittanbieter — die Kostenstruktur wird selbst zur Einnahmequelle.</div>
+    <div class="model"><b>(3) AWS (radikalste Innovation):</b> Die intern entwickelte, skalierbare IT-Infrastruktur wurde extern vermarktet. Es entstand ein <b>komplett neues Geschäftsfeld</b> (Cloud, Pay-per-Usage); aus einer internen <b>Kostenstelle</b> wurde das <b>margenstärkste Segment</b> von Amazon.</div>
+  </div>
+</div>
+
+<footer>
+  Fertig mit Quiz 4? Sag mir Bescheid — dann geht's zu <b>Thema 5 — Unternehmensgründung</b> (knüpft direkt an die «Early Stage»-Frage an).
+  Schreib offene Antworten gern in den Chat — ich benote sie nach Rubrik.<br>
+  ← <a href="../reference/04-geschaeftsmodelle.html">Studienblatt 4</a> · <a href="03-plattformen-oekosysteme-quiz.html">Quiz 3</a>
+</footer>
+</div>
+
+<script>
+function checkMC(q, correctIdx){
+  const opts = document.querySelectorAll('#'+q+' .opt');
+  let chosen = -1;
+  opts.forEach((o,i)=>{ if(o.querySelector('input').checked) chosen=i; });
+  if(chosen<0){ alert('Bitte zuerst eine Antwort wählen.'); return; }
+  opts.forEach((o,i)=>{
+    o.classList.remove('correct','wrong');
+    if(i===correctIdx) o.classList.add('correct');
+    else if(i===chosen) o.classList.add('wrong');
+  });
+  document.getElementById('fb-'+q).classList.add('show');
+}
+function reveal(q){ document.getElementById('fb-'+q).classList.add('show'); }
+function checkMatch(q, total){
+  const rows = document.querySelectorAll('#'+q+' .match-row');
+  let score = 0, answered = 0;
+  rows.forEach(row=>{
+    const correct = row.dataset.correct;
+    const labels = row.querySelectorAll('.match-opts label');
+    labels.forEach(l=>{
+      l.classList.remove('correct','wrong');
+      const inp = l.querySelector('input');
+      if(inp.checked){ answered++; if(inp.value===correct) score++; else l.classList.add('wrong'); }
+      if(inp.value===correct) l.classList.add('correct');
+    });
+  });
+  if(answered===0){ alert('Bitte mindestens eine Zeile beantworten.'); return; }
+  document.getElementById('score-'+q).innerHTML = '<b>'+score+' von '+total+' richtig.</b> ';
+  document.getElementById('fb-'+q).classList.add('show');
+}
+</script>
+</body>
+</html>

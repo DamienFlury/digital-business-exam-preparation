@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 4 — Geschäftsmodelle im Digital Business</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  .canvas{display:grid; grid-template-columns:repeat(5,1fr); grid-auto-rows:minmax(56px,auto); gap:6px; margin:12px 0; font-size:.74rem}
+  .canvas .cell{border:1px solid var(--line); border-radius:6px; padding:7px 8px; background:#fff}
+  .canvas .cell b{display:block; color:var(--ost); font-size:.72rem; margin-bottom:3px}
+  .canvas .kp{grid-row:1/3} .canvas .ka{grid-column:2} .canvas .kr{grid-column:2}
+  .canvas .vp{grid-row:1/3} .canvas .cr{grid-column:4} .canvas .ch{grid-column:4}
+  .canvas .cs{grid-row:1/3} .canvas .cost{grid-column:1/3} .canvas .rev{grid-column:3/6}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2, .canvas .cell{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2{grid-template-columns:1fr} .canvas{font-size:.66rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 4 von 11 · Lernblock 4</div>
+  <h1>Geschäftsmodelle im Digital Business</h1>
+  <div class="sub">Geschäftsmodell = das <b>fehlende Bindeglied</b> zwischen Strategie und Prozessen · es beschreibt, welcher <b>Nutzen</b> für den Kunden entsteht und wie damit <b>Geld verdient</b> wird</div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#begriff">Begriff &amp; Einordnung</a>·
+    <a href="#nutzen">Nutzen</a>·
+    <a href="#digital">Digitale GM &amp; Digitalisierungsgrade</a>·
+    <a href="#elemente">4 Elemente</a>·
+    <a href="#canvas">Business Model Canvas</a>·
+    <a href="#navigator">Business Model Navigator</a>·
+    <a href="#muster">Muster &amp; Innovation</a>·
+    <a href="#amazon">Fallbeispiel Amazon</a>·
+    <a href="#exam">Prüfungsfokus</a>
+  </nav>
+</header>
+
+<div class="exam">
+  <b>Achtung — sehr prüfungsrelevant:</b> Das Musterfragen-Set enthält <b>zwei</b> Fragen zu Geschäftsmodellen mit je <b>10 Punkten</b> (zusammen 20 P!). Geprüft werden: (1) eine <b>Richtig/Falsch-Tabelle</b> zu Aussagen über Geschäftsmodelle, (2) eine <b>Zuordnung</b> «welche Elemente sind <i>nicht</i> Bestandteil eines Geschäftsmodells?», (3) in welcher Gründungsphase das GM am wichtigsten ist (<b>Early Stage</b>, mit Begründung), und (4) die <b>zwei Richtungen digitaler Innovation</b> + je ein Beispiel. Lerne zusätzlich die Frameworks <b>auswendig</b>: die <b>9 Bausteine des BMC</b> und das <b>magische Dreieck WER-WAS-WIE-WERT</b> des Navigators.
+</div>
+
+<!-- ============ BEGRIFF ============ -->
+<h2 id="begriff">1 · Was ist ein Geschäftsmodell?</h2>
+
+<div class="def"><b>Geschäftsmodell (Geschäftsmodelllogik)</b> — Ein Geschäftsmodell spiegelt die <b>innere Logik eines Unternehmens</b> wider: Es beschreibt, welcher <b>Nutzen für den Kunden</b> erbracht wird und wie damit <b>Geld verdient</b> werden soll. Dem <b>Kundennutzen</b> kommt dabei eine hohe Bedeutung zu. <i>(Harwardt &amp; Haselhoff 2022)</i></div>
+
+<p class="lead">Die Wertschöpfungskette der Geschäftsmodelllogik: <b>Kombination von Elementen</b> → <b>Erstellung von Produkten/Dienstleistungen</b> → <b>Nutzenstiftung für Kunden &amp; Partner</b> → <b>Differenzierung gegenüber Wettbewerbern</b> → <b>Erreichen eines Wettbewerbsvorteils und Abschöpfung von Wert</b>.</p>
+
+<h3>Das fehlende Bindeglied (Strategie ↔ Prozess)</h3>
+<p>Geschäftsmodelle gelten als das <b>fehlende Bindeglied zwischen Geschäftsstrategie und Geschäftsprozessen</b> bzw. zwischen <b>Planungs- und Umsetzungsebene</b> (Al-Debei &amp; Avison 2010). Osterwalder (2004) ordnet sie auf der <b>architektonischen Ebene</b> ein:</p>
+<table>
+  <tr><th style="width:24%">Ebene</th><th>Rolle</th><th style="width:26%">Informationscharakter</th></tr>
+  <tr><td><b>Planning level</b> — Strategie</td><td>Hoch aggregiert, langfristige Ausrichtung</td><td>Highly aggregated</td></tr>
+  <tr><td><b>Architectural level</b> — Geschäftsmodell</td><td>Übersetzt Strategie in eine umsetzbare Logik (Bindeglied)</td><td>Tactical</td></tr>
+  <tr><td><b>Implementation level</b> — Geschäftsprozesse</td><td>Operative, detaillierte Abläufe (IS/IT)</td><td>Operational, detailed</td></tr>
+</table>
+
+<!-- ============ NUTZEN ============ -->
+<h2 id="nutzen">2 · Wozu dienen Geschäftsmodelle? (Der Nutzen)</h2>
+<p>Geschäftsmodelle kommen — insbesondere in IT-getriebenen und digitalen Unternehmen — als Werkzeug für die <b>Abbildung, Innovation und Evaluation der Geschäftslogik</b> zum Einsatz (Veit et al. 2014). Osterwalder (2005) nennt vier Nutzenkategorien (auswendig!):</p>
+<table>
+  <tr><th style="width:24%">Nutzen</th><th>Bedeutung</th></tr>
+  <tr><td><b>Understand &amp; Share</b></td><td>Geschäftslogik <b>erfassen, visualisieren, verstehen, kommunizieren und teilen</b>.</td></tr>
+  <tr><td><b>Analyze</b></td><td>Das GM wird zur neuen <b>Analyse-Einheit</b> — Messen, Beobachten und Vergleichen der Geschäftslogik.</td></tr>
+  <tr><td><b>Manage</b></td><td>Verbessert Design, Planung, Änderung und Umsetzung; schnellere Reaktion auf Veränderungen; bessere <b>Ausrichtung von Strategie, Organisation und Technologie</b>.</td></tr>
+  <tr><td><b>Prospect</b></td><td>Beschreibt <b>mögliche Zukunftsszenarien</b> — fördert Innovation via GM-Portfolios und Simulation.</td></tr>
+</table>
+
+<!-- ============ DIGITAL ============ -->
+<h2 id="digital">3 · Digitale Geschäftsmodelle &amp; Digitalisierungsgrade</h2>
+
+<div class="def"><b>Digitales Geschäftsmodell</b> — eine <b>konzeptuelle Erweiterung</b> des Geschäftsmodells, abgegrenzt durch den <b>expliziten Einsatz digitaler Technologien und Daten</b>. Fokus: Lieferung <b>digitaler Angebote und Erlebnisse über digitale Plattformen</b> sowie das Ziel <b>skalierbarer Lösungen in ICT-gestützten Ökosystemen</b> (Guggenberger et al. 2020). Kollmann &amp; Hensellek (2017): die Logik, wie ein Unternehmen in der <b>Net Economy</b> agiert und nachhaltig <b>Wert schafft durch elektronische, informationsbezogene Prozesse</b>.</div>
+
+<h3>Drei Digitalisierungsgrade (Harwardt &amp; Haselhoff 2022)</h3>
+<table>
+  <tr><th style="width:8%">Grad</th><th style="width:30%">Typ</th><th>Kern &amp; Ziel</th></tr>
+  <tr><td><b>1</b></td><td><b>Analoges GM mit digitalisierten Prozessen</b><br><span class="pill">GM nicht betroffen</span></td><td>Analoge Produkte/Dienste, aber digitalisierte Prozesse. <b>Ziel: Effizienzsteigerung</b> ausgewählter Prozesse.</td></tr>
+  <tr><td><b>2</b></td><td><b>Digital erweitertes GM</b><br><span class="pill">durch Digitalisierung erweitert</span></td><td>Zusätzliche digitale Dienste, Produkt→Dienstleistung, Kunden in Konfiguration einbinden, Losgrösse 1. <b>Ziel: zusätzlicher Kundennutzen</b>.</td></tr>
+  <tr><td><b>3</b></td><td><b>Digitales GM</b><br><span class="pill">erst durch Digitalisierung möglich</span></td><td><b>Plattform-</b> und <b>datenbasierte</b> GM (Anbieter &amp; Nachfrager verbinden; Daten verkaufen). <b>Ziel: wettbewerbsfähiges, einfach skalierbares GM</b>.</td></tr>
+</table>
+
+<!-- ============ ELEMENTE ============ -->
+<h2 id="elemente">4 · Die vier Elemente eines Geschäftsmodells</h2>
+<p>Johnson, Christensen &amp; Kagermann (2008): Ein erfolgreiches Geschäftsmodell besteht aus <b>vier ineinandergreifenden Elementen</b> («four interlocking elements»):</p>
+<table>
+  <tr><th style="width:26%">Element</th><th>Beschreibung</th></tr>
+  <tr><td><b>Customer Value Proposition (CVP)</b></td><td>Zielkunde + <b>Job to be done</b> + Angebot, das das Problem/Bedürfnis löst. <i>Wert für den Kunden.</i></td></tr>
+  <tr><td><b>Profit Formula</b></td><td>Revenue model, Cost structure, Margin model, Resource velocity. <i>Wert für das Unternehmen.</i></td></tr>
+  <tr><td><b>Key Resources</b></td><td>Menschen, Technologie, Ausrüstung, Information, Kanäle, Marke, Partner — um die CVP zu liefern.</td></tr>
+  <tr><td><b>Key Processes</b></td><td>Prozesse, Regeln, Kennzahlen und Normen, die die profitable Lieferung <b>wiederholbar &amp; skalierbar</b> machen.</td></tr>
+</table>
+<p class="lead">CVP + Profit Formula <b>definieren den Wert</b>; Key Resources + Key Processes <b>liefern</b> ihn an Kunde und Unternehmen.</p>
+
+<!-- ============ CANVAS ============ -->
+<h2 id="canvas">5 · Business Model Canvas — die 9 Bausteine (Osterwalder 2010)</h2>
+<p class="lead">Das wichtigste Design-Werkzeug. <b>Auswendig lernen — in dieser Anordnung:</b> rechts der Markt (Kunde), links das Unternehmen (Herstellung), unten die Finanzen.</p>
+
+<div class="canvas">
+  <div class="cell kp"><b>① Key Partnerships</b>Partner &amp; Lieferanten; welche Ressourcen/Aktivitäten kommen von aussen?</div>
+  <div class="cell ka"><b>⑦ Key Activities</b>Wichtigste Tätigkeiten zur Lieferung der VP</div>
+  <div class="cell vp"><b>② Value Propositions</b>Welche Probleme lösen wir, welche Bedürfnisse befriedigen wir?</div>
+  <div class="cell cr"><b>④ Customer Relationships</b>Art der Beziehung pro Segment</div>
+  <div class="cell cs"><b>① Customer Segments</b>Welche Kundengruppen bedienen wir?</div>
+  <div class="cell kr"><b>⑥ Key Resources</b>Wichtigste Ressourcen (people, tech, brand…)</div>
+  <div class="cell ch"><b>③ Channels</b>Kommunikations-, Vertriebs- &amp; Verkaufskanäle</div>
+  <div class="cell cost"><b>⑨ Cost Structure</b>Wichtigste Kosten des Modells</div>
+  <div class="cell rev"><b>⑤ Revenue Streams</b>Wie verdient das Unternehmen Geld? (Erlösströme)</div>
+</div>
+<p style="font-size:.8rem;color:var(--muted)">Merkhilfe (4 Blöcke): <b>WER</b> = Customer Segments / Relationships / Channels · <b>WAS</b> = Value Proposition · <b>WIE</b> = Key Activities / Resources / Partners · <b>WERT</b> = Cost Structure / Revenue Streams.</p>
+
+<div class="ex"><b>Beispiel Apple iPod/iTunes:</b> VP = «Seamless Music Experience»; Key Partners = Record Companies, OEMs; Customer Relationships = Lovemark + Switching Costs; Revenue = grosse Hardware-Erlöse + etwas Musik.</div>
+
+<!-- ============ NAVIGATOR ============ -->
+<h2 id="navigator">6 · Business Model Navigator — das «magische Dreieck» (Gassmann et al.)</h2>
+<p>Der St. Galler <b>Business Model Navigator</b> definiert ein Geschäftsmodell über <b>vier zentrale Fragen / Dimensionen</b>: das <b>WER-WAS-WIE-WERT-Konzept</b>.</p>
+<table>
+  <tr><th style="width:14%">Dimension</th><th style="width:30%">Frage</th><th>Inhalt</th><th style="width:14%">Lage</th></tr>
+  <tr><td><b>WER?</b></td><td>Wer sind unsere Zielkunden?</td><td>Kundensegmente</td><td>Mitte</td></tr>
+  <tr><td><b>WAS?</b></td><td>Was bieten wir den Kunden an?</td><td>Nutzenversprechen (Value Proposition)</td><td>extern</td></tr>
+  <tr><td><b>WIE?</b></td><td>Wie stellen wir die Leistung her?</td><td>Wertschöpfungskette</td><td>intern</td></tr>
+  <tr><td><b>WERT?</b></td><td>Wie wird der Wert / Ertrag erzielt?</td><td>Ertragsmechanik (Kosten + Umsatz)</td><td>intern</td></tr>
+</table>
+<p>«Magisches» Dreieck, weil die Optimierung an <b>einem</b> Eckpunkt automatisch Antworten der anderen Seiten erzwingt. Die ersten zwei W (WER, WAS) sind die <b>externe</b>, die letzten zwei (WIE, WERT) die <b>interne</b> Dimension.</p>
+
+<div class="exam">
+  <b>Definition Geschäftsmodellinnovation (Navigator):</b> Eine <b>Geschäftsmodellinnovation</b> liegt vor, wenn <b>mindestens zwei</b> der vier Elemente (WER, WAS, WIE, WERT) verändert werden. Sie erfolgt durch <b>kreative Imitation</b> und <b>Rekombination</b> bestehender Muster — <i>nicht zwingend durch neue Produkte/Prozesse</i>.
+</div>
+
+<!-- ============ MUSTER ============ -->
+<h2 id="muster">7 · Geschäftsmodellmuster &amp; Innovation</h2>
+<p>Gassmann et al.: <b>55 Muster</b> erklären die meisten Innovationen. Konstruktionsmethodik: <b>dominante Branchenlogik durchbrechen</b> durch kreative Imitation + Rekombination.</p>
+
+<h3>Strategien zur Anwendung von Mustern</h3>
+<ul>
+  <li><b>Drei Basisstrategien:</b> <b>Übertragen</b> (Muster auf neue Branche) · <b>Kombinieren</b> (mehrere Muster) · <b>Wiederholen</b> (erneut anwenden).</li>
+  <li><b>Vier Strategien (Beispiel Apple/Nestlé):</b> <b>Create → Transfer → Combine → Leverage.</b></li>
+</ul>
+
+<h3>Wichtige Muster (mit Beispiel)</h3>
+<table>
+  <tr><th style="width:22%">Muster</th><th>Logik</th><th style="width:26%">Beispiele</th></tr>
+  <tr><td><b>Razor and Blade</b><br>(Haken &amp; Köder)</td><td>Basisgerät billig/gratis (geringe Marge), <b>Verbrauchsmaterial teuer</b> (hohe Marge).</td><td>Gillette, HP-Drucker/Tinte, Nespresso (Maschine/Kapseln)</td></tr>
+  <tr><td><b>Subscription</b></td><td>Wiederkehrende Gebühr für laufende Lieferung/Leistung; Kundenbindung.</td><td>Blacksocks (CH, «Sockscription»), Netflix, Spotify, Salesforce</td></tr>
+  <tr><td><b>Freemium</b></td><td>Basisversion gratis, <b>Premium-Version kostenpflichtig</b>.</td><td>Skype, Dropbox, LinkedIn, SurveyMonkey</td></tr>
+  <tr><td><b>Advertisement</b></td><td>Nutzer zahlen nichts; Erlös über <b>Werbung</b> (Aufmerksamkeit verkaufen).</td><td>Facebook, YouTube, Metro-Zeitung, JCDecaux</td></tr>
+  <tr><td><b>Lock-in</b></td><td>Wechselkosten binden Kunden ans System.</td><td>Nespresso, Amazon Prime</td></tr>
+</table>
+
+<!-- ============ AMAZON ============ -->
+<h2 id="amazon">8 · Fallbeispiel — Amazon (ständige GM-Innovation)</h2>
+<p>Amazon auditiert sein Geschäftsmodell laufend. <b>Drei Phasen der Geschäftsmodellinnovation:</b></p>
+<table>
+  <tr><th style="width:26%">Phase</th><th>Veränderung im Geschäftsmodell</th></tr>
+  <tr><td><b>① Marktplatz-Erweiterung</b><br>(ab 2000)</td><td>Vom reinen Händler (Bücher, 1994) zum <b>zweiseitigen Marktplatz</b> (Third-Party Marketplace). Neue Erlöse: <b>Provisionen (~15%)</b> statt nur Handelsmarge — Sortiment wächst ohne eigenes Inventarrisiko.</td></tr>
+  <tr><td><b>② Service-Innovation</b><br>(ab 2005): Prime &amp; FBA</td><td><b>Prime</b> = Abonnement-Modell → <b>Customer Lock-in</b>. <b>FBA</b> monetarisiert die Schlüsselressource Logistik als Service → die Kostenstruktur wird zur Einnahmequelle.</td></tr>
+  <tr><td><b>③ Radikalste Innovation: AWS</b><br>(2006)</td><td>Interne IT-Infrastruktur extern vermarktet → <b>komplett neues Geschäftsfeld</b> (Cloud, Pay-per-Usage). Aus einer internen <b>Kostenstelle</b> wurde das <b>margenstärkste Segment</b>.</td></tr>
+</table>
+<div class="ex"><b>What's next?</b> (1) Logistik-Automatisierung &amp; Physical AI (Roboter-Flotte, Senkung der Kostenstruktur); (2) AWS &amp; Generative AI (Bedrock, Nova) — Verschiebung des Wertangebots, Kunden-Lock-in ins AWS-Ökosystem.</div>
+
+<!-- ============ EXAM ============ -->
+<h2 id="exam">9 · Prüfungsfokus — die zwei Musterfragen</h2>
+
+<h3>Musterfrage 5 (10 P) — Begriff &amp; Bestandteile</h3>
+<div class="exam">
+  <b>Was ist <i>NICHT</i> Bestandteil eines Geschäftsmodells?</b> Häufige Falle. Merke die Trennung:
+  <table style="margin-top:8px">
+    <tr><th style="width:50%">✅ Bestandteil (BMC / Navigator)</th><th>❌ KEIN Bestandteil</th></tr>
+    <tr><td>Kundensegmente · Leistungs-/Nutzenversprechen · Schlüsselaktivitäten · Einnahmen-/Erlösmodell · Kanäle · Ressourcen · Kostenstruktur</td><td><b>Unternehmenskultur</b> · <b>Unternehmensvision</b> · <b>Organisationsstruktur</b> · <b>Investitionsplan</b></td></tr>
+  </table>
+  Faustregel: Ein Geschäftsmodell beschreibt die <b>WER-WAS-WIE-WERT-Logik</b> — übergeordnete Strategie/Kultur/Vision und reine Finanzpläne gehören <b>nicht</b> dazu.
+</div>
+<p style="font-size:.86rem"><b>R/F-Aussagen — alle vier sind FALSCH:</b> «Ein GM ist nur für Start-ups relevant» (falsch — alle Unternehmen); «GM kann nicht mehr verändert werden, sobald festgelegt» (falsch — iterativer Prozess). <b>Phase:</b> Das GM ist vor allem in der <b>Early Stage</b> relevant — hier wird das Modell entwickelt &amp; validiert, auf dem alles Weitere aufbaut.</p>
+
+<h3>Musterfrage 6 (10 P) — Zwei Richtungen digitaler Innovation</h3>
+<table>
+  <tr><th style="width:42%">Richtung</th><th>Beispiel</th></tr>
+  <tr><td><b>Aus neuen Geschäftsanforderungen</b> heraus (Bedarf → Technologie wird gesucht)</td><td>Neues Verkaufsdaten-/CRM-System zur besseren Kundensteuerung</td></tr>
+  <tr><td><b>Aus neuen digitalen Technologien</b> heraus (Technologie → Anwendung wird gefunden)</td><td>Einsatz von KI in der Autoproduktion für autonomes Fahren</td></tr>
+</table>
+
+<div class="ask">
+  <b>Frag deinen Tutor (mich!):</b> Etwas unklar — der Unterschied CVP vs. Value Proposition? Warum Nespresso «Razor &amp; Blade» <i>und</i> «Lock-in» ist? Wie man eine offene 10-P-Antwort strukturiert? <b>Frag einfach im Chat nach.</b> Übe danach mit der <a href="../lessons/04-geschaeftsmodelle-quiz.html">Quiz-Lektion 4</a>.
+</div>
+
+<footer>
+  <b>Primärquelle (lesen/anschauen):</b> Osterwalder &amp; Pigneur, <i>Business Model Generation</i> (2010) — der Standard zum Canvas; kostenlose Canvas-Vorlage + Erklärvideo auf <a class="ref" href="https://www.strategyzer.com/library/the-business-model-canvas">strategyzer.com</a>. Für den Navigator: Gassmann/Frankenberger/Csik, <i>Geschäftsmodelle entwickeln</i> (über OST-IP via hanser-elibrary.com) und <a class="ref" href="https://businessmodelnavigator.com/explore">businessmodelnavigator.com/explore</a>.<br><br>
+  Studienblatt 4 von 11 · DigiBusI FS2026 · gegründet auf <i>DigiBusI_04_BusinessModels_2026</i> + Musterfragen FS26. Querverweise: <a class="ref" href="03-plattformen-oekosysteme.html">← Blatt 3 (Plattformen)</a>
+</footer>
+</div>
+</body>
+</html>

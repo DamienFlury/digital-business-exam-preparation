@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 3 — Digitale Plattformen &amp; Ökosysteme</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 3 von 11 · Lernblock 3</div>
+  <h1>Digitale Plattformen &amp; Ökosysteme</h1>
+  <div class="sub">Plattform = vermittelnde <b>Infrastruktur</b> · Ökosystem = umgebendes <b>Beziehungsgefüge</b> · Netzwerkeffekte als zentraler Hebel</div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#plattform">Plattform-Definition &amp; Akteure</a>·
+    <a href="#netz">Netzwerkeffekte</a>·
+    <a href="#typen">Plattformtypen</a>·
+    <a href="#schichten">Schichtenmodell</a>·
+    <a href="#pipeline">Pipeline → Platform</a>·
+    <a href="#oeko">Ökosysteme</a>·
+    <a href="#bsp">Fallbeispiele</a>·
+    <a href="#exam">Prüfungsfokus</a>
+  </nav>
+</header>
+
+<div class="exam">
+  <b>Achtung — kein offizielles Musterbeispiel:</b> Im Musterfragen-Set gibt es <b>keine</b> dedizierte Frage zu Plattformen &amp; Ökosystemen. Das Thema ist trotzdem voll prüfbar (alle 11 Themen sind gleich gewichtet). Lerne die <b>Frameworks</b>, die die Vorlesung auf ihren Recap-Folien betont: die <b>4 Plattform-Akteure</b>, <b>direkte vs. indirekte Netzwerkeffekte</b>, die <b>6 Plattformtypen</b>, die <b>3 Shifts</b> Pipeline→Platform und die <b>Abgrenzung Plattform ↔ Ökosystem</b>. Halte zu jedem Begriff <b>ein konkretes Beispiel</b> bereit.
+</div>
+
+<!-- ============ PLATTFORM ============ -->
+<h2 id="plattform">1 · Digitale Plattform — Definition &amp; Akteure</h2>
+
+<div class="def"><b>Digitale Plattform</b> — eine <b>Technologie/Infrastruktur</b>, die als <b>Intermediär</b> die Interaktion zwischen <b>zwei oder mehr Nutzergruppen</b> ermöglicht. Sie stellt unter vorgegebenen <b>Regeln</b> eine zentrale Schnittstelle bereit, über die <b>wertschaffende Interaktionen</b> (Austausch von Information, Gütern/Dienstleistungen + Zahlungsmittel) stattfinden. <i>(Obermaier &amp; Mosch 2019: „organizations that get two or more sides on board and enable direct interactions between them“.)</i> Wegen der mehreren Akteure spricht man von <b>zwei- oder mehrseitigen Märkten</b>.</div>
+
+<h3>Die vier Plattform-Akteure (auswendig!)</h3>
+<table>
+  <tr><th style="width:22%">Akteur</th><th>Aufgabe</th><th style="width:28%">Beispiel (Airbnb/Uber)</th></tr>
+  <tr><td><b>Anbieter</b></td><td>Definiert den Kundennutzen, erbringt die Leistung</td><td>Wohnungs-/Fahrzeugeigentümer</td></tr>
+  <tr><td><b>Kunde</b></td><td>Wählt die Plattform, nimmt die Leistung in Anspruch</td><td>Gast / Fahrgast</td></tr>
+  <tr><td><b>Betreiber</b></td><td>Effizientes <b>Matching</b> Anbieter ↔ Kunde, stellt Infrastruktur</td><td>Airbnb, Uber</td></tr>
+  <tr><td><b>Enabler</b></td><td>Stellt die ermöglichende <b>Technologie</b> bereit</td><td>GPS, Internet</td></tr>
+</table>
+<p>Die Kombination Privatperson/Unternehmen auf beiden Seiten ergibt die Marktbeziehungen <span class="pill">C2C</span><span class="pill">C2B</span><span class="pill">B2C</span><span class="pill">B2B</span>.</p>
+
+<h3>Zweiseitiger Markt (Two-Sided Market)</h3>
+<div class="def"><b>Zweiseitiger Markt</b> — eine Plattform, die <b>zwei verschiedene Kundengruppen</b> (z.B. Käufer/Verkäufer) über <b>indirekte Netzwerkeffekte</b> verbindet. <i>(Dewenter &amp; Rösch 2015.)</i> Voraussetzungen: (1) ≥ 2 Gruppen mit unterschiedlicher Absicht, (2) über indirekte Netzeffekte verbunden, (3) die Plattform verbindet sie und <b>internalisiert</b> die Netzeffekte. Wirkung: Kontakt herstellen + <b>Transaktionskosten senken</b>.</div>
+
+<!-- ============ NETZWERKEFFEKTE ============ -->
+<h2 id="netz">2 · Netzwerkeffekte — der zentrale Hebel</h2>
+<div class="def"><b>Netzwerkeffekt</b> — der Nutzen eines Gutes <b>steigt mit der Nutzerzahl</b> (positiver Netzwerkeffekt). Tritt v.a. bei Internetplattformen auf. <b>Negativ</b>, wenn der Nutzen mit steigender Nutzerzahl <i>sinkt</i> (Überlastung; mehr Werbung → weniger Leser).</div>
+<p>Zwei Achsen — die typische Prüfungsfalle ist die Verwechslung von <i>direkt</i> und <i>indirekt</i>:</p>
+<table>
+  <tr><th style="width:26%">Typ</th><th>Wirkung</th><th style="width:30%">Beispiel</th></tr>
+  <tr><td><b>Direkt</b> (same-side)</td><td>Effekt <b>innerhalb</b> einer Marktseite — mehr Nutzer derselben Gruppe = mehr Nutzen</td><td>WhatsApp: mehr Kontakte = wertvoller</td></tr>
+  <tr><td><b>Indirekt</b> (cross-side)</td><td>Effekt <b>zwischen</b> den Marktseiten — mehr auf Seite A = mehr Nutzen für Seite B</td><td>Uber: mehr Fahrer = kürzere Wartezeit für Fahrgäste</td></tr>
+</table>
+<div class="ex"><b>Uber-Flywheel</b> (Harwardt &amp; Haselhoff 2022): mehr Fahrer → kürzere Wartezeiten → mehr Fahrgäste → mehr Aufträge → mehr Fahrer. <b>Negativer cross-side Effekt:</b> zu viele Fahrer pro Nachfrage → sinkende Preise/Einkommen → Fahrer steigen aus.</div>
+
+<!-- ============ PLATTFORMTYPEN ============ -->
+<h2 id="typen">3 · Die sechs Plattformtypen (Digital Platform Map)</h2>
+<p class="lead">Grundprinzip <b>Many-to-many</b>: Die Plattform verbindet Angebots- mit Nachfrageseite. <b>Merke:</b> Plattformen sind eine <b>neue Form der Intermediation — nicht der Wegfall des Vermittlers</b> (Re-Intermediation).</p>
+<table>
+  <tr><th style="width:24%">Typ</th><th>Funktion</th><th style="width:32%">Beispiel</th></tr>
+  <tr><td><b>Marktplatz</b></td><td>Matching von Angebot &amp; Nachfrage (Güter/Dienste)</td><td>eBay, Amazon, Booking, Airbnb, Uber</td></tr>
+  <tr><td><b>Suchplattform</b></td><td>Vermittelt Angebot/Nachfrage von <b>Informationen</b></td><td>Google, Bing, Baidu</td></tr>
+  <tr><td><b>Repository</b></td><td>Virtuelles Archiv — Inhalte speichern &amp; abrufen</td><td>YouTube, Wikipedia, GitHub, Spotify</td></tr>
+  <tr><td><b>Kommunikation</b></td><td>Austausch von <b>Nachrichten</b></td><td>WhatsApp, Skype, WeChat</td></tr>
+  <tr><td><b>Community</b></td><td>Langfristige <b>Vernetzung</b> von Teilnehmern</td><td>LinkedIn, Instagram, Twitter</td></tr>
+  <tr><td><b>Zahlung</b></td><td>Abwicklung von Abrechnung &amp; Zahlung</td><td>PayPal, Apple Pay, Square, Adyen</td></tr>
+</table>
+<p><b>Weitere Typologien (zur Einordnung):</b> Alt 2021 unterscheidet <i>domain-specific</i> (primary/secondary purpose) vs. <i>cross-domain</i> (Assistant-, AI-, Application-/Data-, Operating-Plattformen). Harwardt &amp; Haselhoff 2022 nennen 4 Typen: <span class="pill">E-Commerce</span> (offen vs. geschlossen) <span class="pill">Soziale</span> <span class="pill">Funktionale/IoT</span> <span class="pill">Anwender-Plattformen</span>.</p>
+
+<!-- ============ SCHICHTENMODELL ============ -->
+<h2 id="schichten">4 · Plattform-Schichtenmodell &amp; Ökonomie (Wirtz 2024)</h2>
+<p class="lead">Fünf Ebenen; Basis ist die <b>Nutzer-Basis</b> (Consumer / Producer / <b>Prosumer</b>). Prüfungsrelevant sind v.a. die <b>ökonomischen Vorteile</b> und das <b>Einnahmenmodell</b>.</p>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">Ökonomische Vorteile</h3>
+    <ul>
+      <li><b>Skalen-Effekte</b> (Economies of Scale) — geringe variable Kosten pro Zusatznutzer</li>
+      <li><b>Verbund-Effekte</b> (Economies of Scope)</li>
+      <li><b>Netzwerk-Effekte</b> — mehr Reichweite, mehr Transaktionen</li>
+      <li><b>Long-Tail-Märkte</b> — auch Nischen rentabel bedienbar</li>
+      <li><b>Hoher Datenumfang</b> — Big Data / Machine Learning</li>
+      <li><b>Lock-In-Effekte</b> — <b>Wechselkosten</b> binden Kunden (z.B. Verlust personalisierter Einstellungen)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Einnahmenmodell</h3>
+    <ul>
+      <li><b>Gebühren &amp; Provisionen</b> (pro Transaktion)</li>
+      <li><b>Werbung</b> · <b>Handel mit Nutzerdaten</b> (bei „kostenloser“ Plattform)</li>
+      <li><b>Cross-Selling</b> · <b>Premium-Modelle</b></li>
+      <li><b>Eigenmarken/-produkte</b> · Beratung/Services</li>
+    </ul>
+    <p style="margin-top:8px"><b>Funktions-Querfunktionen:</b> Vermittlung · Pooling · Profiling.</p>
+  </div>
+</div>
+<div class="def"><b>Plattform als Gatekeeper:</b> zentrale <b>Steuerungs-, Kontroll- und Selektionsinstanz</b> für den Austausch zwischen Anbietern und Nachfragern. Kommunikation bleibt meist <i>innerhalb</i> der Plattform (Abwicklung + Daten, z.B. Kundenrezensionen).</div>
+
+<!-- ============ PIPELINE -> PLATFORM ============ -->
+<h2 id="pipeline">5 · Pipeline- vs. Plattform-Geschäft (Van Alstyne et al. 2016, HBR)</h2>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">Pipeline-Geschäft</h3>
+    <p>Wertschöpfung durch eine <b>lineare Aktivitätenkette</b> — das klassische <b>Wertschöpfungsketten-Modell</b>. Input → Schritte → fertiges Produkt; das Unternehmen besitzt einen <b>Teil der Wertschöpfungskette</b>.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Plattform-Geschäft</h3>
+    <p>Der Betreiber <b>vermittelt</b> zwischen Producers und Consumers und nutzt die <b>Daten</b> der Interaktionen für bessere/künftige Angebote — er „verdrahtet die Wertschöpfungskette neu“.</p>
+  </div>
+</div>
+<p><b>Rollen im Plattform-Ökosystem:</b> <span class="pill">Producers</span> (erstellen das Angebot) <span class="pill">Consumers</span> (nutzen es) <span class="pill">Providers</span> (Schnittstelle, z.B. Smartphone bei Android) <span class="pill">Owner</span> (kontrolliert IP &amp; Zugang, z.B. Google bei Android).</p>
+<div class="def"><b>Drei grundlegende Shifts (auswendig!):</b><br>
+  (1) Ressourcen-<b>Kontrolle</b> → Ressourcen-<b>Orchestrierung</b> · (2) <b>interne</b> Optimierung → <b>externe</b> Interaktion · (3) Fokus auf <b>Kundenwert</b> → Fokus auf <b>Ökosystem-Wert</b>.</div>
+
+<!-- ============ ÖKOSYSTEME ============ -->
+<h2 id="oeko">6 · Digitale Ökosysteme</h2>
+<div class="def"><b>Digitales Ökosystem</b> (Fraunhofer IESE) — ein <b>sozio-technisches System</b>, in dem <b>unabhängige</b> Unternehmen und Menschen <b>kooperieren</b>, weil sie sich einen <b>gegenseitigen Vorteil</b> versprechen. In seinem <b>Zentrum</b> steht eine <b>digitale Plattform</b>, die die Kooperation über Ökosystem-Dienste unterstützt. <i>Wirtz 2024: ein „integriertes Beziehungsgefüge aus Akteuren, Wertschöpfungsketten und Beziehungen“, das kollaborativ Wertschöpfung vollzieht, um einen Wettbewerbsvorteil zu erzielen.</i></div>
+<div class="exam"><b>Plattform ↔ Ökosystem (Kernabgrenzung):</b> Die <b>Plattform</b> ist das <b>technische, vermittelnde Zentrum</b>; das <b>Ökosystem</b> ist das umgebende <b>Beziehungsgefüge unabhängiger, kooperierender Partner</b>. Merksatz: <b>Ökosystem = Plattform + grosse Partnermenge + Netzwerkeffekte.</b></div>
+
+<h3>Ökosystem-Typen nach Marktseitigkeit (Trapp et al. 2020)</h3>
+<table>
+  <tr><th style="width:24%">Typ</th><th>Merkmal</th><th style="width:30%">Beispiel</th></tr>
+  <tr><td><b>Einseitiges Netzwerk</b></td><td>Nur <b>ein</b> Partnertyp, alle in derselben Rolle</td><td>WhatsApp, Tinder</td></tr>
+  <tr><td><b>Zweiseitiger Markt</b></td><td>Zwei Partnertypen (Anbieter + Konsumenten) — häufigste Form</td><td>Airbnb, Uber, Flixbus</td></tr>
+  <tr><td><b>Mehrseitiger Markt</b></td><td>&gt; 2 Partnertypen mit unterschiedlichen Rollen — seltener</td><td>Lieferando (Restaurant + Kurier + Kunde)</td></tr>
+</table>
+
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">Vorteile (Trapp et al.)</h3>
+    <ul>
+      <li>Neue (datenbasierte) Geschäftsmöglichkeiten</li>
+      <li>Grosse Reichweite (oft global)</li>
+      <li>Einfachheit / Nutzerfreundlichkeit</li>
+      <li>Offener, kostengünstiger Zugang</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Nachteile — Winner-takes-all</h3>
+    <ul>
+      <li>Nur <b>1–3</b> Ökosysteme pro Markt überleben (<b>Multihoming</b> zu teuer → Konsolidierung)</li>
+      <li><b>Monopolstellung</b> &amp; Marktmacht</li>
+      <li><b>Zentralisierung der Gewinne</b> beim Initiator</li>
+      <li><b>Verdrängung</b> kleiner lokaler Anbieter</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Rolle des Initiators (Orchestrator)</h3>
+<p>Bedarf erkennen → Ökosystem-Service definieren → digitale Plattform aufbauen → <b>Regeln &amp; Governance</b> gestalten → Teilnehmer gewinnen/binden → skalieren &amp; verbessern → <b>Netzwerkeffekte nutzen</b>. Wichtig: Der Initiator hat <b>keine Befehlsgewalt</b> — er gestaltet nur die <b>Rahmenbedingungen</b>. <i>Wirtz-Governance-Formen: relational · contractual · technological.</i></p>
+
+<!-- ============ FALLBEISPIELE ============ -->
+<h2 id="bsp">7 · Fallbeispiele (für die Beispiel-Punkte)</h2>
+<div class="grid2">
+  <div class="ex"><b>Zalando — vom Händler zur Fashion-Plattform:</b> früher <b>Online-Retailer</b> (Einkauf, Marge, volles Bestandsrisiko) → <b>Marktplatz</b> via Partnerprogramm (Marken verkaufen direkt, Zalando als Vermittler mit Provision). Erweiterung: ZEOS (B2B-Services), Lounge, KI-Fashion-Assistant.</div>
+  <div class="ex"><b>Amazon — Plattform &amp; Ökosystem:</b> &gt; Hälfte der Produkte von <b>Drittanbietern</b>; Seller Central, <b>Fulfillment by Amazon (FBA)</b>, Amazon Ads, Kindle Direct Publishing. Prime erhöht <b>Wechselkosten</b> (Lock-In). Gemeinsame Backbone-Infrastruktur für viele Geschäftsmodelle.</div>
+  <div class="ex"><b>Ping An:</b> Versicherer → <b>Technologie-Ökosystem-Orchestrator</b>. „One customer, multiple products“; hochfrequente Ökosysteme (Good Doctor) zur Akquise → <b>Cross-Selling</b> ins margenstarke Finanzgeschäft; monetarisiert <b>indirekte Netzwerkeffekte</b>.</div>
+  <div class="ex"><b>Drei Zeitalter der Kaufabsicht</b> (Schäfers): traditionell (Anbieter→Produkt) → E-Commerce (Produkt→Anbieter) → <b>Plattform-Zeitalter</b> (direkt zum Produktkauf). Einziges CH-Beispiel: <b>Galaxus</b>.</div>
+</div>
+
+<!-- ============ PRÜFUNGSFOKUS ============ -->
+<h2 id="exam">8 · Prüfungsfokus</h2>
+<div class="exam">
+  <b>Da kein Musterbeispiel existiert,</b> sind die wahrscheinlichsten Formate: (a) eine <b>offene Frage</b> „Was ist eine Plattform / ein Ökosystem und wie unterscheiden sie sich?“ oder „Erklären Sie direkte vs. indirekte Netzwerkeffekte mit Beispiel“; (b) eine <b>Zuordnungstabelle</b> (Plattformtyp → Beispiel, oder Aussage → direkt/indirekt). <b>Cold auswendig:</b> 4 Akteure · direkt/indirekt &amp; positiv/negativ · 6 Plattformtypen · 3 Pipeline→Platform-Shifts · Ökosystem-Definition (sozio-technisch, unabhängig, gegenseitiger Vorteil, Plattform im Zentrum) · Winner-takes-all/Multihoming. Immer ein <b>konkretes Beispiel</b> nennen.
+</div>
+
+<div class="ask">
+  <b>Bereit zum Abfragen?</b> Wechsle zum <a class="ref" href="../lessons/03-plattformen-oekosysteme-quiz.html">Quiz-Lektion 3</a> — MC, eine Zuordnungstabelle (Netzwerkeffekte / Plattformtypen) und offene Übungsfragen. Bei Unsicherheiten frag mich jederzeit im Chat.
+</div>
+
+<footer>
+  DigiBusI FS26 · Studienblatt 3 von 11 · Quellen: Vorlesung „Digitale Plattformen und Ökosysteme“ (H.-D. Zimmermann, OST) + zitierte Literatur (Obermaier &amp; Mosch 2019, Dewenter &amp; Rösch 2015, Wirtz 2024, Van Alstyne et al. 2016, Trapp et al. 2020, Harwardt &amp; Haselhoff 2022, Alt 2021, Fraunhofer IESE). Hinweis: kein Eintrag im Musterfragen-Set.<br>
+  ← <a class="ref" href="02-digitale-transformation.html">Studienblatt 2</a> · weiter zu Thema 4: Geschäftsmodelle.
+</footer>
+</div>
+</body>
+</html>

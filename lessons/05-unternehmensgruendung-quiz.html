@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz-Lektion 5 — Unternehmensgründung in der digitalen Wirtschaft</title>
+<style>
+  :root{--ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66; --line:#e3e3ea; --bg:#fbfafc; --ok:#1a7f4b; --no:#b5491f; --accent:#0a7c7c;}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); margin:0; line-height:1.55}
+  .wrap{max-width:820px; margin:0 auto; padding:36px 24px 90px}
+  header.q{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:18px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.6rem; margin:.15em 0}
+  .sub{color:var(--muted); font-size:.92rem}
+  .progress{font-size:.8rem; color:var(--muted); margin-top:8px}
+  .q-card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin:20px 0; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .q-num{font-size:.74rem; font-weight:700; color:var(--ost); letter-spacing:.08em; text-transform:uppercase}
+  .pts{float:right; font-size:.74rem; color:var(--muted); font-weight:600}
+  .q-text{font-size:1.05rem; font-weight:600; margin:6px 0 14px}
+  .opt{display:block; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:7px 0; cursor:pointer; background:#fff; transition:.12s}
+  .opt:hover{border-color:var(--ost)}
+  .opt input{margin-right:9px}
+  .opt.correct{background:#e9f7ef; border-color:var(--ok)}
+  .opt.wrong{background:#fdeee7; border-color:var(--no)}
+  textarea{width:100%; border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:inherit; font-size:.95rem; min-height:90px; resize:vertical}
+  button{background:var(--ost); color:#fff; border:0; border-radius:8px; padding:9px 18px; font-size:.9rem; font-weight:600; cursor:pointer; margin-top:10px}
+  button.ghost{background:#fff; color:var(--ost); border:1px solid var(--ost)}
+  button:hover{opacity:.92}
+  .feedback{display:none; margin-top:14px; padding:13px 16px; border-radius:8px; font-size:.9rem; background:var(--ost-light); border-left:4px solid var(--ost)}
+  .feedback.show{display:block}
+  .feedback h4{margin:0 0 6px; color:var(--ost); font-size:.82rem; text-transform:uppercase; letter-spacing:.06em}
+  .model{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:.88rem}
+  .model b{color:var(--accent)}
+  .tag{display:inline-block; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--ost-light); color:var(--ost); margin-bottom:6px}
+  .self{font-size:.84rem; color:var(--muted); margin-top:10px}
+  .self button{font-size:.8rem; padding:5px 12px; margin:4px 6px 0 0}
+  .checklist{margin-top:12px; font-size:.85rem; background:#fff; border:1px dashed var(--ost); border-radius:8px; padding:10px 14px}
+  .checklist label{display:block; margin:4px 0; cursor:pointer}
+  .checklist input{margin-right:8px}
+  .match-row{border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:8px 0}
+  .match-row .stmt{font-weight:600; font-size:.92rem; margin-bottom:6px}
+  .match-opts{display:flex; flex-wrap:wrap; gap:6px}
+  .match-opts label{font-size:.8rem; border:1px solid var(--line); border-radius:6px; padding:4px 9px; cursor:pointer}
+  .match-opts label.correct{background:#e9f7ef; border-color:var(--ok)}
+  .match-opts label.wrong{background:#fdeee7; border-color:var(--no)}
+  .match-opts input{margin-right:5px}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted)}
+  a{color:var(--accent)}
+  .intro{background:var(--ost-light); border-radius:10px; padding:14px 18px; font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="q">
+  <div class="kicker">DigiBusI · Quiz-Lektion 5 von 11</div>
+  <h1>Unternehmensgründung in der digitalen Wirtschaft</h1>
+  <div class="sub">Aktives Abfragen im Prüfungsformat. Antworte zuerst selbst — <b>in ganzen Sätzen</b> — dann aufdecken.</div>
+  <div class="progress">Kern: <b>3 Phasen</b> (Early/Expansion/Later) · <b>3 Akteure</b> · <b>5 Erfolgsfaktoren</b> · <b>PESTLE</b> &amp; Stress Test · <b>Finanzierung pro Phase</b>. Frage 1 ist die <b>offizielle Musterfrage</b>.</div>
+</header>
+
+<div class="intro">
+  <b>So funktioniert's:</b> Bei MC/Zuordnung anklicken → «Antwort prüfen». Bei offenen Fragen erst selbst tippen, dann «Musterantwort zeigen» und ehrlich selbst bewerten. <b>Tipp:</b> Schreib deine offene Antwort auch in den Chat — ich benote sie nach Rubrik. Begleitendes <a href="../reference/05-unternehmensgruendung.html">Studienblatt 5</a>.
+</div>
+
+<!-- Q1 open — Musterfrage 5c -->
+<div class="q-card" id="q1">
+  <div class="q-num">Frage 1 · Offen <span class="pts">2 P · Musterfrage</span></div>
+  <div class="q-text">Bei der Unternehmensgründung unterscheidet man drei Phasen: Early Stage, Expansion Stage, Later Stage. In welcher Phase ist das <b>Geschäftsmodell</b> vor allem relevant? <b>Begründen Sie</b> Ihre Aussage.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Klar genannt: Early Stage?</label>
+    <label><input type="checkbox"> Begründung: hier wird das GM entwickelt UND validiert?</label>
+    <label><input type="checkbox"> GM als Grundlage, auf der alles Weitere aufbaut?</label>
+    <label><input type="checkbox"> Abgrenzung zu Expansion/Later (Wachstum/Erfolg) erwähnt?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q1')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q1">
+    <h4>Musterantwort</h4>
+    <p>Das Geschäftsmodell ist vor allem in der <b>Early Stage</b> relevant. In dieser Phase stehen die <b>Entwicklung und Validierung</b> des Geschäftsmodells im Vordergrund; es bildet die <b>Grundlage</b>, auf der das Unternehmen aufbaut und sich weiterentwickelt. Die Expansion Stage und die Later Stage sind zwar wichtig, um Wachstum und Erfolg voranzutreiben, doch der Schwerpunkt der Definition und Validierung des Geschäftsmodells liegt in der Early Stage.</p>
+  </div>
+</div>
+
+<!-- Q2 Zuordnung — Phase zu Beschreibung -->
+<div class="q-card" id="q2">
+  <div class="q-num">Frage 2 · Zuordnung <span class="pts">3 P</span></div>
+  <div class="q-text">Ordnen Sie jeden Ideen-Schritt der richtigen <b>Entwicklungsphase</b> zu. Genau ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="EA">
+    <div class="stmt">Ideenfindung, Ideenformulierung, Ideenumsetzung</div>
+    <div class="match-opts"><label><input type="radio" name="p1" value="EA">Early</label><label><input type="radio" name="p1" value="EX">Expansion</label><label><input type="radio" name="p1" value="LA">Later</label></div>
+  </div>
+  <div class="match-row" data-correct="EX">
+    <div class="stmt">Ideenintensivierung</div>
+    <div class="match-opts"><label><input type="radio" name="p2" value="EA">Early</label><label><input type="radio" name="p2" value="EX">Expansion</label><label><input type="radio" name="p2" value="LA">Later</label></div>
+  </div>
+  <div class="match-row" data-correct="LA">
+    <div class="stmt">Ideenfortführung / Ideendiversifikation</div>
+    <div class="match-opts"><label><input type="radio" name="p3" value="EA">Early</label><label><input type="radio" name="p3" value="EX">Expansion</label><label><input type="radio" name="p3" value="LA">Later</label></div>
+  </div>
+
+  <button onclick="checkMatch('q2',3)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q2"><h4>Auflösung</h4>
+    <span id="score-q2"></span> <b>Early Stage</b> = die drei «Ideen»-Schritte von der Findung bis zur Umsetzung (Gründung). <b>Expansion Stage</b> = Ideenintensivierung (Markteinführung &amp; Wachstum). <b>Later Stage</b> = Ideenfortführung/-diversifikation (Reife, Exit). Merke: «Idee → finden, formen, umsetzen, intensivieren, fortführen».
+  </div>
+</div>
+
+<!-- Q3 Zuordnung — Finanzierung zu Phase -->
+<div class="q-card" id="q3">
+  <div class="q-num">Frage 3 · Zuordnung <span class="pts">4 P</span></div>
+  <div class="q-text">In welcher Entwicklungsphase tritt das jeweilige Finanzierungsinstrument / die Phase <b>typischerweise</b> auf? Genau ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="EA">
+    <div class="stmt">Seed-Finanzierung &amp; Business Angels</div>
+    <div class="match-opts"><label><input type="radio" name="f1" value="EA">Early</label><label><input type="radio" name="f1" value="EX">Expansion</label><label><input type="radio" name="f1" value="LA">Later</label></div>
+  </div>
+  <div class="match-row" data-correct="EX">
+    <div class="stmt">2nd / 3rd Round (Venture Capital, Wachstumsfinanzierung)</div>
+    <div class="match-opts"><label><input type="radio" name="f2" value="EA">Early</label><label><input type="radio" name="f2" value="EX">Expansion</label><label><input type="radio" name="f2" value="LA">Later</label></div>
+  </div>
+  <div class="match-row" data-correct="LA">
+    <div class="stmt">IPO (Börsengang), MBO / MBI</div>
+    <div class="match-opts"><label><input type="radio" name="f3" value="EA">Early</label><label><input type="radio" name="f3" value="EX">Expansion</label><label><input type="radio" name="f3" value="LA">Later</label></div>
+  </div>
+  <div class="match-row" data-correct="EA">
+    <div class="stmt">Eigene Mittel &amp; öffentliche Fördermittel (Pre-Seed)</div>
+    <div class="match-opts"><label><input type="radio" name="f4" value="EA">Early</label><label><input type="radio" name="f4" value="EX">Expansion</label><label><input type="radio" name="f4" value="LA">Later</label></div>
+  </div>
+
+  <button onclick="checkMatch('q3',4)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q3"><h4>Auflösung</h4>
+    <span id="score-q3"></span> <b>Early</b>: Pre-Seed/Seed/Startup → eigene Mittel, Fördermittel, Business Angels, erste VC. <b>Expansion</b>: 2nd/3rd Round → VC-Gesellschaften, Fremdfinanzierung. <b>Later</b>: Bridge/IPO/MBO/MBI → Börsengang, strategische Investoren. Faustregel: je reifer das Unternehmen, desto grösser/institutioneller die Kapitalquelle.
+  </div>
+</div>
+
+<!-- Q4 open — 3 Akteure -->
+<div class="q-card" id="q4">
+  <div class="q-num">Frage 4 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Nennen und beschreiben Sie kurz die <b>drei Akteursgruppen</b> der Unternehmensgründung.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Gründer:innen — bringen innovative Ideen/Geschäftsmodelle?</label>
+    <label><input type="checkbox"> Investor:innen — stellen Kapital für Start &amp; Wachstum?</label>
+    <label><input type="checkbox"> Unterstützende im Ecosystem — Beratungs-/Unterstützungsleistungen?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q4')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q4">
+    <h4>Musterantwort</h4>
+    <div class="model"><b>Startup-Gründer:innen</b> bringen die <b>innovativen Ideen und Geschäftsmodelle</b> ein und prägen mit ihrer Persönlichkeit und Motivation die Aktivitäten des Startups.</div>
+    <div class="model"><b>Startup-Investor:innen</b> stellen das <b>Kapital</b> für Start und Wachstum bereit (Risiko-/Beteiligungskapital, Business Angels); sie halten meist eine Minderheitsbeteiligung und steigen über einen <b>Exit</b> wieder aus.</div>
+    <div class="model"><b>Unterstützende im Startup-Ecosystem</b> (Gründerszene) bieten vielfältige <b>Beratungs- und Unterstützungsleistungen</b> — z.B. Kammern, Steuer-/Rechtsberatung, Gründerzentren und Förderinstitutionen.</div>
+  </div>
+</div>
+
+<!-- Q5 MC — PESTLE -->
+<div class="q-card" id="q5">
+  <div class="q-num">Frage 5 · Multiple Choice <span class="pts">2 P</span></div>
+  <div class="q-text">Wofür steht das «L» in der <b>PESTLE</b>-Analyse zur Prüfung der Resilienz?</div>
+  <label class="opt"><input type="radio" name="q5"> A) Logistical (logistisch)</label>
+  <label class="opt"><input type="radio" name="q5"> B) Legal (rechtlich)</label>
+  <label class="opt"><input type="radio" name="q5"> C) Liquidity (liquiditätsbezogen)</label>
+  <label class="opt"><input type="radio" name="q5"> D) Local (lokal)</label>
+  <button onclick="checkMC('q5',1)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q5"><h4>Auflösung</h4><b>B</b> ist richtig. PESTLE prüft sechs externe Faktoren: <b>P</b>olitical, <b>E</b>conomic, <b>S</b>ocial, <b>T</b>echnological, <b>L</b>egal, <b>E</b>nvironmental. Die zweite Methode zur Resilienz-Prüfung ist der <b>Business Model Stress Test</b> (Konfrontation mit Entwicklungen/Unsicherheiten, Heat-Map).</div>
+</div>
+
+<!-- Q6 MC — Investoren-Merkmal -->
+<div class="q-card" id="q6">
+  <div class="q-num">Frage 6 · Multiple Choice <span class="pts">2 P</span></div>
+  <div class="q-text">Welche Aussage über Startup-<b>Investor:innen</b> ist korrekt?</div>
+  <label class="opt"><input type="radio" name="q6"> A) Sie übernehmen meist die Mehrheit, um das Startup zu kontrollieren</label>
+  <label class="opt"><input type="radio" name="q6"> B) Sie halten meist eine Minderheit und steigen über einen Exit aus</label>
+  <label class="opt"><input type="radio" name="q6"> C) Ihr Kapital hat den Charakter von voll besichertem Fremdkapital</label>
+  <label class="opt"><input type="radio" name="q6"> D) Sie engagieren sich zeitlich unbegrenzt ohne Mitspracherechte</label>
+  <button onclick="checkMC('q6',1)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q6"><h4>Auflösung</h4><b>B</b> ist richtig. Der einzelne Kapitalgeber erhält in der Regel eine <b>Minderheitsbeteiligung</b> (der selbständige Charakter bleibt erhalten); das Engagement ist <b>zeitlich begrenzt</b> und endet mit dem Verkauf der Beteiligung (<b>Exit</b>). Das Kapital hat den Charakter von voll haftendem <b>Eigenkapital</b>, und es werden <b>Kontroll- und Mitspracherechte</b> vereinbart.</div>
+</div>
+
+<!-- Q7 open — 5 Erfolgsfaktoren -->
+<div class="q-card" id="q7">
+  <div class="q-num">Frage 7 · Offen <span class="pts">5 P</span></div>
+  <div class="q-text">Nennen Sie die <b>fünf (Erfolgs-)Faktoren</b> der Unternehmensgründung und ordnen Sie sie den Rollen <b>Ausgangspunkt</b>, <b>Umsetzung</b> und <b>Notwendigkeit</b> zu.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Management &amp; Produkt = Ausgangspunkt?</label>
+    <label><input type="checkbox"> Prozesse &amp; Marktzugang = Umsetzung?</label>
+    <label><input type="checkbox"> Finanzen = Notwendigkeit?</label>
+    <label><input type="checkbox"> Zu jedem Faktor ein Stichwort genannt?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q7')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q7">
+    <h4>Musterantwort</h4>
+    <div class="model"><b>Ausgangspunkt:</b> <b>Management</b> (Know-how, Führung, Gründerteam im Mittelpunkt) und <b>Produkt/Service</b> (Idee, Technologie, Businessmodell, USP, Kundennutzen).</div>
+    <div class="model"><b>Umsetzung:</b> <b>Prozesse</b> (Arbeitsabläufe, Organisationsaufbau, Projekt-/Prozessmanagement) und <b>Marktzugang/Netzwerk</b> (Marketing, Vertrieb, Kooperationen, Multiplikatoren).</div>
+    <div class="model"><b>Notwendigkeit:</b> <b>Finanzen</b> (Liquiditätsplanung, Cash-Flow-Sicherung, Controlling, Investor Relations) — sichert alle Aktivitäten über den Liquiditätsaspekt ab.</div>
+  </div>
+</div>
+
+<!-- Q8 open — Businessplan -->
+<div class="q-card" id="q8">
+  <div class="q-num">Frage 8 · Offen <span class="pts">4 P</span></div>
+  <div class="q-text">Was ist ein <b>Businessplan</b> und welche <b>Zwecke</b> erfüllt er? Nennen Sie mindestens drei Zwecke.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Definition: beschreibt Vorhaben mit Zielen, Strategien, Massnahmen?</label>
+    <label><input type="checkbox"> Drei Rollen: internes Planungsinstrument / Dokument für externe Stakeholder / Marketinginstrument?</label>
+    <label><input type="checkbox"> ≥3 Zwecke aus: Planung, Entscheidung, Finanzierung, Kommunikation, Kontrolle?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q8')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q8">
+    <h4>Musterantwort</h4>
+    <p>Ein <b>Businessplan</b> beschreibt ein unternehmerisches Vorhaben mit seinen <b>Zielen, Strategien, Massnahmen und Rahmenbedingungen</b>. Er ist zugleich ein <b>internes Analyse- und Planungsinstrument</b>, ein <b>Dokument für externe Stakeholder</b> und ein <b>Marketinginstrument</b>, das von der Tragfähigkeit des Business Models überzeugt.</p>
+    <p>Zwecke (mind. drei): <b>Planung</b> (gedankliche Vorwegnahme der Umsetzung), <b>Entscheidungsunterstützung</b>, <b>Finanzierungsersuchen</b> (Kapitalakquise), <b>Kommunikation</b> mit Unterstützenden und <b>Kontrolle</b> (Abweichungs-/Erfolgsanalyse).</p>
+  </div>
+</div>
+
+<footer>
+  Fertig mit Quiz 5? Sag mir Bescheid — dann beginnt der zweite Block: <b>Anwendungsbereiche</b>, startend mit <b>Thema 6 — EDI</b>.
+  Schreib offene Antworten gern in den Chat — ich benote sie nach Rubrik.<br>
+  ← <a href="../reference/05-unternehmensgruendung.html">Studienblatt 5</a> · <a href="04-geschaeftsmodelle-quiz.html">Quiz 4</a>
+</footer>
+</div>
+
+<script>
+function checkMC(q, correctIdx){
+  const opts = document.querySelectorAll('#'+q+' .opt');
+  let chosen = -1;
+  opts.forEach((o,i)=>{ if(o.querySelector('input').checked) chosen=i; });
+  if(chosen<0){ alert('Bitte zuerst eine Antwort wählen.'); return; }
+  opts.forEach((o,i)=>{
+    o.classList.remove('correct','wrong');
+    if(i===correctIdx) o.classList.add('correct');
+    else if(i===chosen) o.classList.add('wrong');
+  });
+  document.getElementById('fb-'+q).classList.add('show');
+}
+function reveal(q){ document.getElementById('fb-'+q).classList.add('show'); }
+function checkMatch(q, total){
+  const rows = document.querySelectorAll('#'+q+' .match-row');
+  let score = 0, answered = 0;
+  rows.forEach(row=>{
+    const correct = row.dataset.correct;
+    const labels = row.querySelectorAll('.match-opts label');
+    labels.forEach(l=>{
+      l.classList.remove('correct','wrong');
+      const inp = l.querySelector('input');
+      if(inp.checked){ answered++; if(inp.value===correct) score++; else l.classList.add('wrong'); }
+      if(inp.value===correct) l.classList.add('correct');
+    });
+  });
+  if(answered===0){ alert('Bitte mindestens eine Zeile beantworten.'); return; }
+  document.getElementById('score-'+q).innerHTML = '<b>'+score+' von '+total+' richtig.</b> ';
+  document.getElementById('fb-'+q).classList.add('show');
+}
+</script>
+</body>
+</html>

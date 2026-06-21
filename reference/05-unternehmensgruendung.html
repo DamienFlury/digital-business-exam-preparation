@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 5 — Unternehmensgründung in der digitalen Wirtschaft</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  .phases{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:12px 0}
+  .phase{border:1px solid var(--line); border-radius:8px; padding:10px 12px; background:#fff; font-size:.82rem}
+  .phase h4{margin:0 0 6px; color:#fff; background:var(--ost); border-radius:5px; padding:4px 8px; font-size:.82rem; text-align:center}
+  .phase .stage{font-weight:700; color:var(--accent); font-size:.78rem}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2, .phase h4{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2,.phases{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 5 von 11 · Lernblock 5</div>
+  <h1>Unternehmensgründung in der digitalen Wirtschaft</h1>
+  <div class="sub">3 Phasen: <b>Early → Expansion → Later Stage</b> · 3 Akteure · 5 Erfolgsfaktoren · Resilienz prüfen mit <b>PESTLE</b> &amp; <b>Stress Test</b></div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#resilienz">Resilienz</a>·
+    <a href="#pestle">PESTLE &amp; Stress Test</a>·
+    <a href="#akteure">3 Akteure</a>·
+    <a href="#faktoren">5 Erfolgsfaktoren</a>·
+    <a href="#phasen">Phasen der Gründung</a>·
+    <a href="#finanzierung">Finanzierungsphasen</a>·
+    <a href="#businessplan">Businessplan</a>·
+    <a href="#exam">Prüfungsfokus</a>
+  </nav>
+</header>
+
+<div class="exam">
+  <b>Die zentrale Musterfrage (2 P, mit Begründung):</b> «Bei der Unternehmensgründung unterscheidet man drei Phasen: <b>Early Stage, Expansion Stage, Later Stage</b>. In welcher Phase ist das Geschäftsmodell vor allem relevant?» → Antwort: in der <b>Early Stage</b>, weil dort das Geschäftsmodell <b>entwickelt und validiert</b> wird und die Grundlage bildet, auf der alles Weitere aufbaut. Lerne zusätzlich: die <b>3 Akteure</b>, die <b>5 Erfolgsfaktoren</b>, die Zuordnung <b>Phase ↔ Finanzierung</b> und die beiden Resilienz-Methoden (<b>PESTLE</b>, <b>Stress Test</b>). Dieses Thema baut direkt auf <a class="ref" href="04-geschaeftsmodelle.html">Studienblatt 4</a> auf.
+</div>
+
+<!-- ============ RESILIENZ ============ -->
+<h2 id="resilienz">1 · Resilienz von Geschäftsmodellen</h2>
+<div class="def"><b>Resilienz</b> — die Fähigkeit eines Unternehmens, Krisen nicht nur zu <b>überstehen</b>, sondern sie als <b>Chance für Wachstum und Verbesserung</b> zu nutzen. Resiliente Unternehmen kombinieren starke Kultur, digitale Transformation, finanzielle Stabilität, Anpassungsfähigkeit, Lernbereitschaft, Cyber-Resilienz, Stakeholder-Orientierung, proaktives Risikomanagement, Teamarbeit und strategische Planung.</div>
+
+<h3>Merkmale eines resilienten Geschäftsmodells</h3>
+<table>
+  <tr><th style="width:30%">Merkmal</th><th>Bedeutung</th></tr>
+  <tr><td><b>Robuste Struktur</b></td><td>Grundstruktur absorbiert externe Schocks und Störungen.</td></tr>
+  <tr><td><b>Flexibilität &amp; Anpassungsfähigkeit</b></td><td>Schnelle Anpassung an veränderte Marktbedingungen und unvorhergesehene Ereignisse.</td></tr>
+  <tr><td><b>Diversifikation der Einnahmequellen</b></td><td>Mehrere Einkommensströme verringern die Abhängigkeit von einer Quelle.</td></tr>
+  <tr><td><b>Effiziente Technologie-Nutzung</b></td><td>Moderne Technologien erhöhen die Reaktionsfähigkeit.</td></tr>
+  <tr><td><b>Krisenbewältigung &amp; Lernfähigkeit</b></td><td>Aus Krisen lernen, Strategien überdenken, kontinuierlich verbessern.</td></tr>
+  <tr><td><b>Starkes Lieferkettenmanagement</b></td><td>Alternative Lieferquellen aktivieren können.</td></tr>
+  <tr><td><b>Strategische Partnerschaften</b></td><td>Kooperationen teilen Ressourcen und Fachwissen.</td></tr>
+</table>
+
+<!-- ============ PESTLE ============ -->
+<h2 id="pestle">2 · Resilienz prüfen — zwei Methoden</h2>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">PESTLE-Analyse</h3>
+    <p>Bewertet <b>sechs Kategorien externer Faktoren</b>, die ein Geschäftsmodell beeinflussen. Hilft, sich auf externe Herausforderungen vorzubereiten. Merkwort <b>PESTLE</b>:</p>
+    <ul>
+      <li><b>P</b>olitical — politisch</li>
+      <li><b>E</b>conomic — wirtschaftlich</li>
+      <li><b>S</b>ocial — sozial/gesellschaftlich</li>
+      <li><b>T</b>echnological — technologisch</li>
+      <li><b>L</b>egal — rechtlich</li>
+      <li><b>E</b>nvironmental — ökologisch/Umwelt</li>
+    </ul>
+    <p style="font-size:.8rem;color:var(--muted)">Ursprung: Aguilar 1967 (ETPS). Hilfsmittel: Canvas.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Business Model Stress Test</h3>
+    <p><b>Belastungstest</b>: prüft das Geschäftsmodell unter <b>extremen Bedingungen</b>, um seine Zukunftsfähigkeit (<i>future proof</i>) zu bewerten. Man konfrontiert das BM mit relevanten <b>Entwicklungen &amp; Unsicherheiten</b> (Politik, Wirtschaft, Gesellschaft, Technologie, Markt, Regulierung) und bildet Stärken/Schwächen in einer <b>Heat-Map</b> ab.</p>
+    <p>Nutzen: Identifikation von <b>Schwachstellen</b>, Szenarioanalyse, kontinuierliche Verbesserung, Vertrauensgewinn bei Stakeholdern, ggf. regulatorische Anforderung.</p>
+  </div>
+</div>
+<div class="ex"><b>Beispiel (Stress Test Uber):</b> Entwicklungen wie «selbstfahrende Autos werden akzeptiert» oder «Uber wird wie ein Taxiunternehmen reguliert» werden gegen die WHO/WHAT/HOW/WHY-Zeilen des Geschäftsmodells gehalten — grün = Chance, rot = Bedrohung.</div>
+
+<!-- ============ AKTEURE ============ -->
+<h2 id="akteure">3 · Die drei Akteure der Unternehmensgründung (Kollmann 2022)</h2>
+<table>
+  <tr><th style="width:26%">Akteur</th><th>Rolle</th></tr>
+  <tr><td><b>Startup-Gründer:innen</b></td><td>Bringen <b>innovative Ideen und Geschäftsmodelle</b> ein.</td></tr>
+  <tr><td><b>Startup-Investor:innen</b></td><td>Stellen <b>Kapital</b> für den Start und das weitere Wachstum bereit (Risiko-/Beteiligungskapital, Business Angels).</td></tr>
+  <tr><td><b>Unterstützende</b> im Startup-Ecosystem (<i>Gründerszene</i>)</td><td>Vielfältige <b>Beratungs- und Unterstützungsleistungen</b> (RAV, Kammern, Steuer-/Rechtsberatung, Gründerzentren, Förderinstitutionen).</td></tr>
+</table>
+
+<h3>Merkmale der Startup-Gründenden</h3>
+<ul>
+  <li>Basieren auf <b>innovativer Technologie</b> / technologie-orientiertem GM mit elektronischer Wertschöpfung; überdurchschnittliche F&amp;E → <b>Schutz der Idee</b> wichtig.</li>
+  <li><b>Junges Unternehmen</b> ohne Historie, keine fundamentalen Unternehmensdaten.</li>
+  <li>Entscheidungen stark durch die <b>gründende Person</b> geprägt; dynamische Umwelt, überproportionales Wachstum.</li>
+  <li><b>Extreme Ressourcenknappheit</b> (finanziell &amp; personell); hohe Investitionen in immaterielle Werte; <b>negative Cash-Flows</b>, noch keine Gewinne.</li>
+  <li>Externe Kapitalgeber schliessen die <b>Eigenkapitallücke</b> und üben Einfluss aus.</li>
+</ul>
+
+<h3>Merkmale der Startup-Investor:innen</h3>
+<ul>
+  <li><b>Risiko-/Beteiligungskapital</b>; Business Angels und Inkubatoren.</li>
+  <li>In der Regel <b>Minderheitsbeteiligung</b> → selbständiger Charakter des jungen Unternehmens bleibt erhalten.</li>
+  <li>Zeitlich begrenztes Engagement, beendet durch Verkauf der Beteiligung (<b>Exit</b>); Charakter von voll haftendem <b>Eigenkapital</b>.</li>
+  <li>Vereinbarte <b>Kontroll- und Mitspracherechte</b>.</li>
+</ul>
+<div class="ex"><b>Schweizer Ökosystem (Beispiele):</b> Startfeld / Switzerland Innovation Park Ost (Seed bis CHF 300'000), Venturelab, Venture Kick, b2venture, SICTIC, START Summit (St. Gallen), Startup Nights. 2024: <b>2369 Mio CHF</b> in Schweizer Start-ups (357 Runden), Biotech-Anteil 31%, Zürich 27%.</div>
+
+<!-- ============ FAKTOREN ============ -->
+<h2 id="faktoren">4 · Die fünf (Erfolgs-)Faktoren der Gründung (Kollmann)</h2>
+<table>
+  <tr><th style="width:26%">Faktor</th><th>Inhalt</th><th style="width:22%">Phase im Modell</th></tr>
+  <tr><td><b>Management</b></td><td>Digitale-Wirtschaft-Know-how, Branchenwissen, Kommunikation, Führung — Gründerteam im Mittelpunkt.</td><td rowspan="2"><b>Ausgangspunkt</b></td></tr>
+  <tr><td><b>Produkt / Service</b></td><td>Idee/Konzept, Technologie, Businessmodell, Alleinstellungsmerkmal (USP), Kundennutzen.</td></tr>
+  <tr><td><b>Prozesse</b></td><td>Arbeitsabläufe, Organisationsaufbau, Projekt-/Prozess-/Krisenmanagement.</td><td rowspan="2"><b>Umsetzung</b></td></tr>
+  <tr><td><b>Marktzugang / Netzwerk</b></td><td>Marketing, Vertrieb, Kooperationen, Multiplikatoren, PR.</td></tr>
+  <tr><td><b>Finanzen</b></td><td>Cash-Flow-Orientierung, Liquiditätsplanung, Controlling, Beteiligungsmanagement, Investor Relations.</td><td><b>Notwendigkeit</b></td></tr>
+</table>
+
+<!-- ============ PHASEN ============ -->
+<h2 id="phasen">5 · Die Phasen der Unternehmensgründung (auswendig!)</h2>
+<p class="lead">«Was passiert mit der <b>Idee</b> im Zeitablauf?» — drei Entwicklungsphasen, fünf Ideen-Schritte (Kollmann):</p>
+<div class="phases">
+  <div class="phase">
+    <h4>Early Stage</h4>
+    <div class="stage">Ideenfindung → Ideenformulierung → Ideenumsetzung</div>
+    <p>Gründung &amp; Online-Reife. Hier wird das <b>Geschäftsmodell entwickelt</b>, der Businessplan geschrieben, das Team aufgebaut, die Rechtsform gewählt. <b>Management &amp; Produkt</b> dominieren.</p>
+  </div>
+  <div class="phase">
+    <h4>Expansion Stage</h4>
+    <div class="stage">Ideenintensivierung</div>
+    <p>Markteinführung, Anpassung des Geschäftsmodells, Kooperationen, Wachstumsfinanzierung. <b>Marktzugang &amp; Prozesse</b> dominieren.</p>
+  </div>
+  <div class="phase">
+    <h4>Later Stage</h4>
+    <div class="stage">Ideenfortführung / Ideendiversifikation</div>
+    <p>Hohe Marktdurchdringung, stabile Kundenbeziehungen, ganzheitliches Controlling, Modifikation der Geschäftsidee, <b>Exit</b>. Alle Bausteine reif (+++).</p>
+  </div>
+</div>
+<p style="font-size:.84rem"><b>Handlungswandel über die Phasen:</b> Management: <i>Gründer → Manager</i> · Produkt: <i>Konzept → Geschäft</i> · Prozesse: <i>Disposition → Organisation</i> · Marktzugang: <i>Isolation → Kooperation</i> · Finanzen: <i>Inhaber → Gesellschafter</i>.</p>
+
+<!-- ============ FINANZIERUNG ============ -->
+<h2 id="finanzierung">6 · Finanzierungsphasen &amp; -instrumente (Zuordnung lernen!)</h2>
+<table>
+  <tr><th style="width:18%">Entwicklung</th><th style="width:28%">Finanzierungsphase</th><th>Instrumente / Quellen</th></tr>
+  <tr><td><b>Early Stage</b></td><td>Pre-Seed → Seed → Startup</td><td>Eigene Mittel, öffentliche Fördermittel, <b>Business Angels</b>, Venture Capital, Businessplan-Wettbewerbe, Hausbank</td></tr>
+  <tr><td><b>Expansion Stage</b></td><td>2nd Round → 3rd Round</td><td><b>Venture Capital</b>-Gesellschaften, strategische Investoren, Fremdfinanzierung, Fördermittel</td></tr>
+  <tr><td><b>Later Stage</b></td><td>Bridge → IPO → MBO / MBI</td><td>VC, Fremdfinanzierung, <b>Börsengang (IPO)</b>, strategische Investoren, Privatanleger</td></tr>
+</table>
+<p style="font-size:.8rem;color:var(--muted)">MBO = Management-Buy-Out · MBI = Management-Buy-In · IPO = Börsengang · Bridge = Überbrückungsfinanzierung.</p>
+
+<!-- ============ BUSINESSPLAN ============ -->
+<h2 id="businessplan">7 · Der Businessplan</h2>
+<div class="def"><b>Businessplan</b> — Beschreibung eines unternehmerischen Vorhabens mit <b>Zielen, Strategien, Massnahmen und Rahmenbedingungen</b>. Er ist (1) ein internes <b>Analyse- und Planungsinstrument</b>, (2) ein Dokument für <b>externe Stakeholder</b> und (3) ein <b>Marketinginstrument</b>, das von der Tragfähigkeit des Business Models überzeugt.</div>
+
+<h3>Fünf Zwecke (Ziele)</h3>
+<table>
+  <tr><th style="width:30%">Ziel</th><th>Bedeutung</th></tr>
+  <tr><td><b>Planung</b></td><td>Gedankliche Vorwegnahme der Umsetzung des Geschäftskonzepts.</td></tr>
+  <tr><td><b>Entscheidungsunterstützung</b></td><td>Beurteilung zum Zweck einer Umsetzungsentscheidung.</td></tr>
+  <tr><td><b>Finanzierungsersuchen</b></td><td>Akquise von Kapital/Fördergeldern bei potenziellen Kapitalgebern.</td></tr>
+  <tr><td><b>Kommunikation</b></td><td>Information an potenzielle Unterstützende (z.B. Kapitalgeber).</td></tr>
+  <tr><td><b>Kontrolle</b></td><td>Abweichungs- und Erfolgskontrolle.</td></tr>
+</table>
+
+<h3>Typische Elemente</h3>
+<p style="font-size:.86rem">Management Summary · Das Unternehmen · Gründerpersonen/Management · Geschäftsidee &amp; Produkt · Markt &amp; Zielgruppe(n) · Konkurrenz · Marketing · Standort &amp; Logistik · Produktion &amp; Beschaffung · Risikoanalyse · Finanzierung &amp; Finanzplan.</p>
+
+<div class="exam">
+  <b>USP-Anforderungen (Kollmann) — selten gefragt, aber gut für Beispiele:</b> Ein gutes Alleinstellungsmerkmal in der digitalen Wirtschaft ist <b>wichtig, präventiv (schwer kopierbar), überlegen, erschwinglich, profitabel, unterscheidbar und vermittelbar</b>.
+</div>
+
+<!-- ============ EXAM ============ -->
+<h2 id="exam">8 · Prüfungsfokus</h2>
+<div class="card">
+  <h3 style="margin-top:0">Musterfrage 5c (2 P) — Modellantwort</h3>
+  <p>«In welcher Phase ist das Geschäftsmodell vor allem relevant? Begründen Sie.»</p>
+  <div class="ex" style="background:#eef7f7"><b>Antwort:</b> Das Geschäftsmodell ist vor allem in der <b>Early Stage</b> relevant. In dieser Phase stehen die <b>Entwicklung und Validierung</b> des Geschäftsmodells im Vordergrund — es bildet die <b>Grundlage</b>, auf der das Unternehmen aufbaut und sich weiterentwickelt. Expansion und Later Stage sind zwar für Wachstum und Erfolg wichtig, doch der Schwerpunkt der Definition des Geschäftsmodells liegt am Anfang.</div>
+</div>
+<p style="font-size:.86rem"><b>Wahrscheinliche weitere Fragen:</b> die 3 Phasen + Ideen-Schritte nennen · die 3 Akteure beschreiben · die 5 Erfolgsfaktoren · PESTLE auflösen · Finanzierungsinstrument einer Phase zuordnen (z.B. «IPO» → Later Stage) · Zweck/Elemente eines Businessplans.</p>
+
+<div class="ask">
+  <b>Frag deinen Tutor (mich!):</b> Unklar, warum Business Angels in der Early Stage und VC eher in der Expansion auftreten? Unterschied Inkubator vs. Business Angel? Wie man die 2-Punkte-Begründung knackig formuliert? <b>Frag im Chat.</b> Übe danach mit der <a href="../lessons/05-unternehmensgruendung-quiz.html">Quiz-Lektion 5</a>.
+</div>
+
+<footer>
+  <b>Primärquelle (lesen):</b> Tobias Kollmann, <i>Digital Entrepreneurship — Grundlagen der Unternehmensgründung in der Digitalen Wirtschaft</i> (8. Aufl., 2022, Springer Gabler) — die Grundlage dieser Vorlesung, via OST-IP unter <a class="ref" href="https://link.springer.com/book/10.1007/978-3-658-37260-6">springer.com</a>. Schweizer Praxis: <a class="ref" href="https://www.startupguide.sg.ch">startupguide.sg.ch</a> · <a class="ref" href="https://www.startup.ch">startup.ch</a>.<br><br>
+  Studienblatt 5 von 11 · DigiBusI FS2026 · gegründet auf <i>DigiBusI_5_Unternehmesgründung_2026</i> + Musterfragen FS26. Querverweise: <a class="ref" href="04-geschaeftsmodelle.html">← Blatt 4 (Geschäftsmodelle)</a>
+</footer>
+</div>
+</body>
+</html>
