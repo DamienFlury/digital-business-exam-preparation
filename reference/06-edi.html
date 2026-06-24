@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 6 — Electronic Data Interchange (EDI)</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .big{background:#fbe9e0; border:2px solid var(--warn)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  .istrue{color:#1a7f4b; font-weight:700}
+  .isfalse{color:var(--warn); font-weight:700}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 6 von 11 · Lernblock 6 (Anwendungsbereiche)</div>
+  <h1>Electronic Data Interchange (EDI)</h1>
+  <div class="sub">EDI = <b>automatisierter, zwischenbetrieblicher Austausch strukturierter Geschäftsdokumente</b> zwischen Anwendungssystemen — <b>ohne menschliches Eingreifen</b>. Kein Standard, keine Technologie, sondern ein <b>Konzept</b>.</div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#was">Was ist EDI?</a>·
+    <a href="#trap">Die Begriffsfallen</a>·
+    <a href="#geschichte">Geschichte</a>·
+    <a href="#varianten">5 Varianten</a>·
+    <a href="#vergleich">Klassisch vs. Web-EDI</a>·
+    <a href="#standards">Rolle der Standards</a>·
+    <a href="#vorteile">Vorteile</a>·
+    <a href="#exam">Prüfungsfokus (12 P!)</a>
+  </nav>
+</header>
+
+<div class="exam big">
+  <b>Höchste Prüfungsrelevanz — eine 12-Punkte-Frage!</b> Das Musterfragen-Set hat <b>eine grosse EDI-Frage (Q7, 12 P)</b> in vier Teilen: (a) <b>Richtig/Falsch</b> zu EDI-Aussagen, (b) die falschen <b>begründen</b>, (c) eine richtige <b>Web-EDI</b>-Aussage ankreuzen, (d) die <b>Rolle der Standards</b> erklären. Der rote Faden ist immer derselbe: <b>EDI ist ein Konzept</b> — <i>kein</i> Standard, <i>keine</i> Technologie, <i>keine</i> Software, und es überträgt <i>keine</i> E-Mails/Multimedia. Lerne das auswendig.
+</div>
+
+<!-- ============ WAS ============ -->
+<h2 id="was">1 · Was ist EDI?</h2>
+<div class="def"><b>EDI (Electronic Data Interchange, elektronischer Datenaustausch)</b> — der <b>automatisierte, zwischenbetriebliche Austausch</b> von <b>strukturierten Geschäftsdokumenten</b> (Bestellungen, Lieferscheine, Rechnungen, Zahlungsbelege) zwischen den <b>Anwendungssystemen</b> der Geschäftspartner, <b>ohne menschliches Eingreifen</b> — also <b>von Anwendung zu Anwendung</b> («Maschine zu Maschine»). <i>(wi-lex.de; GS1 2009)</i></div>
+
+<p><b>Zentrales Ziel:</b> ein <b>automatisierter, schneller und fehlerfreier</b> Datenaustausch digitaler (Geschäfts-)Dokumente. EDI vermeidet <b>Medienbrüche</b> und Mehrfacheingaben und ist damit eine <b>zentrale Grundlage des Digital Business</b> und der digitalen Transformation.</p>
+
+<h3>Strukturierte Daten = Syntax + Semantik</h3>
+<table>
+  <tr><th style="width:22%">Element</th><th>Bedeutung</th></tr>
+  <tr><td><b>Syntax</b></td><td>Reihenfolge / Struktur der Zeichen — die <b>Grammatik</b> der Nachricht (z.B. Datum im Format JJJJMMTT). Macht die Nachricht maschinell lesbar.</td></tr>
+  <tr><td><b>Semantik</b></td><td><b>Bedeutung</b> der Zeichen — sorgt dafür, dass beide Systeme dieselbe «Sprache» sprechen.</td></tr>
+  <tr><td><b>Pragmatik</b></td><td><b>Anwendungsregeln</b> & Geschäftsprozesse — wie die Nachricht im konkreten Geschäftsszenario sinnvoll genutzt wird.</td></tr>
+</table>
+<p>Nutzer von EDI: Unternehmen, Verwaltungen, Banken, Versicherungen, Zoll, …</p>
+
+<!-- ============ TRAP ============ -->
+<h2 id="trap">2 · Die vier Begriffsfallen (Musterfrage-Kern)</h2>
+<div class="exam">
+  Im Musterfragen-Teil (a/b) muss man Aussagen als richtig/falsch bewerten <b>und begründen</b>. Diese Tabelle ist das Herzstück:
+</div>
+<table>
+  <tr><th style="width:60%">Aussage über EDI</th><th>R/F</th><th>Begründung</th></tr>
+  <tr><td>«EDI ist ein <b>Standard</b> zum Dokumentenaustausch.»</td><td class="isfalse">FALSCH</td><td>EDI ist ein <b>Konzept</b>, kein Standard. Ein Standard ist z.B. <b>EDIFACT</b>.</td></tr>
+  <tr><td>«EDI ist eine <b>spezifische Technologie</b>, die Automation ermöglicht.»</td><td class="isfalse">FALSCH</td><td>EDI ist ein <b>technologie-unabhängiges Konzept</b>; es kann mit verschiedenen Technologien umgesetzt werden.</td></tr>
+  <tr><td>«EDI ermöglicht den Austausch inkl. <b>E-Mails und multimedialer</b> Dokumente.»</td><td class="isfalse">FALSCH</td><td>EDI tauscht <b>strukturierte Geschäftsdokumente</b> aus (Bestellungen, Rechnungen, Lieferscheine). <b>Kein</b> Austausch multimedialer Dokumente / E-Mails.</td></tr>
+  <tr><td>«EDI erfordert eine <b>vorgängige Verständigung</b> der Partner, z.B. über Standards.»</td><td class="istrue">RICHTIG</td><td>Ja — gemeinsames Verständnis + ein <b>Interchange Agreement</b> sind Voraussetzung.</td></tr>
+  <tr><td>«Es besteht eine <b>Vielzahl</b> unterschiedlicher EDI-Standards.»</td><td class="istrue">RICHTIG</td><td>Ja — EDIFACT, ANSI X12, ODETTE/VDA, SWIFT, TRADACOMS, EANCOM …</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)">Merksatz für die Begründung: «EDI ist <b>weder Standard noch Technologie noch Software, sondern ein Konzept / Rahmenwerk</b> für den standardisierten, automatisierten Austausch strukturierter Geschäftsdaten zwischen verschiedenen Informationssystemen — unabhängig von der eingesetzten Technologie.»</p>
+
+<!-- ============ GESCHICHTE ============ -->
+<h2 id="geschichte">3 · Historische Entwicklung (kurz)</h2>
+<table>
+  <tr><th style="width:22%">Zeit</th><th>Entwicklung</th></tr>
+  <tr><td><b>Ende 60er</b></td><td>US-amerikanische <b>Transportbranche</b> entwickelt erste EDI-Standards.</td></tr>
+  <tr><td><b>70er / 80er</b></td><td>Branchenspezifische Standards: <b>ODETTE / VDA</b> (Automobil), <b>SEDAS</b> (Konsumgüter), <b>SWIFT</b> (Banken).</td></tr>
+  <tr><td><b>1983</b></td><td><b>ANSI ASC X12</b> — branchenunabhängiger US-Standard (noch heute in den USA führend). In UK: <b>TRADACOMS</b>.</td></tr>
+  <tr><td><b>1987</b></td><td><b>UN/EDIFACT</b> — von UN/ECE: branchenübergreifender, <b>internationaler</b> Standard. Bis heute ~<b>300 EDIFACT-Nachrichten</b>, als <b>ISO-Standard</b> stabilisiert.</td></tr>
+</table>
+<p style="font-size:.84rem">Entwicklungslinie: <b>papiergebunden → physische Datenträger → elektronischer Datenaustausch über Netzwerke</b>.</p>
+
+<!-- ============ VARIANTEN ============ -->
+<h2 id="varianten">4 · Die EDI-Varianten</h2>
+
+<h3>(1) Klassisches EDI — Direktes / Punkt-zu-Punkt-EDI</h3>
+<p>Die <b>älteste und traditionellste</b> Form (klassische B2B-Integration). Direkte Verbindung zweier Unternehmen über ein EDI-Softwarepaket mit vereinbarten Protokollen (<b>AS2, OFTP, SFTP</b>). Auf jeder Seite ein <b>Konnektor</b> (Konvertierung + Kommunikation). <span class="pill">Zielgruppe: Grossunternehmen, grosse Volumina</span></p>
+
+<h3>(2) EDI via VAN / EDI-Clearing-Center</h3>
+<p>Die <b>heute häufigste</b> Form. Ein <b>Value Added Network (VAN)</b> bzw. Clearing-Center ist ein <b>Drittanbieter</b> (Cloud-gehostet), der als <b>zentrale Drehscheibe</b> die technische Infrastruktur bereitstellt.</p>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">Kernfunktionen</h3>
+    <ul>
+      <li><b>Routing</b> — Nachricht an richtigen Partner</li>
+      <li><b>Konvertierung</b> — internes Format ↔ EDI-Standard des Empfängers</li>
+      <li><b>Archivierung</b> (Compliance) + <b>Signatur</b></li>
+      <li><b>Monitoring</b> (24/7) + <b>Support</b></li>
+      <li><b>Partner-Onboarding</b> (Neuanbindung)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Vorteile (Effizienz durch Outsourcing)</h3>
+    <ul>
+      <li><b>Kostenreduktion</b> — keine eigene EDI-Hardware/-Software/-Spezialwissen</li>
+      <li><b>Komplexitätsreduktion</b> — <b>eine</b> Verbindung statt zu jedem Partner</li>
+      <li><b>Zuverlässigkeit</b> — 24/7, garantierte Zustellung</li>
+      <li><b>Skalierbarkeit</b> — schnelles Onboarding neuer Partner</li>
+    </ul>
+  </div>
+</div>
+<p style="font-size:.84rem;color:var(--muted)"><span class="pill">Zielgruppe: KMU + Grossunternehmen</span> Beispiele: ecosio, Descartes, SEEBURGER.</p>
+
+<h3>(3) Web-EDI</h3>
+<p>Entstand, um die <b>Reichweite auf kleinere Partner</b> zu erweitern und <b>Einstiegshürden zu senken</b>. EDI läuft über einen <b>Web-Browser</b>: Papierdokumente werden in einem <b>Internetformular</b> nachgebildet; der Nutzer gibt Daten <b>manuell</b> ein, die dann automatisch in eine EDI-Nachricht konvertiert und über <b>FTPS/HTTPS</b> versendet werden. <b>Keine Applikationsintegration</b> beim Lieferanten nötig — nur ein Internetzugang. <span class="pill">Zielgruppe: KMU / «Long-Tail»-Partner</span></p>
+<div class="ex"><b>CH-Beispiele:</b> Coop (webedi.coop.ch), SBB, Liebherr, KOSTAL. Web-EDI und klassisches EDI werden oft <b>kombiniert</b>: grosse Lieferanten via klassisches EDI (automatisiert), kleine via Web-EDI (manuell).</div>
+
+<h3>(4) B2B-Integration — die moderne Sicht</h3>
+<p>EDI wird zur <b>Kernkomponente einer umfassenden B2B-Integrationsplattform</b>. Schlagworte:</p>
+<ul>
+  <li><b>EaaS (EDI-as-a-Service) / Cloud-EDI</b> — vollständig ausgelagerter Managed Service (Provider übernimmt Konnektivität, Hosting, Mapping-Wartung, Compliance; Abo-Modell).</li>
+  <li><b>Hybrid-Integration</b> — traditionelle Standards (EDIFACT, X12) <b>+</b> moderne Formate (XML, JSON, APIs). EDI bleibt für hohe Volumina & regulierte Bereiche (e-Invoicing) dominant; APIs für Echtzeit.</li>
+  <li><b>B2Any (Business-to-Anything)</b> — verbindet über alle Kanäle: klassisches EDI, Web-EDI, API-Gateway, E-Invoicing. <span class="pill">Zielgruppe: alle Teilnehmer einer Lieferkette</span></li>
+</ul>
+
+<h3>(5) Voraussetzungen für die Nutzung von EDI</h3>
+<ul>
+  <li><b>Stabile Geschäftsbeziehung</b></li>
+  <li><b>Regelmässiges Aufkommen gleicher Transaktionen</b></li>
+  <li><b>Gemeinsames Verständnis</b> der zu unterstützenden Geschäftsprozesse</li>
+  <li>IT-Infrastruktur: <b>EDI-fähige Anwendungssysteme</b></li>
+</ul>
+
+<!-- ============ VERGLEICH ============ -->
+<h2 id="vergleich">5 · Klassisches EDI vs. Web-EDI</h2>
+<table>
+  <tr><th style="width:24%">Kriterium</th><th>Klassisches EDI (System-zu-System)</th><th>Web-EDI (Browser-basiert)</th></tr>
+  <tr><td><b>Belegvolumen</b></td><td>Hoch (Tausende Dok./Monat)</td><td>Niedrig (wenige Dutzend)</td></tr>
+  <tr><td><b>Automatisierung</b></td><td>Vollständig (ERP ↔ ERP)</td><td>Manuell / halbautomatisch (Web-Formular)</td></tr>
+  <tr><td><b>Integrationstiefe</b></td><td>Sehr hoch (direkt ins ERP)</td><td>Niedrig (Browser, oft keine Anbindung)</td></tr>
+  <tr><td><b>Anfangsinvestition</b></td><td>Hoch (Software, Mapping, VAN)</td><td>Gering/Null (nur Internetzugang)</td></tr>
+  <tr><td><b>Fehleranfälligkeit</b></td><td>Sehr gering (automatisiert)</td><td>Höher (manuelle Eingabe)</td></tr>
+  <tr><td><b>Zielgruppe</b></td><td>Grossunternehmen, zentrale Partner</td><td>KMU, kleine Lieferanten («Long Tail»)</td></tr>
+  <tr><td><b>Nutzungszweck</b></td><td>Standardlösung für hochfrequente Prozesse (Automotive, Retail)</td><td>Ergänzungslösung für Long-Tail-Partner</td></tr>
+</table>
+
+<!-- ============ STANDARDS ============ -->
+<h2 id="standards">6 · Die Rolle der Standards (Musterfrage Teil d, 4 P)</h2>
+<div class="def"><b>Warum Standards?</b> Die Anwendungssysteme (z.B. ERP) der Partner verarbeiten <b>unterschiedliche interne Datenformate</b>. Diese werden in einen <b>vereinbarten EDI-Standard konvertiert</b>. Ein Standard legt <b>Inhalt und Format</b> eines Dokuments fest, sodass die <b>empfangende Maschine die Information korrekt interpretieren</b> kann — jedes Datenelement steht an seinem erwarteten Platz. <b>Ohne Standard</b> könnte das Empfängersystem nicht erkennen, welcher Teil der Nachricht was bedeutet → automatisierter Austausch wäre unmöglich.</div>
+
+<div class="exam">
+  <b>Das Schlüsselargument (unbedingt nennen!):</b> Ein zentraler Standard <b>vermeidet multiple bilaterale Austauschformate</b>. Bei <b>bilateraler</b> Kommunikation («jeder mit jedem») braucht man <b>n·(n−1)</b> Kommunikationsvorschriften; über ein <b>zentrales Austauschformat</b> («jeder mit einem») nur noch <b>2n</b>. Standards senken so den Abstimmungsaufwand drastisch.
+</div>
+
+<h3>Standard-Kategorien (Digital-Business-Standards)</h3>
+<table>
+  <tr><th style="width:30%">Kategorie</th><th>Zweck</th><th style="width:30%">Beispiele</th></tr>
+  <tr><td><b>Identifikationsstandards</b></td><td>Unternehmen & Produkte kennzeichnen</td><td>GLN/ILN, GTIN/EAN, D-U-N-S, SSCC</td></tr>
+  <tr><td><b>Klassifikationsstandards</b></td><td>Produkte einheitlich beschreiben</td><td>eCl@ss, GPC, UNSPSC</td></tr>
+  <tr><td><b>Katalogaustauschformate</b></td><td>Produktdaten bereitstellen</td><td>BMEcat, PRICAT/PRODAT, xCBL</td></tr>
+  <tr><td><b>Transaktionsstandards</b></td><td>Geschäftsdokumente automatisiert austauschen</td><td><b>EDIFACT</b>, EANCOM, <b>ANSI X12</b>, VDA, XML, APIs</td></tr>
+  <tr><td><b>Prozessstandards</b></td><td>komplexe Geschäftsprozesse modellieren</td><td>ebXML, RosettaNET, GS1 Prozeus</td></tr>
+</table>
+
+<h3>EDI-Schichtenmodell (Syntax → Semantik → Pragmatik)</h3>
+<table>
+  <tr><th style="width:22%">Schicht</th><th>Inhalt</th><th style="width:30%">Beispiel</th></tr>
+  <tr><td><b>Integration</b></td><td>EDI-fähige Anwendungen</td><td>—</td></tr>
+  <tr><td><b>Pragmatik</b></td><td>Anwendungsregeln, Geschäftsprozesse</td><td>Open EDI, CPFR, SCOR</td></tr>
+  <tr><td><b>Semantik</b></td><td>Bedeutung der Daten</td><td>ISBN, ISSN, EAN/UCC-13</td></tr>
+  <tr><td><b>Syntax</b></td><td>Grammatik/Struktur der Nachricht</td><td>UN/EDIFACT, ANSI X12, XML</td></tr>
+  <tr><td><b>Data transfer</b></td><td>Übertragung</td><td>TCP/IP</td></tr>
+  <tr><td><b>Security</b></td><td>Sicherheit</td><td>RSA</td></tr>
+</table>
+<p style="font-size:.84rem">Verbindendes Element zwischen zwei Firmen: ein <b>Contract / Interchange Agreement</b>.</p>
+
+<h3>Unterscheidungsmerkmale von Standards</h3>
+<ul>
+  <li><b>Spezifikationsprozess:</b> von Gremien spezifiziert (<b>top-down</b>) vs. von der Wirtschaft forcierte <b>De-Facto-Standards</b> (<b>bottom-up</b>).</li>
+  <li><b>Grad der Verbreitung</b> · <b>Grad der Offenlegung</b> (offen ↔ geheim) · <b>Nutzungsrechte</b> (kostenfrei ↔ zahlungspflichtig).</li>
+</ul>
+
+<!-- ============ VORTEILE ============ -->
+<h2 id="vorteile">7 · Vorteile von EDI</h2>
+<div class="grid2">
+  <div class="card"><ul>
+    <li><b>Geschwindigkeit</b> — automatisierte Prozesse in Sekunden, unabhängig von Arbeitszeiten</li>
+    <li><b>Niedrige Fehlerquote</b> — kein manueller Schritt als Fehlerquelle</li>
+    <li><b>Skalierbarkeit</b> — gleiches Setup bewältigt Vielfaches an Aufträgen</li>
+    <li><b>Einsparung</b> von Personalkosten, Druck & Papier</li>
+  </ul></div>
+  <div class="card"><ul>
+    <li><b>Transparenz</b> — alle Abläufe dokumentiert, Konflikte schnell klärbar</li>
+    <li><b>Einfachere Internationalisierung</b> — Sprach-/Kulturbarrieren fallen weg</li>
+    <li><b>Supply-Chain-Optimierung</b> & <b>Industrie 4.0</b></li>
+    <li><b>Business Intelligence</b> — Daten als Entscheidungsgrundlage</li>
+  </ul></div>
+</div>
+<div class="ex"><b>Trends:</b> Cloud-EDI · API-Integration · KI/ML (Fehlererkennung, Prognose) · Blockchain (Nachverfolgbarkeit) · IoT/Industrie 4.0. <b>EaaS</b> ist die moderne Weiterentwicklung des VAN.</div>
+
+<!-- ============ EXAM ============ -->
+<h2 id="exam">8 · Prüfungsfokus — die 12-Punkte-Frage (Q7)</h2>
+<div class="card">
+  <p><b>(a) R/F:</b> siehe Tabelle in <a href="#trap">Abschnitt 2</a>. Kern: EDI = Konzept (nicht Standard/Technologie/Software), kein Multimedia/E-Mail; «braucht Verständigung» &amp; «viele Standards» sind <span class="istrue">richtig</span>.</p>
+  <p><b>(b) Begründen:</b> Merksatz aus Abschnitt 2 — «EDI ist ein technologie-unabhängiges Konzept für den standardisierten Austausch strukturierter Geschäftsdaten».</p>
+  <p><b>(c) Web-EDI (richtige Aussage ankreuzen):</b> «Web-EDI ermöglicht den elektronischen Austausch von Geschäftsdaten über das Internet mittels <b>Webbrowser ohne eine spezielle Applikation</b>.» (Die Aussagen «veraltet», «nur für Grossunternehmen», «teure Hardware nötig» sind falsch.)</p>
+  <p><b>(d) Rolle der Standards (4 P):</b> Standards legen Inhalt/Format fest → Empfängermaschine kann korrekt interpretieren; <b>ohne</b> Standards kein automatisierter Austausch; ein zentraler Standard ersetzt <b>n·(n−1)</b> bilaterale Formate durch <b>2n</b>.</p>
+</div>
+
+<div class="ask">
+  <b>Frag deinen Tutor (mich!):</b> Unterschied EDIFACT ↔ EANCOM? Was genau macht ein VAN technisch? Warum ist EDI «kein Standard», obwohl es standardisiert ist? Wie formuliere ich die 4-P-Standards-Antwort? <b>Frag im Chat.</b> Übe danach mit der <a href="../lessons/06-edi-quiz.html">Quiz-Lektion 6</a>.
+</div>
+
+<footer>
+  <b>Primärquelle:</b> GS1 (2009) <i>EANCOM — Der Motor für EDI</i> und das EDI-Lexikon auf <a class="ref" href="https://www.wi-lex.de">wi-lex.de</a>; praxisnah erklärt von <a class="ref" href="https://ecosio.com/de/blog/">ecosio.com</a> und <a class="ref" href="https://www.seeburger.com">seeburger.com</a> (siehe auch das SEEBURGER-Whitepaper im <code>selbststudium/</code>-Ordner).<br><br>
+  Studienblatt 6 von 11 · DigiBusI FS2026 · gegründet auf <i>DigiBusI_06_EDI_2026</i> + Musterfrage 7. Querverweise: <a class="ref" href="05-unternehmensgruendung.html">← Blatt 5</a>
+</footer>
+</div>
+</body>
+</html>

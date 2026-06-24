@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 8 — Digital Contracting</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .big{background:#fbe9e0; border:2px solid var(--warn)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:1px 7px;border-radius:5px;white-space:nowrap}
+  .tag-proc{background:#e9f0fb;border:1px solid #c4d6f3;color:#1d4ed8}
+  .tag-obj{background:#eef7ec;border:1px solid #c8e3c0;color:#1a7f4b}
+  .tag-fwd{background:#fbf0e9;border:1px solid #f3d8c4;color:#b5491f}
+  .tag-rev{background:#f1ecfb;border:1px solid #d8c4f3;color:#6b21a8}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2, .tag{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 8 von 11 · Lernblock 3 (Anwendungsbereiche)</div>
+  <h1>Digital Contracting</h1>
+  <div class="sub">Digital Contracting = <b>durch digitale Medien unterstützter Prozess</b>, der von der <b>Vertragsverhandlung</b> über die <b>Vertragsunterzeichnung</b> bis zur <b>Überwachung der Vertragserfüllung</b> reicht. Es ist die <b>Vereinbarungsphase</b> der Markttransaktion — der Schritt nach dem Procurement (Blatt 7).</div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#grund">Grundlagen</a>·
+    <a href="#persp">2 Perspektiven</a>·
+    <a href="#einordnung">Einordnung &amp; Design</a>·
+    <a href="#vorteile">Vorteile</a>·
+    <a href="#clm">CLM ⭐</a>·
+    <a href="#abgrenzung">CLM-Abgrenzung ⭐</a>·
+    <a href="#ki">CLM &amp; KI</a>·
+    <a href="#dienste">Dienste (Incoterms)</a>·
+    <a href="#preis">Preisfindung ⭐</a>·
+    <a href="#integration">Integration</a>·
+    <a href="#exam">Prüfungsfokus</a>
+  </nav>
+</header>
+
+<div class="exam big">
+  <b>Was du sicher können musst (laut Zusammenfassung &amp; Schwerpunkt der Vorlesung):</b> die <b>zwei Perspektiven</b> (Prozess vs. Objekt), was ein <b>Digital Contract</b> ist, <b>CLM</b> definieren <i>und</i> von <b>DMS/CMS/CRM/Records</b> abgrenzen, sowie die <b>Preisfindungsmechanismen</b> — besonders <b>Forward- vs. Reverse-Auktion</b>. Incoterms als konkretes Dienst-Beispiel. <span class="pill">Zu Blatt 8 ist (noch) keine offizielle Musterfrage zugeordnet — frag mich, dann gleiche ich es mit dem Musterfragen-Set ab.</span>
+</div>
+
+<!-- ============ GRUNDLAGEN ============ -->
+<h2 id="grund">1 · Grundlagen &amp; Begriffe</h2>
+<div class="def"><b>Digital Contracting (E-Contracting)</b> — die <b>komplette elektronische Abbildung des Vertragsprozesses</b>: ein durch digitale Medien unterstützter Prozess von der <b>Vertragsverhandlung</b> über die <b>-unterzeichnung</b> bis zur <b>Überwachung der Vertragserfüllung</b>. Der Vertrag kann abgeschlossen werden, <b>ohne dass die Parteien physisch/persönlich in Kontakt treten</b>.</div>
+
+<p>Digital Contracting als <b>Verhandlungsprozess</b> umfasst u.a.: gültige <b>Protokollierung</b> der Verhandlungspositionen, elektronische <b>Ablage</b> der Vertragsteile, <b>Vereinbarung von Rechten &amp; Pflichten</b>, <b>Preisverhandlung</b>, <b>rechtsgültiger Vertragsabschluss</b> (mit digitaler Signatur) und <b>Controlling</b> der Vertragserfüllung.</p>
+
+<div class="ex"><b>Contract Management (Contracting) =</b> «development and maintenance of business agreements in a <b>structured manner</b>» — das Management vertraglicher Vereinbarungen über den <b>gesamten Lebenszyklus</b> (Verhandlung → Erstellung → Erfüllung → Beendigung), mit dem Ziel, <b>Performance zu maximieren und Risiko zu minimieren</b> (Schemm et al., 2006). <b>E-Contracting</b> = ein Contracting-Prozess, der <b>mindestens teilweise IT-gestützt</b> ist und auf einer <b>elektronischen Repräsentation</b> des Vertrags beruht.</div>
+
+<!-- ============ PERSPEKTIVEN ============ -->
+<h2 id="persp">2 · Die zwei Perspektiven ⭐ + Digital Contract</h2>
+<div class="exam">Der zentrale Denkrahmen der Vorlesung: Digital Contracting hat <b>zwei Perspektiven</b>. Merke: <b>Prozess = die Tätigkeit</b> (verhandeln, unterzeichnen) · <b>Objekt = das Ergebnis</b> (Entwurf → finaler Vertrag).</div>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-proc">Prozess-Perspektive</span></h3>
+    <p>Fokus auf die <b>Tätigkeit</b>: <b>Vertragsverhandlung → Vertragsunterzeichnung</b>.</p>
+    <ul>
+      <li>Aushandlung des Vertrags (Preis, Liefer-, Zahlungskonditionen)</li>
+      <li>Unterzeichnung — via <b>digitale Signaturen</b> &amp; <b>«Trusted Third Parties»</b> (z.B. elektronische Notariate)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-obj">Objekt-Perspektive</span></h3>
+    <p>Fokus auf das <b>Ergebnis/Dokument</b>: <b>Vorvertrag (Entwurf) → finaler Vertrag</b>.</p>
+    <ul>
+      <li>Ziel: Generieren eines <b>rechtsgültigen Vertrages</b></li>
+      <li>Der Vertrag als digitales Objekt, das die Verpflichtungen festhält</li>
+    </ul>
+  </div>
+</div>
+
+<div class="def"><b>Digital Contracts</b> — <b>Verträge im juristischen Sinne</b>, die als <b>digitales Dokument repräsentiert</b> und von den Vertragsparteien mit <b>digitalen Signaturen unterzeichnet</b> werden. Sie binden die Parteien rechtsgültig.</div>
+<h3>Drei Repräsentationsformen eines Digital Contract</h3>
+<table>
+  <tr><th style="width:30%">Form</th><th>Merkmal / Beispiel</th></tr>
+  <tr><td><b>Text-Dokumente</b></td><td>Unstrukturiert — Word, E-Mail, PDF.</td></tr>
+  <tr><td><b>Semi-strukturierte Inhalte</b></td><td>Daten der Vertragsparteien, Leistungsbeschreibung, Legal Terms — teilweise maschinenlesbar (z.B. Produkt-ID).</td></tr>
+  <tr><td><b>Legally binding messages</b></td><td>Strukturierter Nachrichtenaustausch, z.B. <b>ebXML</b> (Anknüpfung an EDI/Prozessstandards, Blatt 6).</td></tr>
+</table>
+
+<!-- ============ EINORDNUNG ============ -->
+<h2 id="einordnung">3 · Einordnung in die Markttransaktion &amp; Design-Alternativen</h2>
+<h3>Der Transaktionsprozess — wo «Contracting» sitzt</h3>
+<p>Eine Markttransaktion läuft in vier Phasen. <b>Contracting ist die dritte</b> (= Vereinbarungsphase); danach folgt die Abwicklung.</p>
+<table>
+  <tr><th>① Information</th><th>② Offers / Demand</th><th>③ Contracting ⭐</th><th>④ Settlement</th></tr>
+  <tr><td>Einladung, Angebots­erstellung</td><td>Offerte</td><td><b>Vertragsverhandlung &amp; Unterzeichnung</b></td><td>Überwachung der Vertragseinhaltung, Quittung</td></tr>
+  <tr><td>Wissens-/Absichtsphase</td><td>→ Gebote</td><td>→ <b>Vertragsabschluss</b></td><td>Abwicklungsphase → Transaktionsende</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)">Drei Sichten auf dasselbe Contracting (Kontext): <b>Business View · Legal View · IT/Security View</b> — Vertragsabschluss muss in allen dreien funktionieren.</p>
+
+<h3>Electronic Contracting — Design-Alternativen (Schemm et al.)</h3>
+<p style="font-size:.84rem;color:var(--muted)">Ersetzt die überladene Matrix-Folie: vier Design-Entscheidungen, je mit Optionen.</p>
+<table>
+  <tr><th style="width:24%">Design-Entscheidung</th><th>Alternativen</th></tr>
+  <tr><td><b>Vertragsrepräsentation</b></td><td>Semi-strukturiert · Strukturiert (proprietär) · Strukturiert (Standardformat)</td></tr>
+  <tr><td><b>Contracting-System</b></td><td>Contract-Management-System (CLM) · Records-Management-System · ERP-System · Business-Networking-System</td></tr>
+  <tr><td><b>Integration</b></td><td>EDI / Web Services · ERP-Anbindung · Portal · E-Mail</td></tr>
+  <tr><td><b>Signatur</b></td><td>Elektronische Signatur · Digitale Signatur (Public-Key)</td></tr>
+</table>
+<div class="ex"><b>Case Study «R» (Retail):</b> ~80'000 Mitarbeitende, ~11 Mrd. € Umsatz, ~15'000 aktive Lieferantenverträge. <b>Pain Points</b> des papierbasierten Prozesses: hohe Kosten/Fehler bei der Vertragserstellung, <b>2–4 Wochen</b> Genehmigungszyklus, intransparente Vertragsänderungen, fehlendes proaktives Monitoring, <b>~100'000 € Portokosten/Jahr</b>. R wählte: ERP-Repräsentation, <b>Portal</b> statt EDI (einfacher für kleine Lieferanten), <b>digitale Signatur</b> (vorhandene PKI).</div>
+
+<!-- ============ VORTEILE ============ -->
+<h2 id="vorteile">4 · Vorteile des Digital Contracting</h2>
+<div class="grid2">
+  <div class="card"><ul>
+    <li><b>Geschwindigkeit</b> — Verträge in kürzester Zeit erstellt &amp; ausgeführt</li>
+    <li><b>Kostensenkung</b> — Wegfall papierbezogener Kosten (Druck, Porto)</li>
+    <li><b>Zugriff</b> — von jedem Ort mit Internet abrufen, prüfen, unterzeichnen</li>
+  </ul></div>
+  <div class="card"><ul>
+    <li><b>Sicherheit</b> — fortgeschrittene Merkmale (Verschlüsselung, ggf. Blockchain)</li>
+    <li><b>Nachhaltigkeit</b> — Verzicht auf Papier</li>
+    <li><b>Effizienz der Verhandlung</b> — Automatisierung erhöht Zahl der Anbieter/Runden</li>
+  </ul></div>
+</div>
+<div class="ex"><b>Belege automatisierter Verhandlung (Van Hoek &amp; Lacity, 2023):</b> <b>Maersk</b> spart 7–8 % bei 1 Mrd. $ jährlich (&gt;10'000 e-Auktionen bis 2023); <b>Walmart</b> automatisierte &gt;7 Mrd. $ und erzielte ≥5 % Mehrwert; selbst KMU (Walker's Shortbread, Grupo Herdez) sparen 1,5–8 %.</div>
+
+<!-- ============ CLM ============ -->
+<h2 id="clm">5 · Contract Lifecycle Management (CLM) ⭐</h2>
+<div class="def"><b>Contract Lifecycle Management (CLM)</b> — die <b>systematische Verwaltung von Verträgen über ihren gesamten Lebenszyklus</b>: von der <b>Erstellung</b> über <b>Verhandlung, Genehmigung und Unterzeichnung</b> bis hin zu <b>Überwachung und Archivierung/Erneuerung</b>. Mehr als reine Ablage — CLM verbindet <b>Menschen, Workflows und Daten</b> («zentrales Nervensystem für Verträge»).</div>
+
+<h3>Lebenszyklus &amp; Kern-Funktionen (Gartner)</h3>
+<p>Eine CLM-Software steuert Verträge «from initiation through award, compliance and renewal». Kernfähigkeiten:</p>
+<div class="grid2">
+  <div class="card"><ul>
+    <li><b>Request</b> a contract (anfordern)</li>
+    <li><b>Create</b> a contract (Vorlagen, Klauselbibliotheken)</li>
+    <li><b>Manage</b> negotiation &amp; approval workflow</li>
+    <li><b>Store</b> contracts (zentral)</li>
+  </ul></div>
+  <div class="card"><ul>
+    <li><b>Search</b> contracts</li>
+    <li><b>Advanced analysis</b> (automatisierte Prüfung, Risk-Scoring)</li>
+    <li><b>Update / renew</b> a contract</li>
+  </ul></div>
+</div>
+<p style="font-size:.84rem">Ablauf: Entwurf (Vorlagen/Klauseln) → Verhandlung &amp; Genehmigung (automatisierte Workflows, digitale Signatur) → zentrale Speicherung → Laufzeit-Monitoring (Fristen, Pflichten, Compliance, proaktive Alerts) → Verlängerung / Neuverhandlung / strukturierte Archivierung.</p>
+
+<h3>Warum CLM nötig ist (die «Notwendigkeit»)</h3>
+<table>
+  <tr><th style="width:28%">Treiber</th><th>Nutzen</th></tr>
+  <tr><td><b>Legal Compliance</b></td><td>Verträge sind die rechtliche Basis; gesetzliche Pflichten erfüllen, Risiken aus Vertragsbrüchen minimieren.</td></tr>
+  <tr><td><b>Cost Control</b></td><td>Konditionen überwachen, Fristen einhalten, Verlängerungen/Kündigungen rechtzeitig steuern.</td></tr>
+  <tr><td><b>Risk Mitigation</b></td><td>Risiken proaktiv erkennen &amp; adressieren → weniger Verluste, Haftung, Rechtsstreit.</td></tr>
+  <tr><td><b>Efficiency</b></td><td>Administrative Prozesse automatisieren &amp; optimieren.</td></tr>
+  <tr><td><b>Partner Relationships</b></td><td>Transparenz schafft Vertrauen &amp; klare Kommunikation.</td></tr>
+  <tr><td><b>Opportunity Optimization</b></td><td>Cross-/Up-Selling, Wachstumschancen identifizieren.</td></tr>
+</table>
+
+<!-- ============ ABGRENZUNG ============ -->
+<h2 id="abgrenzung">6 · CLM abgrenzen: DMS / CMS / CRM / Records ⭐</h2>
+<div class="exam">Klassische Abgrenzungs-/Verständnisfrage: «Was unterscheidet CLM von einem DMS/CMS/CRM/Records-System?» Kernsatz: <b>CLM stellt den Vertrag (end-to-end) ins Zentrum</b> — die anderen Systeme verwalten Dokumente, Webinhalte, Kunden bzw. Aufbewahrung, nicht den Vertragslebenszyklus.</div>
+<table>
+  <tr><th style="width:18%">System</th><th>Kernfokus</th><th>Wofür (Definition)</th></tr>
+  <tr><td><b>CLM</b><br>Contract Lifecycle Mgmt</td><td><b>Verträge (end-to-end)</b></td><td>Verwaltung des <b>gesamten Vertragslebenszyklus</b>; hohe Workflow-Automatisierung (Genehmigung, Compliance, Redlining), KI-gestützte Vertragssuche.</td></tr>
+  <tr><td><b>DMS</b><br>Document Mgmt</td><td>Dokumente (Speicherung, Zugriff, Zusammenarbeit)</td><td>Zentrale <b>Speicherung, Verwaltung, Versionierung</b> &amp; gemeinsame Bearbeitung beliebiger Dokumente. Fokus: aktiver Dokumenten-Lebenszyklus.</td></tr>
+  <tr><td><b>CMS</b><br>Content Mgmt</td><td>Webinhalte &amp; digitale Medien</td><td>Erstellung, Verwaltung &amp; <b>Veröffentlichung digitaler Inhalte</b> (Websites, Blogs). Z.B. WordPress, Drupal. <b>Kein Bezug</b> zu Verträgen.</td></tr>
+  <tr><td><b>CRM</b><br>Customer Relationship Mgmt</td><td>Kunden, Leads &amp; Verkaufschancen</td><td>Verwaltung der <b>Kundenbeziehung</b> &amp; Vertriebsprozesse. Kann Vertragsdaten als Teil der Kundenakte enthalten, <b>ersetzt aber kein CLM</b>.</td></tr>
+  <tr><td><b>Records Mgmt</b></td><td>Dokumente, Akten &amp; Compliance</td><td>Sichere <b>Archivierung</b> aller Unternehmensunterlagen: <b>Aufbewahrungsfristen</b>, Zugriffsrechte, lückenlose <b>Audit Trails</b>. Stark in regulierten Branchen.</td></tr>
+</table>
+
+<!-- ============ KI ============ -->
+<h2 id="ki">7 · CLM &amp; KI</h2>
+<p><b>KI im Digital Contracting</b> = Einsatz von <b>ML, NLP und generativer KI</b>, um jede Phase des Vertragsprozesses zu automatisieren, zu analysieren und zu optimieren — verwandelt manuelle, fehleranfällige Aufgaben in schnelle, datengesteuerte Prozesse.</p>
+<table>
+  <tr><th style="width:30%">Phase</th><th>Was die KI tut</th></tr>
+  <tr><td><b>Erstellung &amp; Entwurf</b></td><td>Generativer Entwurf aus Vorlagen; Klauselstandardisierung (vorab genehmigte Klauseln einfügen).</td></tr>
+  <tr><td><b>Prüfung &amp; Verhandlung</b></td><td>Automatisches <b>Redlining</b> (Abweichungen/fehlende Klauseln markieren), Risikoerkennung, Echtzeit-Verhandlungsempfehlungen.</td></tr>
+  <tr><td><b>Management &amp; Analyse</b></td><td><b>Datenextraktion</b> via NLP (Fristen, Preise, Haftungsgrenzen); intelligente Suche in natürlicher Sprache.</td></tr>
+  <tr><td><b>Nach Ausführung</b></td><td>Verpflichtungsverfolgung mit Alerts; automatische Compliance-Prüfung.</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)"><b>Vorteile (KI im CLM):</b> höhere Geschwindigkeit/Effizienz (Wochen → Stunden), geringeres Risiko/Fehlerquote, verbesserte Transparenz, Kosteneinsparung. <b>Beispiel Sirion</b> (AI-native, agentOS): Search-, Draft-, Redline-, Obligations-Agent u.a.</p>
+
+<!-- ============ DIENSTE ============ -->
+<h2 id="dienste">8 · Contracting-Dienste — Incoterms &amp; Musterverträge</h2>
+<div class="def"><b>ICC Incoterms® (International Commercial Terms)</b> — internationale Regeln zur <b>Auslegung handelsüblicher Vertragsformeln</b> im Aussenhandel. Die <b>3-Buchstaben-Klauseln</b> regeln die wesentlichen <b>Käufer- und Verkäuferpflichten</b> (Beförderung, Versicherung, Form/Ort der Lieferung, Dokumente, Kosten- und Gefahrenübergang), v.a. bei <b>grenzüberschreitenden Geschäften</b>.</div>
+<ul>
+  <li>Herausgeber: <b>Internationale Handelskammer (ICC)</b>, privatwirtschaftlich; von <b>UNCITRAL</b> unterstützt. Erstmals <b>1936</b>.</li>
+  <li><b>Wirksam erst, wenn im Vertrag darauf Bezug genommen wird</b> — und die Parteien müssen die <b>konkrete Klausel UND die Fassung</b> (z.B. Incoterms 2020) vereinbaren.</li>
+  <li>Zweck: <b>international einheitliche Auslegung</b> → vermeidet Missverständnisse &amp; Rechtsstreit.</li>
+  <li>Beispiele: <b>EXW</b> (Ex Works = ab Werk), <b>FCA</b> (Free Carrier = frei Frachtführer).</li>
+</ul>
+<p style="font-size:.84rem;color:var(--muted)">Weitere Dienste: <b>Musterverträge</b> (ICC, Swissmem für den Exportbereich) sowie <b>CLM-Software</b> als Markt (DocuSign CLM, Concord, SAP Ariba Contract Management, Sirion — vgl. Forrester Wave / Gartner Magic Quadrant).</p>
+
+<!-- ============ PREISFINDUNG ============ -->
+<h2 id="preis">9 · Preisfindungsmechanismen ⭐</h2>
+<div class="def"><b>Preisfindungsmechanismen</b> — Prozesse, die Verhandlungspartner anwenden, um einen <b>für beide Seiten akzeptablen Preis</b> zu ermitteln. Wichtiger Teil des <b>Digital-Matching-Prozesses</b> in der Vereinbarungsphase.</div>
+<table>
+  <tr><th style="width:22%">Mechanismus</th><th>Preisbildung</th><th>Verhandlung?</th><th>Typischer Einsatz</th></tr>
+  <tr><td><b>Online-Catalog</b> (Offer/Accept)</td><td><b>Statisch</b> — Katalogkonditionen gelten</td><td><b>Keine</b></td><td>Stabile Preise, zeitkritische Beschaffung, geringer Aufwand</td></tr>
+  <tr><td><b>Online-Request</b> (RfP / Ausschreibung)</td><td><b>Zweiseitig dynamisch</b> — Nachfrager formuliert Wünsche, Anbieter offerieren</td><td>Ja, beidseitig</td><td>Zeitunkritisch, wenige Transaktionen; ggf. anonym. Bsp.: simap.ch, Handwerkerbörsen (renovero.ch)</td></tr>
+  <tr><td><b>Auktion</b></td><td><b>Einseitig dynamisch</b> — offener Preismechanismus über Gebote</td><td>Über Gebote</td><td>Wenig zeitkritisch, geringer Beratungsaufwand; Marktpreis schwer bestimmbar. Bsp.: eBay, Ricardo, Netbid</td></tr>
+</table>
+
+<h3>Auktionen genauer — Forward vs. Reverse ⭐</h3>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-fwd">Forward / Traditional</span></h3>
+    <p><b>Ein Verkäufer</b> bietet ein Gut an; <b>viele Käufer überbieten sich</b> nach oben. Das <b>höchste Gebot</b> gewinnt.</p>
+    <p style="font-size:.84rem">→ Preis steigt. Klassisch: eBay.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-rev">Reverse Auction</span></h3>
+    <p><b>Ein Käufer</b> fordert viele <b>Anbieter</b> zur Angebotsabgabe auf; die <b>Verkäufer unterbieten sich</b>. Das <b>niedrigste Gebot</b> erhält den Zuschlag.</p>
+    <p style="font-size:.84rem">→ Preis sinkt. <b>Häufig im Procurement</b> — der Käufer tritt aus dem Prozess heraus, Lieferanten konkurrieren direkt.</p>
+  </div>
+</div>
+<p style="font-size:.84rem;color:var(--muted)">Weitere Unterscheidungen: <b>einattributiv</b> (nur Preis) vs. <b>multiattributiv</b> (auch Qualität, Liefer-/Zahlungskonditionen). Ausprägungen: <b>English · Dutch · Japanese</b>. Klassisches Beispiel der <b>Dutch Auction</b> (fallender Preis): die <b>Dutch Flower Auction</b> (Royal FloraHolland, Auktionsuhr).</p>
+
+<!-- ============ INTEGRATION ============ -->
+<h2 id="integration">10 · Integration von Auktionen in Procurement-/ERP-Systeme</h2>
+<table>
+  <tr><th style="width:26%">Ansatz</th><th>Idee &amp; Beispiel</th></tr>
+  <tr><td><b>1 · Native / Direkt</b></td><td>Auktion direkt im ERP eingebaut, alle Daten in einem System. Bsp.: SAP Ariba nativ in S/4HANA.</td></tr>
+  <tr><td><b>2 · API-basiert</b></td><td>Externe Plattform via offene Schnittstellen, bidirektional in Echtzeit. Bsp.: Coupa ↔ Oracle ERP via REST.</td></tr>
+  <tr><td><b>3 · EDI-Schnittstellen</b></td><td>Standardformate (<b>UN/EDIFACT, ANSI X12, XML</b>) für automatisierten Dokumentenaustausch. Bsp.: Automobilindustrie (Anknüpfung Blatt 6).</td></tr>
+  <tr><td><b>4 · Middleware</b></td><td>Integrationsplattform als «Brücke» (MuleSoft, Dell Boomi). Für heterogene IT.</td></tr>
+  <tr><td><b>5 · Cloud-basiert</b></td><td>Cloud-Gateways verbinden On-Premise-ERP mit Cloud-Auktionen (SAP BTP, Oracle Integration Cloud). Pay-as-you-go.</td></tr>
+</table>
+
+<!-- ============ EXAM ============ -->
+<h2 id="exam">11 · Prüfungsfokus</h2>
+<div class="card">
+  <p><b>Definitionsfragen:</b> Digital Contracting (Prozess von Verhandlung bis Erfüllungsüberwachung) · Digital Contract (rechtsgültig, digital, digital signiert) · CLM (gesamter Lebenszyklus).</p>
+  <p><b>Verständnis/Abgrenzung:</b> die <b>zwei Perspektiven</b> (Prozess vs. Objekt) erklären · <b>CLM von DMS/CMS/CRM/Records abgrenzen</b> (Kernfokus je System).</p>
+  <p><b>Mechanismen:</b> die drei Preisfindungsmechanismen (statisch / zweiseitig dynamisch / einseitig dynamisch) und vor allem <b>Forward- vs. Reverse-Auktion</b> (wer lädt ein, in welche Richtung bewegt sich der Preis, warum Reverse im Procurement).</p>
+  <p><b>Konkretes Dienst-Beispiel:</b> <b>Incoterms</b> — was sie regeln, dass sie nur bei Bezugnahme im Vertrag (inkl. Fassung) wirksam werden.</p>
+</div>
+
+<div class="ask">
+  <b>Frag deinen Tutor (mich!):</b> Worin unterscheiden sich elektronische und digitale Signatur genau? Wann lohnt eine Reverse-Auktion gegenüber einer Ausschreibung? Was ist der Unterschied zwischen Digital Contract und Smart Contract? <b>Frag im Chat.</b> Übe danach mit der <a href="../lessons/08-digital-contracting-quiz.html">Quiz-Lektion 8</a>.
+</div>
+
+<footer>
+  Studienblatt 8 von 11 · DigiBusI FS2026 · gegründet auf <i>DigiBusI_08_DigitalContracting 2026</i> (Schemm et al. 2006; Kollmann 2019/2022; Gartner 2022; Wilkinson &amp; Giuffre 2021; Van Hoek &amp; Lacity 2023; ICC/Incoterms; BearingPoint/Sirion) + Zusammenfassungsfolie.
+  Querverweise: <a class="ref" href="07-digital-procurement.html">← Blatt 7 (Digital Procurement)</a> — Contracting ist die Vereinbarungsphase nach der Beschaffung. <a class="ref" href="06-edi.html">Blatt 6 (EDI)</a> — EDI als ein Integrationsansatz für Auktionen.
+</footer>
+</div>
+</body>
+</html>

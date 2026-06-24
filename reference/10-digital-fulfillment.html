@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 10 — Digital Fulfillment</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .big{background:#fbe9e0; border:2px solid var(--warn)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:1px 7px;border-radius:5px;white-space:nowrap}
+  .tag-log{background:#e9f0fb;border:1px solid #c4d6f3;color:#1d4ed8}
+  .tag-ful{background:#eef7ec;border:1px solid #c8e3c0;color:#1a7f4b}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2, .tag{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 10 von 11 · Lernblock 3 (Anwendungsbereiche)</div>
+  <h1>Digital Fulfillment</h1>
+  <div class="sub">Digital Fulfillment = der <b>gesamte Prozess der Auftragsabwicklung im E-Commerce</b> — alles, was <b>nach der Bestellung</b> passiert (Lagern, Kommissionieren, Verpacken, Versenden, Tracking, Zahlung, Retouren …). <b>Logistik</b> ist der Oberbegriff, <b>Fulfillment</b> die E-Commerce-Teildisziplin davon.</div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#grund">Grundlagen ⭐</a>·
+    <a href="#logful">Logistik vs. Fulfillment ⭐</a>·
+    <a href="#distrib">Distributionssysteme</a>·
+    <a href="#drop">Dropshipping</a>·
+    <a href="#dienstleister">Logistikdienstleister</a>·
+    <a href="#pl">1PL–5PL ⭐</a>·
+    <a href="#typen">Fulfillment-Typen</a>·
+    <a href="#wes">WES / WMS / TMS</a>·
+    <a href="#freight">FreightTech ⭐</a>·
+    <a href="#exam">Prüfungsfokus</a>
+  </nav>
+</header>
+
+<div class="exam big">
+  <b>Schwerpunkte:</b> <b>Digital Fulfillment</b> &amp; <b>Logistik</b> definieren und voneinander abgrenzen · die <b>PL-Klassifikation 1PL→4PL</b> (und besonders <b>3PL vs. 4PL</b>: asset- vs. non-asset-based) · die <b>vier Distributionsmodelle</b> (inkl. <b>Dropshipping</b>) · <b>FreightTech</b> mit seinen <b>drei Säulen</b>. <span class="pill">Gut strukturierte Lektion (kein Tail-Problem) — viele klare Definitionen &amp; Frameworks.</span>
+</div>
+
+<!-- ============ GRUNDLAGEN ============ -->
+<h2 id="grund">1 · Grundlagen: Digital Fulfillment &amp; Logistik ⭐</h2>
+<div class="def"><b>Digital Fulfillment</b> — der <b>gesamte Prozess der Auftragsabwicklung im E-Commerce</b>. Er setzt <b>unmittelbar nach der Bestellung</b> ein und umfasst Lagerung, Kommissionierung, Transport/Versand, Auslieferung, teilweise Bezahlung sowie After-Sales bis zur Retourenbearbeitung. Kann zusätzlich das <b>Content Management des E-Shops</b> und das <b>Warenwirtschaftssystem</b> einschliessen.</div>
+<h3>Die Kernaufgaben (alles <i>nach</i> dem Vertragsabschluss)</h3>
+<div class="grid2">
+  <div class="card"><ul>
+    <li>Lagerhaltung</li><li>Kommissionierung</li><li>Verpackung</li><li>Versand</li><li>Tracking</li><li>Retouren-Management</li>
+  </ul></div>
+  <div class="card"><ul>
+    <li>Rechnungswesen</li><li>Zahlungsabwicklung</li><li>Mahnwesen</li><li>Reparaturen</li><li>Support</li>
+  </ul></div>
+</div>
+<div class="def"><b>Logistik</b> — die <b>integrierte Planung, Koordination, Durchführung und Kontrolle der Güterflüsse</b> in und zwischen Unternehmen. Ziel: Güter <b>zeitlich, mengenmässig, räumlich und qualitativ richtig</b> bereitstellen. Auch <b>«Flow Management»</b> genannt.</div>
+
+<!-- ============ LOG vs FUL ============ -->
+<h2 id="logful">2 · Logistik vs. Fulfillment ⭐</h2>
+<div class="exam">Kernsatz, den du auswendig können solltest: <b>«Jeder Fulfillment-Dienstleister ist ein Logistik-Dienstleister — aber nicht jeder Logistik-Dienstleister bietet Fulfillment an.»</b> Logistik = Oberbegriff, Fulfillment = Teildisziplin.</div>
+<table>
+  <tr><th style="width:20%">Merkmal</th><th>Klassische Logistik (Spedition)</th><th>Fulfillment (E-Commerce-Logistik)</th></tr>
+  <tr><td><b>Hierarchie</b></td><td>Der <b>Oberbegriff</b></td><td>Eine <b>Teildisziplin</b> der Logistik</td></tr>
+  <tr><td><b>Kunde</b></td><td>Meist <b>B2B</b> (Fabrik → Grosshändler)</td><td>Meist <b>B2C</b> (Händler → Endkunde)</td></tr>
+  <tr><td><b>Handlungseinheit</b></td><td>Palette &amp; Container (oft nicht ausgepackt)</td><td><b>Stückgut (SKU)</b> — Palette wird aufgebrochen, Einzelteile entnommen</td></tr>
+  <tr><td><b>IT-Anbindung</b></td><td><b>EDI</b>-Schnittstellen, ERP-Systeme</td><td><b>API</b>-Schnittstellen zu Shop-Systemen (Shopify, Magento)</td></tr>
+  <tr><td><b>Dienstleistung</b></td><td>«Transportiere das von A nach B»</td><td>«Manage meine Bestellung, leg Geschenkkarten dazu …»</td></tr>
+</table>
+
+<!-- ============ DISTRIBUTION ============ -->
+<h2 id="distrib">3 · Veränderung der Distributionssysteme</h2>
+<p><b>Traditionell:</b> lineare Verteilung — Hersteller → Markenorganisationen → Grosshandel → Detailhandel → Kunde.</p>
+<p><b>Aktuell:</b> weniger linear, zwei Gegenbewegungen:</p>
+<div class="grid2">
+  <div class="card"><h3 style="margin-top:0">Disintermediation</h3>Überspringen von Handelsstufen (z.B. Hersteller verkauft direkt online → eShop des Herstellers).</div>
+  <div class="card"><h3 style="margin-top:0">Re-Intermediation</h3>Entstehung <b>neuer</b> Intermediäre (digitale Marktplätze, Plattformen als Kundenzugangs-Dienstleister).</div>
+</div>
+<p style="font-size:.84rem;color:var(--muted)"><b>Folge:</b> «Der Einzelhandel hat den <b>exklusiven Zugang zu den Konsumenten</b> und damit das wichtigste Merkmal seiner Rolle verloren.»</p>
+
+<h3>Die vier Distributionsmodelle (Sucky &amp; Felch)</h3>
+<table>
+  <tr><th style="width:8%">Opt.</th><th style="width:24%">Modell</th><th>Beschreibung</th><th style="width:26%">Logistik</th></tr>
+  <tr><td><b>A</b></td><td><b>Lagergeschäft</b></td><td>Produzent &amp; Online-Händler verkaufen parallel über eigene Shops</td><td>Lieferung aus Lager des Produzenten oder Händlers</td></tr>
+  <tr><td><b>B</b></td><td><b>Dropshipping / Streckengeschäft</b></td><td>Online-Händler betreibt Marktplatz; Produzent bietet dort an (gegen Provision)</td><td>Produzent liefert <b>direkt</b> an Endkunden</td></tr>
+  <tr><td><b>C</b></td><td><b>Fulfillment durch Händler</b></td><td>Kunde bestellt im Shop des Produzenten, aber Händler übernimmt Logistik &amp; Retouren</td><td>Lieferung aus Lager des Online-Händlers <span class="pill">Zalando ZFS</span></td></tr>
+  <tr><td><b>D</b></td><td><b>Connected Retail</b></td><td>Marktplatz-Bestellungen werden an stationäre Einzelhändler weitergeleitet</td><td>Logistik-DL (z.B. DHL) holt in Filiale ab; Retouren zurück in Filiale <span class="pill">Zalando Connected Retail</span></td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)"><b>Von der Supply Chain zum Business Ecosystem:</b> klassische SC = produktbezogen, linear. <b>Ecosystem</b> = dynamisches Netzwerk, bündelt komplementäre Leistungen auf einer (digitalen) Plattform → überproportionaler Kundennutzen (<b>1+1=3</b>). Trade-off: Dropshipping/dezentrale Lager senken Bestände, riskieren aber sinkende Kundenzufriedenheit (Teillieferungen).</p>
+
+<!-- ============ DROPSHIPPING ============ -->
+<h2 id="drop">4 · Dropshipping (Streckengeschäft)</h2>
+<div class="def"><b>Dropshipping</b> — ein Detailhandels-Fulfillment-Modell, bei dem der Verkäufer (Online-Shop-Betreiber) die verkauften Produkte <b>nicht selbst auf Lager hält oder versendet</b>. Der Verkäufer ist <b>Vermittler</b> zwischen Kunde und Lieferant.</div>
+<ol style="font-size:.88rem">
+  <li><b>Bestellung beim Händler:</b> Kunde bestellt im Shop des Händlers (Dropshippers) und zahlt den Verkaufspreis.</li>
+  <li><b>Weiterleitung:</b> Händler leitet Bestellung (und Zahlung abzüglich Marge) an seinen Dropshipping-Lieferanten weiter.</li>
+  <li><b>Direkter Versand:</b> Lieferant verpackt und versendet <b>direkt an den Endkunden</b> — oft im Namen des Händlers.</li>
+</ol>
+<p style="font-size:.84rem;color:var(--muted)">Für den Kunden ist der Prozess im Hintergrund meist <b>nicht erkennbar</b>.</p>
+
+<!-- ============ DIENSTLEISTER ============ -->
+<h2 id="dienstleister">5 · Logistikdienstleister — Grundbegriffe</h2>
+<div class="def"><b>Logistikdienstleister</b> — Unternehmen, die im Logistikkanal Dienstleistungen für die <b>«verladende Wirtschaft»</b> (Verlader = auftraggebende Industrie-/Handels-/Dienstleistungsunternehmen) erbringen. Sie betreiben Infrastruktur sowie Prozesse zur <b>raumzeitlichen Ver- und Entsorgung</b>.</div>
+<div class="grid2">
+  <div class="card"><h3 style="margin-top:0">Komponentenanbieter</h3>Erbringen <b>einzelne</b> Logistikleistungen.</div>
+  <div class="card"><h3 style="margin-top:0">Systemanbieter</h3>Bieten <b>ganzheitliche</b> Lösungen (selbst + zugekaufte Komponenten) → <b>Kontraktlogistik</b>.</div>
+</div>
+
+<!-- ============ PL ============ -->
+<h2 id="pl">6 · Die PL-Klassifikation: 1PL → 5PL ⭐</h2>
+<div class="exam"><b>PL = Party Logistics.</b> Das wichtigste Framework der Lektion. Merke die Treppe: je höher die Zahl, desto <b>mehr Steuerung/IT</b> und <b>weniger eigene physische Assets</b>. Der Knick ist zwischen <b>3PL</b> (besitzt Assets, <i>macht</i>) und <b>4PL</b> (besitzt keine, <i>steuert</i>).</div>
+<table>
+  <tr><th style="width:10%">Level</th><th style="width:24%">Bezeichnung</th><th>Fokus</th><th style="width:24%">Assets</th></tr>
+  <tr><td><b>1PL</b></td><td>First Party Logistics</td><td><b>Eigenlogistik</b> — Unternehmen macht alle Logistik (Transport, Lager) selbst</td><td>Eigener Fuhrpark &amp; Lager</td></tr>
+  <tr><td><b>2PL</b></td><td>Second Party Logistics</td><td>Klassische Dienstleister für einfache <b>TUL</b> (Transport, Umschlag, Lagerung) — Spediteure, Reedereien</td><td>Eigene LKW/Schiffe/Lagerflächen</td></tr>
+  <tr><td><b>3PL</b></td><td>Third Party Logistics</td><td><b>Systemdienstleister (Kontraktlogistik)</b>: komplexe Pakete, langfristige Verträge, <b>Value Added Services</b> (Montage, Etikettierung, Retouren)</td><td><b>Asset-based</b> (Mix eigene Assets + Subunternehmer)</td></tr>
+  <tr><td><b>4PL</b></td><td>Fourth Party Logistics</td><td><b>Systemintegrator</b>: steuert die <b>gesamte Supply Chain</b>, koordiniert 3PLs/2PLs; Fokus IT, Planung, Optimierung</td><td><b>Non-Asset-based</b> (nur IT &amp; Know-how)</td></tr>
+  <tr><td><b>5PL</b></td><td>Fifth Party Logistics</td><td>SCM für ganze <b>Netzwerke</b> (nicht nur einzelne Ketten); Weiterentwicklung des 4PL via Automatisierung &amp; Big Data</td><td>Rein digital/organisatorisch</td></tr>
+</table>
+
+<h3>3PL vs. 4PL — die zentrale Abgrenzung</h3>
+<table>
+  <tr><th style="width:22%">Merkmal</th><th>3PL</th><th>4PL</th></tr>
+  <tr><td><b>Hauptfokus</b></td><td>Operative Ausführung (<b>Machen</b>)</td><td>Strategische Steuerung (<b>Planen &amp; Optimieren</b>)</td></tr>
+  <tr><td><b>Assets</b></td><td><b>Asset-based</b>: eigene LKW, Lager, Personal</td><td><b>Non-Asset-based</b>: nur IT, Software, Know-how</td></tr>
+  <tr><td><b>Aufgabe</b></td><td>Spezifische Logistikaufgaben (Transport, Lager)</td><td>Managt die ganze Supply Chain, koordiniert mehrere 3PLs</td></tr>
+  <tr><td><b>Ansprechpartner</b></td><td>Kunde hat oft Verträge mit <b>mehreren</b> 3PLs</td><td><b>Single Point of Contact</b> — managt alle anderen DL</td></tr>
+  <tr><td><b>Neutralität</b></td><td>Will eigene Assets auslasten</td><td>Neutral — wählt den besten Anbieter am Markt</td></tr>
+</table>
+
+<!-- ============ TYPEN ============ -->
+<h2 id="typen">7 · Fulfillment-Dienstleister — Typen</h2>
+<table>
+  <tr><th style="width:24%">Typ</th><th>Ideal für</th><th>Stärke / Schwäche</th></tr>
+  <tr><td><b>Marktplatz (FBA)</b></td><td>Händler mit 80 %+ Umsatz auf Amazon</td><td>+ Prime-Status, Skalierung · − hohe Kosten, «Black Box», Abhängigkeit</td></tr>
+  <tr><td><b>Tech-Enabled Fulfillment</b></td><td>D2C-Brands, Shopify-Nutzer, Start-ups</td><td>+ Top-IT-Integration, Transparenz, «Unboxing» · − teurer, unpersönlicher Support</td></tr>
+  <tr><td><b>Klassischer 3PL / Kontraktlogistik</b></td><td>Grosse Konzerne (B2B+B2C-Mix)</td><td>+ Stabilität, Volumen, günstige Lager · − IT oft Legacy, träge</td></tr>
+  <tr><td><b>Lokal / Nische</b></td><td>Kleine/regionale Shops</td><td>+ persönlich, individuell · − keine Skalierung, IT rudimentär</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)">CH-Beispiele: <b>Die Post</b> (Digital Commerce), <b>MS Direct</b>; international <b>Fulfillment-by-Amazon (FBA)</b>.</p>
+
+<!-- ============ WES ============ -->
+<h2 id="wes">8 · Lagersysteme: WES / WMS / TMS</h2>
+<div class="def"><b>Warehouse Execution System (WES)</b> — Softwarelösung, die die Abläufe in einem Lager/Distributionszentrum <b>optimiert und automatisiert</b>; das <b>«Gehirn»</b> moderner Lager. Koordiniert alle Aufgaben (Wareneingang → Lagerung → Auslieferung), optimiert Ressourcen, steuert den Materialfluss in <b>Echtzeit</b> und integriert <b>LVS/WMS, TMS und ERP</b>.</div>
+<table>
+  <tr><th style="width:18%">System</th><th>Zweck</th></tr>
+  <tr><td><b>WMS / LVS</b></td><td>Warehouse-/Lagerverwaltung: orchestriert Lagerprozesse (Picken, Packen); integriert Roboter.</td></tr>
+  <tr><td><b>TMS</b></td><td>Transportation Management: Routenoptimierung, Sendungsverfolgung, Kostenverwaltung.</td></tr>
+  <tr><td><b>Supply Chain Visibility</b></td><td>GPS, RFID, Sensoren → lückenlose Echtzeit-Verfolgung der Waren.</td></tr>
+</table>
+
+<!-- ============ FREIGHTTECH ============ -->
+<h2 id="freight">9 · Digitalisierung der Logistik — FreightTech ⭐</h2>
+<div class="def"><b>FreightTech</b> (Freight + Technology) — der Einsatz <b>innovativer Technologien und disruptiver Ideen</b> zur Digitalisierung der gesamten Logistik-/Frachtbranche. Ziel: <b>Effizienz, Transparenz und Nachhaltigkeit</b> im Gütertransport steigern.</div>
+<h3>Die drei Säulen von FreightTech</h3>
+<div class="grid3">
+  <div class="card"><h3 style="margin-top:0">Intelligence</h3>Datengestützte Entscheidungen &amp; Optimierung — Tools zur Erzeugung, Übertragung und Analyse von Daten.</div>
+  <div class="card"><h3 style="margin-top:0">Automatisierung</h3>Reduzierung manueller Arbeit durch Robotik &amp; automatisierte Systeme.</div>
+  <div class="card"><h3 style="margin-top:0">Integration</h3>Vernetzung vieler Stakeholder über Plattform-Modelle → mehr Transparenz &amp; Kommunikation.</div>
+</div>
+<p style="font-size:.84rem;color:var(--muted)"><b>Beispiele:</b> fahrerlose Flurförderzeuge · <b>Augmented Reality</b> (Vision Picking bei DHL) · vollautomatisierte (Hochregal-)Lager (AutoStore) · Amazon-Robotics (&gt;750'000 Roboter). <b>Digitale Frachtmarktplätze:</b> Timocom, Saloodo! (verbinden Auftraggeber &amp; Spediteure → <b>Smart Logistics</b>).</p>
+
+<!-- ============ EXAM ============ -->
+<h2 id="exam">10 · Prüfungsfokus</h2>
+<div class="card">
+  <p><b>Definitionen:</b> Digital Fulfillment (Prozess nach der Bestellung) · Logistik (Flow Management, Güter zeitlich/mengenmässig/räumlich/qualitativ richtig) · Dropshipping · FreightTech · WES.</p>
+  <p><b>Abgrenzungen:</b> <b>Logistik vs. Fulfillment</b> (Oberbegriff vs. Teildisziplin; B2B/Palette/EDI vs. B2C/SKU/API) · <b>3PL vs. 4PL</b> (asset-based/machen vs. non-asset/steuern).</p>
+  <p><b>Frameworks:</b> die <b>PL-Treppe 1PL→4PL(→5PL)</b> · die <b>vier Distributionsmodelle</b> A–D · die <b>drei FreightTech-Säulen</b> (Intelligence/Automatisierung/Integration).</p>
+  <p><b>Begriffspaar:</b> <b>Disintermediation</b> (Stufen überspringen) vs. <b>Re-Intermediation</b> (neue Intermediäre).</p>
+</div>
+
+<div class="ask">
+  <b>Frag deinen Tutor (mich!):</b> Wann lohnt sich für einen Shop ein 4PL statt mehrerer 3PLs? Worin unterscheiden sich WES, WMS und ERP genau? Ist Dropshipping ein Distributionsmodell oder ein Logistikmodell — oder beides? <b>Frag im Chat.</b> Übe danach mit der <a href="../lessons/10-digital-fulfillment-quiz.html">Quiz-Lektion 10</a>.
+</div>
+
+<footer>
+  Studienblatt 10 von 11 · DigiBusI FS2026 · gegründet auf <i>DigiBusI_10_digitalFulfillment 2026</i> (Kollmann 2022; Sucky &amp; Felch 2021; Binswanger &amp; Christ 2020; Gabler Wirtschaftslexikon; Roland Berger 2020; E-Commerce Report Schweiz 2019) + Zusammenfassungsfolien.
+  Querverweise: <a class="ref" href="09-digital-marketing.html">← Blatt 9 (Digital Marketing)</a> · <a class="ref" href="06-edi.html">Blatt 6 (EDI)</a> — EDI/API als IT-Anbindung der Logistik; <a class="ref" href="07-digital-procurement.html">Blatt 7</a>.
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 11 — Digital Payment</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .big{background:#fbe9e0; border:2px solid var(--warn)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:1px 7px;border-radius:5px;white-space:nowrap}
+  .tag-m2m{background:#e9f0fb;border:1px solid #c4d6f3;color:#1d4ed8}
+  .tag-ag{background:#f1ecfb;border:1px solid #d8c4f3;color:#6b21a8}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2, .tag{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 11 von 11 · Lernblock 3 (Anwendungsbereiche) · LETZTES THEMA</div>
+  <h1>Digital Payment</h1>
+  <div class="sub">Digitaler Zahlungsverkehr = die <b>beleglose Erfassung und Abwicklung des bargeldlosen Zahlungsverkehrs</b>. Diese Lektion gliedert sich in <b>Grundlagen → 7 Kategorien digitaler Zahlungssysteme → Ausblick (Agentic &amp; M2M Payment)</b>.</div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#grund">Grundlagen</a>·
+    <a href="#kategorien">7 Kategorien</a>·
+    <a href="#psp">PSP</a>·
+    <a href="#bnpl">BNPL</a>·
+    <a href="#mobile">Mobile Payment</a>·
+    <a href="#agentic">Agentic Payment</a>·
+    <a href="#m2m">M2M-Payment ⭐⭐</a>·
+    <a href="#exam">Prüfungsfokus</a>
+  </nav>
+</header>
+
+<div class="exam big">
+  <b>Die ganze Musterfrage 12 (14 P) dreht sich um M2M-Payment!</b> Vierteilig: <b>(a, 2 P)</b> M2M-Payment <b>erläutern</b>; <b>(b, 4 P)</b> <b>zwei Anwendungsgebiete</b> nennen &amp; beschreiben; <b>(c, 2 P)</b> Unterschied <b>M2M vs. herkömmliche</b> Zahlung; <b>(d, 6 P)</b> je <b>zwei Vorteile UND zwei Herausforderungen</b> für Unternehmen. → Konzentriere dich auf <a href="#m2m">Abschnitt 7</a>. Die 7 Kategorien sind Grundwissen für den Rest.
+</div>
+
+<!-- ============ GRUNDLAGEN ============ -->
+<h2 id="grund">1 · Grundlagen &amp; Klassifikation</h2>
+<div class="def"><b>Digitaler Zahlungsverkehr</b> — die <b>beleglose Erfassung und Abwicklung des bargeldlosen Zahlungsverkehrs</b> (Summe aller Zahlungsvorgänge zwischen Wirtschaftssubjekten).</div>
+<h3>Klassifikation digitaler Zahlungslösungen</h3>
+<table>
+  <tr><th style="width:28%">Kriterium</th><th>Ausprägungen</th></tr>
+  <tr><td><b>Abwicklungsort</b></td><td>lokal vs. international</td></tr>
+  <tr><td><b>Zeitpunkt der Zahlung</b></td><td><b>Prepaid</b> (vorausbezahlt) · <b>Pay-now</b> (sofort) · <b>Pay-later</b> (nachträglich, z.B. BNPL)</td></tr>
+  <tr><td><b>Betragshöhe</b></td><td>Micropayment (Kleinstbeträge) vs. Macropayment</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)"><b>Erfolgsfaktoren</b> digitaler Zahlungssysteme: Akzeptanz/Verbreitung, Sicherheit, einfache Benutzung, niedrige Kosten, Vertrauen. <b>Aktuelle Trends:</b> Instant-Banküberweisungen, mobile Endgeräte, KI in der B2B-Zahlungsabwicklung.</p>
+
+<!-- ============ KATEGORIEN ============ -->
+<h2 id="kategorien">2 · Die 7 Kategorien digitaler Zahlungssysteme</h2>
+<table>
+  <tr><th style="width:6%">#</th><th style="width:26%">Kategorie</th><th>Kern</th></tr>
+  <tr><td>1</td><td><b>Digitales Geld / Micropayment</b></td><td>1. Gen <b>token-basiert</b> (eCash/DigiCash) · 2. Gen <b>konto-basiert</b>. eCash <b>scheiterte</b> (mangelnde Akzeptanz, Komplexität).</td></tr>
+  <tr><td>2</td><td><b>Virtuelle Währungen / Krypto</b></td><td>Digitale Wertdarstellung <b>nicht von einer Zentralbank</b>; <b>Kryptowährung</b> = dezentral via Blockchain (Bitcoin, Ethereum); aufbewahrt im <b>Wallet</b>.</td></tr>
+  <tr><td>3</td><td><b>Kreditkarten-basiert</b></td><td>Authentifizierung über <b>3-D Secure / EMV 3DS</b> (heute «Visa Secure»); früher <b>SET</b>. NFC/kontaktlos, Mobile Wallet.</td></tr>
+  <tr><td>4</td><td><b>EBPP</b> (Electronic Bill Presentment &amp; Payment)</td><td><b>eRechnung / eBill</b>: Biller sendet die Rechnung elektronisch, Empfänger prüft &amp; zahlt digital (SIX Paynet, eBill.ch).</td></tr>
+  <tr><td>5</td><td><b>Payment-Lösungen für Online-Shops (PSP)</b></td><td>Payment Service Provider bündeln Zahlungsmethoden für Shops (Saferpay/SIX, Worldline, Datatrans, Stripe).</td></tr>
+  <tr><td>6</td><td><b>Buy Now Pay Later (BNPL)</b></td><td>«Kauf auf Rechnung»: erst erhalten, später zahlen; ein Anbieter übernimmt Risiko &amp; Abwicklung.</td></tr>
+  <tr><td>7</td><td><b>Mobile Payment</b></td><td>Zahlung via <b>mobiles Endgerät</b> (Twint, Apple Pay, Google Pay); NFC.</td></tr>
+</table>
+
+<h3>Detail zu ausgewählten Kategorien</h3>
+<div class="grid2">
+  <div class="card"><h3 style="margin-top:0">Kryptowährungen — Eigenschaften</h3>
+    <ul><li><b>Dezentralisierung</b> (keine zentrale Instanz/Zentralbank)</li><li>basieren auf <b>Blockchain</b></li><li>Unterschied zu <b>Fiat</b>: kein gesetzliches Zahlungsmittel, kein Staat/Zentralbank dahinter</li></ul>
+  </div>
+  <div class="card"><h3 style="margin-top:0">EBPP — betriebswirtschaftlicher Nutzen</h3>
+    <ul><li><b>Rechnungssteller:</b> Kosteneinsparungen (kein Druck/Porto), schnellere Bezahlung</li><li><b>Empfänger:</b> Zusatzservice, einfache, medienbruchfreie Verarbeitung</li></ul>
+  </div>
+</div>
+
+<!-- ============ PSP ============ -->
+<h2 id="psp">3 · Payment Service Provider (PSP)</h2>
+<div class="def"><b>Payment Service Provider (PSP)</b> — ein <b>Zahlungsanbieter</b>, über den ein Onlineshop überhaupt erst <b>Zahlungen akzeptieren</b> kann. Der PSP <b>bündelt verschiedene Zahlungsmethoden</b> und übernimmt die technische &amp; sichere Abwicklung zwischen Shop, Kunde und Bank.</div>
+<p style="font-size:.84rem"><b>Vorteile:</b> spezialisierte Payment-Partner, <b>eine Integration</b> für viele Zahlungsmethoden, Sicherheit/Compliance, weniger eigener Aufwand. <b>Beispiele:</b> Saferpay (SIX), Worldline, Datatrans, Stripe.</p>
+
+<!-- ============ BNPL ============ -->
+<h2 id="bnpl">4 · Buy Now Pay Later (BNPL)</h2>
+<div class="def"><b>BNPL («Kauf auf Rechnung»)</b> — der Kunde erhält die Ware <b>zuerst</b> und zahlt <b>später</b> (Pay-later). Ein BNPL-Anbieter übernimmt die <b>Rechnungsstellung und das Ausfallrisiko</b> für den Händler und streckt die Zahlung vor.</div>
+<p style="font-size:.84rem;color:var(--muted)">Beliebt im CH-Onlinehandel; senkt Kaufhürden, verlagert das Bonitäts-/Ausfallrisiko vom Händler zum Anbieter.</p>
+
+<!-- ============ MOBILE ============ -->
+<h2 id="mobile">5 · Mobile Payment</h2>
+<div class="def"><b>Mobile Payment</b> — «any payment in which a mobile device is used»: Durchführung von Zahlungen über ein <b>mobiles Endgerät</b>. Unterscheidung nach räumlicher Distanz: <b>Proximity</b> (vor Ort, NFC) vs. <b>Remote</b> (aus der Ferne).</div>
+<p style="font-size:.84rem"><b>Twint</b> (CH-Lösung; 2016 aus der Fusion zweier Lösungen): bezahlen, Geld senden/anfordern, Kundenkarten hinterlegen. Weitere: <b>Apple Pay, Google Pay, Samsung Pay</b>.</p>
+
+<!-- ============ AGENTIC ============ -->
+<h2 id="agentic">6 · Ausblick: Agentic Payment</h2>
+<div class="def"><b>Agentic Payment</b> — der nächste Schritt nach Instant Payments: <b>autonome KI-Agenten</b> lösen Zahlungen aus, indem sie Entscheidungen treffen (z.B. «dieser Flug ist jetzt am günstigsten → buchen»). <b>Software-Fokus.</b></div>
+<p style="font-size:.84rem;color:var(--muted)">Beispiele/Standards: <b>Visa Intelligent Commerce</b>, <b>Mastercard Agent Pay</b>, Agentic-Payments-Protokolle für KI-Agenten.</p>
+
+<!-- ============ M2M ============ -->
+<h2 id="m2m">7 · Machine-to-Machine (M2M) Payment ⭐⭐ (Musterfrage 12)</h2>
+<div class="exam">Die zentrale Aussage der Vorlesung: <b>«Die Zukunft des Zahlungsverkehrs gehört dem M2M-Payment.»</b> Alle vier Teilfragen (a–d) hängen hier dran — diese vier Blöcke kalt können.</div>
+
+<h3>(a) Was ist M2M-Payment? <span class="pill">2 P</span></h3>
+<div class="def"><b>M2M-Payment</b> — der <b>digitale Zahlungsverkehr zwischen Maschinen oder Geräten, bei dem keine menschliche Interaktion erforderlich ist</b>. Vernetzte Geräte tauschen <b>automatisch</b> Zahlungsinformationen aus, verifizieren und autorisieren Transaktionen <b>selbstständig</b> — basierend auf vordefinierten Regeln/Verträgen/Protokollen. <b>Technische Grundlage: IoT</b> (z.B. via NFC).</div>
+
+<h3>(b) Zwei Anwendungsgebiete (nennen &amp; beschreiben) <span class="pill">4 P</span></h3>
+<div class="grid2">
+  <div class="card"><h3 style="margin-top:0">Smarte Parksysteme</h3>Das Fahrzeug (z.B. mit <b>RFID-Chip</b>) wird beim Einfahren erkannt, die Parkdauer erfasst und die Gebühr <b>automatisch von einem hinterlegten Konto abgebucht</b> — kein Ticket, kein Bargeld.</div>
+  <div class="card"><h3 style="margin-top:0">Einzelhandel / Verkaufsautomaten</h3>Vernetzte Getränke-/Snackautomaten oder Selbstbedienungskassen mit integrierter <b>Zahlungsschnittstelle</b>: die Maschine erkennt den Artikel und <b>autorisiert die Zahlung automatisch</b>.</div>
+</div>
+<p style="font-size:.84rem;color:var(--muted)">Weitere (laut Skript): <b>Connected Car</b>, <b>eV-Charging / Plug&amp;Charge</b>, Mautstrassen, Smart Homes / Smart Metering, <b>Industrie 4.0</b> (autom. Einkauf/Verrechnung von Services), <b>Smart City</b> (ÖV, Umwelt-/Energiedaten), «invisible payment» im Laden.</p>
+
+<h3>(c) M2M vs. herkömmliche Zahlung <span class="pill">2 P</span></h3>
+<table>
+  <tr><th style="width:30%">Aspekt</th><th>Herkömmlich</th><th>M2M</th></tr>
+  <tr><td><b>Beteiligte</b></td><td>Person → Person/Unternehmen</td><td><b>Maschine → Maschine</b> / Gerät → Gerät</td></tr>
+  <tr><td><b>Menschliche Interaktion</b></td><td><b>Erforderlich</b> (Beleg, Unterschrift, PIN, Karte einstecken)</td><td><b>Keine</b> — Geräte handeln selbstständig</td></tr>
+  <tr><td><b>Steuerung</b></td><td>manuell durch den Menschen</td><td>automatisch, nach vordefinierten Regeln/Protokollen</td></tr>
+</table>
+
+<h3>(d) Zwei Vorteile &amp; zwei Herausforderungen (für Unternehmen) <span class="pill">6 P</span></h3>
+<div class="grid2">
+  <div class="card"><h3 style="margin-top:0">✅ Vorteile</h3>
+    <ul>
+      <li><b>Effizienzsteigerung:</b> automatische, nahtlose Abwicklung ohne manuelle Schritte → spart Zeit &amp; Ressourcen.</li>
+      <li><b>Echtzeit- &amp; präzise Daten:</b> genaue Transaktionsdaten in Echtzeit → besseres Datenmanagement, Transparenz, Entscheidungsgrundlage.</li>
+    </ul>
+  </div>
+  <div class="card"><h3 style="margin-top:0">⚠️ Herausforderungen</h3>
+    <ul>
+      <li><b>Sicherheit &amp; Datenschutz:</b> vernetzte Geräte sind angreifbar → robuste Sicherheits-/Compliance-Massnahmen nötig.</li>
+      <li><b>Interoperabilität &amp; Standardisierung:</b> Geräte verschiedener Hersteller müssen nahtlos kommunizieren → gemeinsame Standards nötig.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Zusatzwissen (gut fürs Verständnis)</h3>
+<table>
+  <tr><th style="width:24%"></th><th><span class="tag tag-m2m">M2M Payment</span> (Hardware-Fokus)</th><th><span class="tag tag-ag">Agentic Payment</span> (Software-Fokus)</th></tr>
+  <tr><td><b>Auslöser</b></td><td>Sensor/Ereignis (Auto fährt in die Garage)</td><td>Entscheidung einer KI («Flug jetzt am günstigsten»)</td></tr>
+  <tr><td><b>Intelligenz</b></td><td><b>Regelbasiert</b> (if-this-then-that)</td><td><b>Adaptiv &amp; autonom</b> (verhandelt, wägt ab)</td></tr>
+</table>
+<p style="font-size:.84rem"><b>M2M-Zahlungsprozess in 4 Schritten:</b> ① <b>Authentifizierung</b> (Gerät identifiziert sich → «Machine Identity») → ② <b>Leistungsmessung</b> (Sensoren messen Verbrauch, z.B. 15 kWh) → ③ <b>Auslösung</b> (Gerät sendet Zahlungsbefehl aus integriertem Wallet) → ④ <b>Settlement</b> (Zahlung via Instant Payment / Blockchain / Karte → Leistung wird freigegeben).</p>
+<p style="font-size:.84rem;color:var(--muted)"><b>Problemfelder:</b> fehlende rechtliche Rahmenbedingungen — <b>Rechtspersönlichkeit von Maschinen</b>, Haftung, rechtsverbindliche <b>Maschinenidentitäten</b>; ferner Consumer Resistance, IoT-Payment-Betrug, starke Authentifizierung.</p>
+
+<!-- ============ EXAM ============ -->
+<h2 id="exam">8 · Prüfungsfokus</h2>
+<div class="card">
+  <p><b>Musterfrage 12 (14 P) — komplett M2M:</b> <b>(a)</b> Definition (Zahlung zwischen Maschinen, ohne Mensch, automatisch) · <b>(b)</b> zwei Anwendungsgebiete (smartes Parken, Verkaufsautomaten — beschreiben!) · <b>(c)</b> Unterschied zu herkömmlich (Mensch↔Mensch mit Interaktion vs. Maschine↔Maschine ohne) · <b>(d)</b> 2 Vorteile (Effizienz, Echtzeitdaten) + 2 Herausforderungen (Sicherheit/Datenschutz, Interoperabilität/Standards).</p>
+  <p><b>Grundwissen drumherum:</b> die <b>7 Kategorien</b> grob zuordnen können · <b>PSP</b>, <b>BNPL</b>, <b>Mobile/Twint</b>, <b>Krypto vs. Fiat</b>, <b>EBPP/eBill</b> definieren · <b>M2M vs. Agentic</b> (Hardware/Regel vs. Software/KI).</p>
+</div>
+
+<div class="ask">
+  <b>Frag deinen Tutor (mich!):</b> Worin unterscheiden sich M2M- und Agentic Payment in einem Satz? Warum ist die «Rechtspersönlichkeit von Maschinen» ein Problem? Was war SET und warum 3-D Secure? <b>Frag im Chat.</b> Übe danach mit der <a href="../lessons/11-digital-payment-quiz.html">Quiz-Lektion 11</a> — der letzten!
+</div>
+
+<footer>
+  Studienblatt 11 von 11 · DigiBusI FS2026 · gegründet auf <i>DigiBusI_11_DigitalPayment 2026</i> (Wirtz 2024; Hierl 2017; Meier/Stormer 2012; Taherdoost 2023; Worldline 2021; Kearney 2024) + Musterfrage 12. <b>Damit ist der Stoff komplett — viel Erfolg an der MSP! 🎓</b>
+  Querverweise: <a class="ref" href="10-digital-fulfillment.html">← Blatt 10 (Digital Fulfillment)</a> · <a class="ref" href="06-edi.html">Blatt 6 (EDI)</a> — EBPP ist EDI-basiert; M2M knüpft an Industrie 4.0 an.
+</footer>
+</div>
+</body>
+</html>

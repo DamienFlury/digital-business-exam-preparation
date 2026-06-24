@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 7 — Digital Procurement</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .big{background:#fbe9e0; border:2px solid var(--warn)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  .istrue{color:#1a7f4b; font-weight:700}
+  .isfalse{color:var(--warn); font-weight:700}
+  .tag-sell{background:#e9f0fb;border:1px solid #c4d6f3;color:#1d4ed8}
+  .tag-buy{background:#eef7ec;border:1px solid #c8e3c0;color:#1a7f4b}
+  .tag-mkt{background:#fbf0e9;border:1px solid #f3d8c4;color:#b5491f}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:1px 7px;border-radius:5px;white-space:nowrap}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2, .tag{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 7 von 11 · Lernblock (Anwendungsbereiche)</div>
+  <h1>Digital Procurement</h1>
+  <div class="sub">Digital Procurement = die <b>elektronische Unterstützung der Beschaffung</b> über die gesamte Prozesskette — von der Bedarfsanalyse bis zur Rechnungsabwicklung. Ziel: <b>Effizienz, Wirksamkeit und Kontrolle</b> der Beschaffung steigern.</div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#was">Grundlagen</a>·
+    <a href="#phasen">4 Phasen</a>·
+    <a href="#struktur">strukturiert/unstrukturiert</a>·
+    <a href="#abc">ABC-Analyse</a>·
+    <a href="#varianten">Sell-/Buy-Side/Marktplatz</a>·
+    <a href="#nutzen">Nutzen je Modell</a>·
+    <a href="#exam">Prüfungsfokus (10 P!)</a>
+  </nav>
+</header>
+
+<div class="exam big">
+  <b>Hohe Prüfungsrelevanz — eine 10-Punkte-Frage (Q8)!</b> Zweiteilig: <b>(8a, 4 P)</b> «Nennen und beschreiben Sie <b>zwei Vorteile</b> des Digital Procurement gegenüber der traditionellen Beschaffung» → z.B. <b>Zeiteinsparung, Kostensenkung, erhöhte Transparenz</b>. <b>(8b, 6 P)</b> Sechs Vorteils-Aussagen den drei Lösungstypen zuordnen: <b>Sell-Side / Buy-Side / Marktplatz</b>. Diesen Dreiklang <b>kalt auswendig können</b> (siehe <a href="#varianten">Abschnitt 5</a>+<a href="#nutzen">6</a>).
+</div>
+
+<!-- ============ WAS ============ -->
+<h2 id="was">1 · Grundlagen: Beschaffung &amp; Digital Procurement</h2>
+<div class="def"><b>Digital Procurement (elektronische Beschaffung / E-Procurement)</b> — die <b>Nutzung digitaler Technologien zur Unterstützung und Automatisierung des gesamten Beschaffungsprozesses</b> zwischen einem beschaffenden Unternehmen und seinen Lieferanten. Es ersetzt papier- und telefonbasierte Abläufe durch integrierte, elektronische Prozesse.</div>
+
+<h3>Zwei Ebenen der Beschaffung</h3>
+<table>
+  <tr><th style="width:22%">Ebene</th><th>Fokus</th><th>«Tätigkeit»</th></tr>
+  <tr><td><b>Strategische Beschaffung</b></td><td>Langfristig: Lieferantenwahl, Rahmenverträge, Sourcing-Strategie, Marktanalyse</td><td><b>Sourcing</b> (Quelle finden)</td></tr>
+  <tr><td><b>Operative Beschaffung</b></td><td>Kurzfristig: konkrete Bestellungen, Abwicklung, Wareneingang, Rechnung</td><td><b>Ordering</b> (bestellen)</td></tr>
+</table>
+
+<div class="ex"><b>Maverick Buying:</b> Rund <b>ein Drittel</b> der Beschaffung läuft <b>ausserhalb</b> der formalen Prozesse («wildes», unkontrolliertes Einkaufen) → teuer, intransparent. Digital Procurement kanalisiert diese Bestellungen zurück in den Standardprozess.</div>
+
+<h3>Produktarten in der Beschaffung</h3>
+<table>
+  <tr><th style="width:30%">Art</th><th>Merkmal</th></tr>
+  <tr><td><b>MRO-Güter</b> (Maintenance, Repair, Operations)</td><td>Indirekte Güter / C-Teile: Büromaterial, Werkzeug, Wartung. Geringer Wert, hohe Stückzahl → ideal für E-Procurement.</td></tr>
+  <tr><td><b>Direkte Güter</b></td><td>Fliessen direkt ins Produkt ein (Bauteile, Komponenten).</td></tr>
+  <tr><td><b>Rohstoffe</b></td><td>Unverarbeitete Materialien.</td></tr>
+</table>
+
+<!-- ============ PHASEN ============ -->
+<h2 id="phasen">2 · Der Beschaffungsprozess in 4 Phasen</h2>
+<div class="grid2">
+  <div class="card"><h3 style="margin-top:0">① Analyse</h3>Bedarf ermitteln, Markt & Lieferanten analysieren, Anforderungen festlegen.</div>
+  <div class="card"><h3 style="margin-top:0">② Initiierung (Anbahnung)</h3>Ausschreibung, Angebote einholen, Lieferanten ansprechen.</div>
+  <div class="card"><h3 style="margin-top:0">③ Vereinbarung</h3>Verhandlung, Vertrag/Bestellung, Konditionen festlegen.</div>
+  <div class="card"><h3 style="margin-top:0">④ Verarbeitung &amp; Abrechnung</h3>Bestellabwicklung, Wareneingang, Rechnungsprüfung &amp; Zahlung.</div>
+</div>
+<div class="ex"><b>Effekt der Digitalisierung (Beispiel):</b> Durchlaufzeit einer Bestellung sinkt von <b>9 Tagen auf 1,5 Tage</b> (≈ <b>−83 %</b>). Treiber: weniger manuelle Schritte, direkte ERP-Integration, keine Medienbrüche.</div>
+
+<h3>Prozessveränderung: vor vs. mit Digital Procurement</h3>
+<table>
+  <tr><th style="width:20%">Prozess</th><th>Vorher</th><th>Mit Digital Procurement</th></tr>
+  <tr><td><b>Produktsuche</b></td><td>Papierkataloge, komplexe Bestellformulare</td><td>Online-Produktkataloge</td></tr>
+  <tr><td><b>Zusage</b></td><td>papierbasierte Prüfprozesse</td><td>Online-Zusage-Flow, Business-Regeln im System</td></tr>
+  <tr><td><b>Dateneingabe</b></td><td>manuelle Eingabe ins ERP</td><td>direkte ERP-Integration, keine Zwischenschritte</td></tr>
+  <tr><td><b>Datenübertragung</b></td><td>Telefon / Fax</td><td>unmittelbare Online-Übertragung an Lieferant</td></tr>
+  <tr><td><b>Bestellstatus</b></td><td>Prüfung per Telefon/Fax</td><td>Online-Prüfung in Echtzeit</td></tr>
+</table>
+
+<!-- ============ STRUKTUR ============ -->
+<h2 id="struktur">3 · Strukturierte vs. unstrukturierte Beschaffung</h2>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0">Strukturierte Beschaffung</h3>
+    <ul>
+      <li>Standardisierte, wiederkehrende Bedarfe (Kataloge, Rahmenverträge)</li>
+      <li>Klar definierter, automatisierbarer Prozess</li>
+      <li>Typisch: <b>MRO/C-Güter</b> über Kataloge</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Unstrukturierte Beschaffung</h3>
+    <ul>
+      <li>Einmalige / komplexe / hochwertige Bedarfe</li>
+      <li>Verhandlung, Spezifikation nötig → manueller</li>
+      <li>Typisch: strategische A-Güter, Projektbeschaffung</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Katalogmanagement</h3>
+<p>Online-Kataloge sind das Herz des operativen E-Procurement. Datenbereiche: <b>Katalogstrukturdaten</b> (Gruppen-, Klassifikationssysteme), <b>Produktdaten</b> (Identifikation, Spezifikation, Bestell-/Logistik-, Preisdaten) und <b>Produktstrukturdaten</b> (Referenzierung, Parametrisierung, Konfiguration). Fünf Stakeholder pflegen/nutzen den Katalog (Lieferant, Betreiber, Einkauf, Bedarfsträger, IT).</p>
+
+<!-- ============ ABC ============ -->
+<h2 id="abc">4 · Zentrale Grundlage: ABC-Analyse</h2>
+<div class="def"><b>ABC-Analyse</b> — Verfahren zur <b>Klassifizierung</b> aller einzukaufenden Güter nach Beschaffungs<b>komplexität</b>, -<b>volumen</b> und -<b>häufigkeit</b> in die Klassen A, B und C. <b>Ziel → Beschaffungskosten minimieren.</b></div>
+<table>
+  <tr><th>Güterart</th><th>Wertanteil</th><th>Mengenanteil</th><th>Strategie</th><th>E-Procurement-Potenzial</th></tr>
+  <tr><td><b>A-Güter</b></td><td>80 %</td><td>10 %</td><td>auftragsbezogen, intensive Preisverhandlung → <b>optimales Sourcing</b></td><td><b>niedrig</b></td></tr>
+  <tr><td><b>B-Güter</b></td><td>15 %</td><td>20 %</td><td>Mischform</td><td>mittel</td></tr>
+  <tr><td><b>C-Güter</b></td><td>5 %</td><td>70 %</td><td>vorratsbezogen, einfache Abwicklung → <b>Prozesskostensenkung</b></td><td><b>hoch</b></td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)">Merke die Inversion: <b>A-Güter = viel Wert, wenig Menge</b> (lohnt Verhandlung, wenig Automatisierungspotenzial). <b>C-Güter = wenig Wert, viel Menge</b> (hier zahlt sich Automatisierung am meisten aus).</p>
+
+<!-- ============ VARIANTEN ============ -->
+<h2 id="varianten">5 · Die drei Lösungstypen (organisationsübergreifend) ⭐</h2>
+<div class="exam">Typologisiert nach der <b>Zahl der Transaktionspartner</b>. Der Kern der 6-P-Frage: <b>Wer betreibt das System, und wer ist «der Eine»?</b></div>
+<table>
+  <tr><th style="width:16%">Typ</th><th style="width:18%">Topologie</th><th>Wer betreibt das System?</th><th style="width:20%">Beispiel / Zugang</th></tr>
+  <tr>
+    <td><span class="tag tag-sell">Sell-Side</span></td>
+    <td><b>One-to-Many</b><br>1 Lieferant → viele Käufer</td>
+    <td>Der <b>Lieferant</b> stellt System + Online-Katalog bereit und gibt die Anforderungen vor. Im Grunde ein <b>B2B-E-Shop</b>. Käufer meldet sich an, sieht (ggf. individuelle) Produkte/Preise.</td>
+    <td>SAP-ERP-Shop, Conrad, Würth<br><span class="pill">proprietär oder offen</span></td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-buy">Buy-Side</span></td>
+    <td><b>One-to-Many</b><br>viele Lieferanten → 1 Käufer</td>
+    <td>Das <b>beschaffende Unternehmen</b> betreibt das System und integriert die Kataloge mehrerer Lieferanten in seine <b>eigene</b> Umgebung. Eigene Workflows, Genehmigungen, Berechtigungen.</td>
+    <td>VW Group Supply / ONE.Konzern Business Plattform<br><span class="pill">vorwiegend proprietär, geschlossen</span></td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-mkt">Marktplatz</span></td>
+    <td><b>Many-to-One-to-Many</b><br>viele Lieferanten ↔ viele Käufer</td>
+    <td>Ein <b>neutraler Dritter (Intermediär)</b> betreibt die Plattform, übernimmt Management der Lieferantenkataloge und Bestellabwicklung. Vermittelt zwischen beiden Seiten.</td>
+    <td>eBay Business &amp; Industrie, Mercateo<br><span class="pill">vorwiegend offen</span></td>
+  </tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)"><b>Eselsbrücke:</b> <b>Sell</b>-Side = der <b>Verkäufer</b> hat die Macht/das System; <b>Buy</b>-Side = der <b>Käufer</b> hat das System; <b>Marktplatz</b> = ein <b>Dritter</b> sitzt in der Mitte.</p>
+
+<!-- ============ NUTZEN ============ -->
+<h2 id="nutzen">6 · Nutzenaspekte je Modell (Antwortschlüssel für 8b) ⭐</h2>
+<div class="grid3">
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-sell">Sell-Side</span></h3>
+    <ul>
+      <li><b>Geringe Implementierungs-/Investitionskosten</b> für den Käufer (System kommt vom Lieferanten)</li>
+      <li><b>Katalogpflege liegt beim Lieferanten</b></li>
+      <li><b>Produktkonfiguration</b> komplexer Produkte möglich</li>
+      <li>Effektives Einkaufstool für <b>kleinere Unternehmen</b></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-buy">Buy-Side</span></h3>
+    <ul>
+      <li><b>Einheitliche Benutzeroberfläche</b> (MSPC)</li>
+      <li><b>Eigene/definierte Workflows</b> &amp; <b>Genehmigungs-/Berechtigungs-verfahren</b></li>
+      <li>Beschaffungsprozess <b>unternehmensspezifisch gestaltbar</b></li>
+      <li>Fokus auf <b>strategische</b> Einkaufsaktivitäten</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-mkt">Marktplatz</span></h3>
+    <ul>
+      <li><b>Aggregation</b> reduziert Transaktionskosten</li>
+      <li><b>Bündelung</b> erhöht Einfluss kleinerer Unternehmen</li>
+      <li>Vermittlung sorgt für <b>optimales Matching</b> → <b>Vergleichbarkeit der Angebote</b></li>
+      <li><b>Verkürzung der Suchzeiten</b></li>
+    </ul>
+  </div>
+</div>
+
+<div class="exam">
+  <b>Die 6 Aussagen aus Musterfrage 8b — Antwortschlüssel:</b>
+  <table style="margin-top:8px">
+    <tr><th style="width:74%">Aussage</th><th>Modell</th></tr>
+    <tr><td>«keine Investitionskosten für ein Bestellsystem»</td><td><span class="tag tag-sell">Sell-Side</span></td></tr>
+    <tr><td>«Konfiguration von komplexen Produkten möglich»</td><td><span class="tag tag-sell">Sell-Side</span></td></tr>
+    <tr><td>«Beschaffungsprozess kann unternehmensspezifisch gestaltet werden»</td><td><span class="tag tag-buy">Buy-Side</span></td></tr>
+    <tr><td>«interne Berechtigungs-/Genehmigungsverfahren werden gut unterstützt»</td><td><span class="tag tag-buy">Buy-Side</span></td></tr>
+    <tr><td>«Vergleichbarkeit von verschiedenen Angeboten»</td><td><span class="tag tag-mkt">Marktplatz</span></td></tr>
+    <tr><td>«Verkürzung der Suchzeiten»</td><td><span class="tag tag-mkt">Marktplatz</span></td></tr>
+  </table>
+  <b>Logik:</b> System kommt vom Lieferanten → keine eigenen Kosten + Konfiguration = <b>Sell</b>. Eigenes System → eigene Workflows/Berechtigungen = <b>Buy</b>. Viele Anbieter an einem Ort → vergleichen + schneller suchen = <b>Marktplatz</b>.
+</div>
+
+<!-- ============ VORTEILE ============ -->
+<h2 id="exam">7 · Allgemeine Vorteile + Prüfungsfokus (Q8a)</h2>
+<p><b>Vorteile gegenüber traditioneller Beschaffung</b> (für 8a — zwei nennen <i>und beschreiben</i>):</p>
+<div class="grid2">
+  <div class="card"><ul>
+    <li><b>Zeiteinsparung</b> — durch Automatisierung manueller Aufgaben (9 → 1,5 Tage)</li>
+    <li><b>Kostensenkung</b> — effizientere Prozesse, bessere Preisverhandlungen, weniger Fehlkäufe</li>
+    <li><b>Erhöhte Transparenz</b> — zentrale Erfassung aller Beschaffungsdaten in Echtzeit</li>
+  </ul></div>
+  <div class="card"><ul>
+    <li><b>Verbesserte Compliance</b> — Einhaltung von Richtlinien &amp; Genehmigungsprozessen</li>
+    <li><b>Reduzierung von Fehlern</b> — Automatisierung &amp; Standardisierung von Abläufen</li>
+    <li><b>Bessere Zusammenarbeit</b> — verbesserter Informationsaustausch mit Lieferanten</li>
+  </ul></div>
+</div>
+<p style="font-size:.84rem;color:var(--muted)">Siemens-Klassiker (3 Stossrichtungen): <b>Effizienz</b> (schneller/billiger), <b>Wirksamkeit</b> (bessere Entscheidungen) und <b>Kontrolle</b> (Compliance, weniger Maverick Buying).</p>
+
+<div class="card">
+  <h3 style="margin-top:0">So beantwortest du Q8 (10 P)</h3>
+  <p><b>(8a, 4 P):</b> Zwei Vorteile <b>nennen UND beschreiben</b> — das sind <b>zwei Punktblöcke</b>! Z.B.: «<b>Zeiteinsparung</b>: Durch die Automatisierung manueller Aufgaben verkürzt sich die Durchlaufzeit einer Bestellung erheblich. <b>Kostensenkung</b>: Effizientere Prozesse und bessere Preisverhandlungen senken die Beschaffungskosten.»</p>
+  <p><b>(8b, 6 P):</b> Jede der sechs Aussagen genau einem Modell zuordnen (siehe Antwortschlüssel oben). Bei Unsicherheit über die Eselsbrücke gehen: <i>Wer betreibt das System?</i></p>
+</div>
+
+<div class="ask">
+  <b>Frag deinen Tutor (mich!):</b> Warum hat ein Marktplatz «vorwiegend offenen» Zugang, Buy-Side aber «geschlossen»? Was ist OCI/PunchOut? Unterschied Sourcing ↔ Ordering nochmals? <b>Frag im Chat.</b> Übe danach mit der <a href="../lessons/07-digital-procurement-quiz.html">Quiz-Lektion 7</a>.
+</div>
+
+<footer>
+  Studienblatt 7 von 11 · DigiBusI FS2026 · gegründet auf <i>DigiBusI_07_digitalProcurement_2026</i> (Kollmann 2019/2022; Wirtz 2024; Schmitz 2020; Abts/Mülder 2017) + Musterfrage 8.
+  Querverweise: <a class="ref" href="06-edi.html">← Blatt 6 (EDI)</a> — EDI ist die technische Basis des Dokumentenaustauschs im Procurement.
+</footer>
+</div>
+</body>
+</html>

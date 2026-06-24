@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz-Lektion 10 — Digital Fulfillment</title>
+<style>
+  :root{--ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66; --line:#e3e3ea; --bg:#fbfafc; --ok:#1a7f4b; --no:#b5491f; --accent:#0a7c7c;}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); margin:0; line-height:1.55}
+  .wrap{max-width:820px; margin:0 auto; padding:36px 24px 90px}
+  header.q{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:18px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.6rem; margin:.15em 0}
+  .sub{color:var(--muted); font-size:.92rem}
+  .progress{font-size:.8rem; color:var(--muted); margin-top:8px}
+  .q-card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin:20px 0; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .q-num{font-size:.74rem; font-weight:700; color:var(--ost); letter-spacing:.08em; text-transform:uppercase}
+  .pts{float:right; font-size:.74rem; color:var(--muted); font-weight:600}
+  .q-text{font-size:1.05rem; font-weight:600; margin:6px 0 14px}
+  .opt{display:block; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:7px 0; cursor:pointer; background:#fff; transition:.12s}
+  .opt:hover{border-color:var(--ost)}
+  .opt input{margin-right:9px}
+  .opt.correct{background:#e9f7ef; border-color:var(--ok)}
+  .opt.wrong{background:#fdeee7; border-color:var(--no)}
+  textarea{width:100%; border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:inherit; font-size:.95rem; min-height:90px; resize:vertical}
+  button{background:var(--ost); color:#fff; border:0; border-radius:8px; padding:9px 18px; font-size:.9rem; font-weight:600; cursor:pointer; margin-top:10px}
+  button.ghost{background:#fff; color:var(--ost); border:1px solid var(--ost)}
+  button:hover{opacity:.92}
+  .feedback{display:none; margin-top:14px; padding:13px 16px; border-radius:8px; font-size:.9rem; background:var(--ost-light); border-left:4px solid var(--ost)}
+  .feedback.show{display:block}
+  .feedback h4{margin:0 0 6px; color:var(--ost); font-size:.82rem; text-transform:uppercase; letter-spacing:.06em}
+  .model{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:.88rem}
+  .model b{color:var(--accent)}
+  .tag{display:inline-block; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--ost-light); color:var(--ost); margin-bottom:6px}
+  .self{font-size:.84rem; color:var(--muted); margin-top:10px}
+  .self button{font-size:.8rem; padding:5px 12px; margin:4px 6px 0 0}
+  .checklist{margin-top:12px; font-size:.85rem; background:#fff; border:1px dashed var(--ost); border-radius:8px; padding:10px 14px}
+  .checklist label{display:block; margin:4px 0; cursor:pointer}
+  .checklist input{margin-right:8px}
+  .match-row{border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:8px 0}
+  .match-row .stmt{font-weight:600; font-size:.92rem; margin-bottom:6px}
+  .match-opts{display:flex; flex-wrap:wrap; gap:6px}
+  .match-opts label{font-size:.8rem; border:1px solid var(--line); border-radius:6px; padding:4px 9px; cursor:pointer}
+  .match-opts label.correct{background:#e9f7ef; border-color:var(--ok)}
+  .match-opts label.wrong{background:#fdeee7; border-color:var(--no)}
+  .match-opts input{margin-right:5px}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted)}
+  a{color:var(--accent)}
+  .intro{background:var(--ost-light); border-radius:10px; padding:14px 18px; font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="q">
+  <div class="kicker">DigiBusI · Quiz-Lektion 10 von 11</div>
+  <h1>Digital Fulfillment</h1>
+  <div class="sub">Aktives Abfragen im Prüfungsformat. Antworte zuerst selbst — <b>in ganzen Sätzen</b> — dann aufdecken.</div>
+  <div class="progress">Kern: <b>Fulfillment vs. Logistik</b> · <b>PL-Klassifikation 1PL→4PL</b> (3PL vs. 4PL!) · <b>4 Distributionsmodelle</b> + Dropshipping · <b>FreightTech</b> &amp; seine 3 Säulen.</div>
+</header>
+
+<div class="intro">
+  <b>So funktioniert's:</b> Bei MC/Zuordnung anklicken → «Antwort prüfen». Bei offenen Fragen erst selbst tippen, dann «Musterantwort zeigen» und ehrlich selbst bewerten. <b>Merkhilfen:</b> PL-Treppe — je höher die Zahl, desto mehr <i>Steuerung/IT</i>, desto weniger <i>eigene Assets</i> · 3PL = <i>machen</i>, 4PL = <i>steuern</i>. Begleitendes <a href="../reference/10-digital-fulfillment.html">Studienblatt 10</a>.
+</div>
+
+<!-- Q1 open — Digital Fulfillment Definition -->
+<div class="q-card" id="q1">
+  <div class="q-num">Frage 1 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Definieren Sie <b>Digital Fulfillment</b> und nennen Sie <b>drei Kernaufgaben</b>.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Gesamter Prozess der Auftragsabwicklung im E-Commerce?</label>
+    <label><input type="checkbox"> Setzt unmittelbar NACH der Bestellung ein?</label>
+    <label><input type="checkbox"> Drei Aufgaben (z.B. Lagerung, Kommissionierung, Verpackung, Versand, Tracking, Zahlung, Retouren)?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q1')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q1">
+    <h4>Musterantwort</h4>
+    <p><b>Digital Fulfillment</b> ist der <b>gesamte Prozess der Auftragsabwicklung im E-Commerce</b>. Er setzt <b>unmittelbar nach der Bestellung</b> ein und umfasst Kernaufgaben wie <b>Lagerung, Kommissionierung, Verpackung, Versand, Tracking, Zahlungsabwicklung und Retouren-Management</b> (drei genügen). Optional auch Content Management des E-Shops und das Warenwirtschaftssystem.</p>
+  </div>
+</div>
+
+<!-- Q2 open — Logistik vs Fulfillment -->
+<div class="q-card" id="q2">
+  <div class="q-num">Frage 2 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Erklären Sie den Unterschied zwischen <b>Logistik</b> und <b>Fulfillment</b>. Nennen Sie zwei Unterscheidungsmerkmale.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Logistik = Oberbegriff, Fulfillment = Teildisziplin (E-Commerce-Auftragsabwicklung)?</label>
+    <label><input type="checkbox"> «Jeder Fulfillment-DL ist ein Logistik-DL, aber nicht umgekehrt»?</label>
+    <label><input type="checkbox"> Zwei Merkmale: B2B vs. B2C, Palette vs. SKU, EDI/ERP vs. API?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q2')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q2">
+    <h4>Musterantwort</h4>
+    <p><b>Logistik</b> ist der <b>Oberbegriff</b> (gesamte Planung/Steuerung von Waren- und Informationsströmen entlang der Wertschöpfungskette); <b>Fulfillment</b> ist eine <b>Teildisziplin</b> davon — die Auftragsabwicklung nach einer Bestellung, meist im E-Commerce. <b>Merkmale (zwei genügen):</b> Kunde <b>B2B</b> (Logistik) vs. <b>B2C</b> (Fulfillment); Handlungseinheit <b>Palette/Container</b> vs. <b>Stückgut (SKU)</b>; IT-Anbindung <b>EDI/ERP</b> vs. <b>API zu Shop-Systemen</b>. Merksatz: «Jeder Fulfillment-Dienstleister ist ein Logistik-Dienstleister, aber nicht umgekehrt.»</p>
+  </div>
+</div>
+
+<!-- Q3 Zuordnung — PL-Levels (scrambled: 3PL, 1PL, 4PL, 2PL) -->
+<div class="q-card" id="q3">
+  <div class="q-num">Frage 3 · Zuordnung <span class="pts">4 P</span></div>
+  <div class="q-text">Ordnen Sie jede Beschreibung dem richtigen PL-Level zu. Ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="3PL">
+    <div class="stmt"><b>Systemdienstleister (Kontraktlogistik)</b>: übernimmt komplexe Logistikpakete inkl. Value Added Services; asset-based, oft mit Subunternehmern.</div>
+    <div class="match-opts"><label><input type="radio" name="pl1" value="1PL">1PL</label><label><input type="radio" name="pl1" value="2PL">2PL</label><label><input type="radio" name="pl1" value="3PL">3PL</label><label><input type="radio" name="pl1" value="4PL">4PL</label></div>
+  </div>
+  <div class="match-row" data-correct="1PL">
+    <div class="stmt"><b>Eigenlogistik</b>: das Unternehmen führt alle Logistikaufgaben (Transport, Lagerung) selbst durch, mit eigenem Fuhrpark und Lager.</div>
+    <div class="match-opts"><label><input type="radio" name="pl2" value="1PL">1PL</label><label><input type="radio" name="pl2" value="2PL">2PL</label><label><input type="radio" name="pl2" value="3PL">3PL</label><label><input type="radio" name="pl2" value="4PL">4PL</label></div>
+  </div>
+  <div class="match-row" data-correct="4PL">
+    <div class="stmt"><b>Systemintegrator ohne eigene Assets</b> (non-asset): steuert die gesamte Supply Chain, koordiniert mehrere 3PLs; Fokus auf IT, Planung, Optimierung.</div>
+    <div class="match-opts"><label><input type="radio" name="pl3" value="1PL">1PL</label><label><input type="radio" name="pl3" value="2PL">2PL</label><label><input type="radio" name="pl3" value="3PL">3PL</label><label><input type="radio" name="pl3" value="4PL">4PL</label></div>
+  </div>
+  <div class="match-row" data-correct="2PL">
+    <div class="stmt">Klassische Dienstleister für einfache <b>TUL</b>-Aufgaben (Transport, Umschlag, Lagerung); besitzen eigene LKW/Schiffe/Lager (Spediteure, Reedereien).</div>
+    <div class="match-opts"><label><input type="radio" name="pl4" value="1PL">1PL</label><label><input type="radio" name="pl4" value="2PL">2PL</label><label><input type="radio" name="pl4" value="3PL">3PL</label><label><input type="radio" name="pl4" value="4PL">4PL</label></div>
+  </div>
+
+  <button onclick="checkMatch('q3',4)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q3"><h4>Auflösung</h4>
+    <span id="score-q3"></span> Treppe: <b>1PL</b> Eigenlogistik · <b>2PL</b> einfache TUL (Spedition) · <b>3PL</b> Kontraktlogistik (asset-based, <i>macht</i>) · <b>4PL</b> Systemintegrator (non-asset, <i>steuert</i>).
+  </div>
+</div>
+
+<!-- Q4 Zuordnung — Distributionsmodelle (scrambled: DROP, CONN, LAGER, FBH) -->
+<div class="q-card" id="q4">
+  <div class="q-num">Frage 4 · Zuordnung <span class="pts">4 P</span></div>
+  <div class="q-text">Ordnen Sie jede Beschreibung dem richtigen Distributionsmodell zu.</div>
+
+  <div class="match-row" data-correct="DROP">
+    <div class="stmt">Online-Händler betreibt einen Marktplatz; der Produzent bietet dort an und liefert bei Bestellung <b>direkt an den Endkunden</b> (gegen Provision).</div>
+    <div class="match-opts"><label><input type="radio" name="d1" value="LAGER">Lagergeschäft</label><label><input type="radio" name="d1" value="DROP">Dropshipping</label><label><input type="radio" name="d1" value="FBH">Fulfillment durch Händler</label><label><input type="radio" name="d1" value="CONN">Connected Retail</label></div>
+  </div>
+  <div class="match-row" data-correct="CONN">
+    <div class="stmt">Marktplatz-Bestellungen werden an <b>stationäre Einzelhändler</b> weitergeleitet; ein Logistik-DL (z.B. DHL) holt in der Filiale ab (z.B. Zalando Connected Retail).</div>
+    <div class="match-opts"><label><input type="radio" name="d2" value="LAGER">Lagergeschäft</label><label><input type="radio" name="d2" value="DROP">Dropshipping</label><label><input type="radio" name="d2" value="FBH">Fulfillment durch Händler</label><label><input type="radio" name="d2" value="CONN">Connected Retail</label></div>
+  </div>
+  <div class="match-row" data-correct="LAGER">
+    <div class="stmt">Produzent &amp; Online-Händler verkaufen parallel über eigene Shops; Lieferung aus dem Lager des Produzenten oder des Händlers.</div>
+    <div class="match-opts"><label><input type="radio" name="d3" value="LAGER">Lagergeschäft</label><label><input type="radio" name="d3" value="DROP">Dropshipping</label><label><input type="radio" name="d3" value="FBH">Fulfillment durch Händler</label><label><input type="radio" name="d3" value="CONN">Connected Retail</label></div>
+  </div>
+  <div class="match-row" data-correct="FBH">
+    <div class="stmt">Kunde bestellt im Shop des <b>Produzenten</b>, aber der <b>Händler übernimmt Logistik &amp; Retouren</b> (z.B. Zalando Fulfillment Solutions).</div>
+    <div class="match-opts"><label><input type="radio" name="d4" value="LAGER">Lagergeschäft</label><label><input type="radio" name="d4" value="DROP">Dropshipping</label><label><input type="radio" name="d4" value="FBH">Fulfillment durch Händler</label><label><input type="radio" name="d4" value="CONN">Connected Retail</label></div>
+  </div>
+
+  <button onclick="checkMatch('q4',4)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q4"><h4>Auflösung</h4>
+    <span id="score-q4"></span> <b>Lagergeschäft</b> = parallele Shops, Lieferung aus eigenem Lager. <b>Dropshipping</b> = Produzent liefert direkt. <b>Fulfillment durch Händler</b> = Händler übernimmt Logistik (ZFS). <b>Connected Retail</b> = Abholung in der Filiale.
+  </div>
+</div>
+
+<!-- Q5 MC — 3PL vs 4PL -->
+<div class="q-card" id="q5">
+  <div class="q-num">Frage 5 · Multiple Choice <span class="pts">2 P</span></div>
+  <div class="q-text">Welche Aussage über einen <b>4PL-Dienstleister</b> ist <b>richtig</b>?</div>
+  <label class="opt"><input type="radio" name="q5"> A) Ein 4PL besitzt eigene LKW, Lagerhallen und Personal und führt den Transport selbst aus</label>
+  <label class="opt"><input type="radio" name="q5"> B) Ein 4PL ist ein non-asset-based Systemintegrator, der als «Single Point of Contact» die gesamte Supply Chain steuert und mehrere 3PLs koordiniert</label>
+  <label class="opt"><input type="radio" name="q5"> C) Ein 4PL betreibt Eigenlogistik und braucht keine externen Dienstleister</label>
+  <label class="opt"><input type="radio" name="q5"> D) Ein 4PL beschränkt sich auf einfache TUL-Aufgaben (Transport, Umschlag, Lagerung)</label>
+  <button onclick="checkMC('q5',1)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q5"><h4>Auflösung</h4><b>B</b> ist richtig. Der 4PL ist <b>non-asset-based</b> (besitzt keine physischen Assets, nur IT &amp; Know-how), agiert als <b>Single Point of Contact</b> und <b>steuert</b> die Supply Chain, indem er mehrere 3PLs koordiniert. A beschreibt einen 3PL/2PL, C einen 1PL, D einen 2PL.</div>
+</div>
+
+<!-- Q6 open — Dropshipping -->
+<div class="q-card" id="q6">
+  <div class="q-num">Frage 6 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Was ist <b>Dropshipping</b> und wie läuft der Prozess ab (drei Schritte)?</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Verkäufer hält die Ware NICHT selbst auf Lager / versendet nicht selbst; er ist Vermittler?</label>
+    <label><input type="checkbox"> (1) Kunde bestellt &amp; zahlt beim Händler?</label>
+    <label><input type="checkbox"> (2) Händler leitet Bestellung (+ Zahlung − Marge) an Lieferanten weiter?</label>
+    <label><input type="checkbox"> (3) Lieferant versendet direkt an den Endkunden (im Namen des Händlers)?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q6')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q6">
+    <h4>Musterantwort</h4>
+    <p><b>Dropshipping (Streckengeschäft)</b> ist ein Fulfillment-Modell, bei dem der Verkäufer die Ware <b>nicht selbst lagert oder versendet</b>, sondern als <b>Vermittler</b> zwischen Kunde und Lieferant fungiert. Ablauf: <b>(1)</b> Der Kunde bestellt und zahlt im Shop des Händlers. <b>(2)</b> Der Händler leitet die Bestellung (und die Zahlung abzüglich seiner Marge) an seinen Lieferanten weiter. <b>(3)</b> Der Lieferant versendet die Ware <b>direkt an den Endkunden</b> — oft im Namen des Händlers. Für den Kunden ist das im Hintergrund meist nicht erkennbar.</p>
+  </div>
+</div>
+
+<!-- Q7 open — FreightTech -->
+<div class="q-card" id="q7">
+  <div class="q-num">Frage 7 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Was versteht man unter <b>FreightTech</b>, und welche <b>drei Säulen</b> hat es?</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Einsatz innovativer/disruptiver digitaler Technologien zur Digitalisierung der Logistik-/Frachtbranche?</label>
+    <label><input type="checkbox"> Ziel: Effizienz, Transparenz, Nachhaltigkeit im Gütertransport?</label>
+    <label><input type="checkbox"> Drei Säulen: Intelligence, Automatisierung, Integration?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q7')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q7">
+    <h4>Musterantwort</h4>
+    <p><b>FreightTech</b> (Freight + Technology) bezeichnet den Einsatz <b>innovativer Technologien und disruptiver Ideen</b> zur Digitalisierung der gesamten Logistik-/Frachtbranche, mit dem Ziel, <b>Effizienz, Transparenz und Nachhaltigkeit</b> im Gütertransport zu steigern. <b>Drei Säulen:</b> <b>Intelligence</b> (datengestützte Entscheidungen &amp; Optimierung), <b>Automatisierung</b> (Robotik, Reduzierung manueller Arbeit) und <b>Integration</b> (Plattform-Modelle, Vernetzung vieler Stakeholder für mehr Transparenz).</p>
+  </div>
+</div>
+
+<footer>
+  Fertig mit Quiz 10? Sag mir Bescheid — dann fehlt nur noch <b>Blatt 11 (Digital Payment)</b>, das letzte Thema.
+  Schreib offene Antworten gern in den Chat — ich benote sie nach Rubrik.<br>
+  ← <a href="../reference/10-digital-fulfillment.html">Studienblatt 10</a> · <a href="09-digital-marketing-quiz.html">Quiz 9</a>
+</footer>
+</div>
+
+<script>
+function checkMC(q, correctIdx){
+  const opts = document.querySelectorAll('#'+q+' .opt');
+  let chosen = -1;
+  opts.forEach((o,i)=>{ if(o.querySelector('input').checked) chosen=i; });
+  if(chosen<0){ alert('Bitte zuerst eine Antwort wählen.'); return; }
+  opts.forEach((o,i)=>{
+    o.classList.remove('correct','wrong');
+    if(i===correctIdx) o.classList.add('correct');
+    else if(i===chosen) o.classList.add('wrong');
+  });
+  document.getElementById('fb-'+q).classList.add('show');
+}
+function reveal(q){ document.getElementById('fb-'+q).classList.add('show'); }
+function checkMatch(q, total){
+  const rows = document.querySelectorAll('#'+q+' .match-row');
+  let score = 0, answered = 0;
+  rows.forEach(row=>{
+    const correct = row.dataset.correct;
+    const labels = row.querySelectorAll('.match-opts label');
+    labels.forEach(l=>{
+      l.classList.remove('correct','wrong');
+      const inp = l.querySelector('input');
+      if(inp.checked){ answered++; if(inp.value===correct) score++; else l.classList.add('wrong'); }
+      if(inp.value===correct) l.classList.add('correct');
+    });
+  });
+  if(answered===0){ alert('Bitte mindestens eine Zeile beantworten.'); return; }
+  document.getElementById('score-'+q).innerHTML = '<b>'+score+' von '+total+' richtig.</b> ';
+  document.getElementById('fb-'+q).classList.add('show');
+}
+</script>
+</body>
+</html>

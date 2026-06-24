@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studienblatt 9 — Digital Marketing &amp; Social CRM</title>
+<style>
+  :root{
+    --ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66;
+    --line:#e3e3ea; --bg:#fbfafc; --accent:#0a7c7c; --warn:#b5491f;
+  }
+  *{box-sizing:border-box}
+  html{font-size:15.5px}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px; margin:0 auto; padding:38px 30px 80px}
+  header.sheet{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:8px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.85rem; margin:.15em 0 .1em; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem}
+  nav.toc{font-size:.82rem; color:var(--muted); margin:14px 0 4px}
+  nav.toc a{color:var(--ost); text-decoration:none; margin-right:4px}
+  nav.toc a:hover{text-decoration:underline}
+  h2{font-size:1.15rem; margin:30px 0 10px; padding:6px 12px; background:var(--ost); color:#fff; border-radius:6px}
+  h3{font-size:.98rem; margin:18px 0 6px; color:var(--ost)}
+  p{margin:.4em 0}
+  ul{margin:.4em 0; padding-left:1.25em}
+  li{margin:.22em 0}
+  .lead{font-size:.95rem}
+  .card{background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin:12px 0; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .def{border-left:4px solid var(--ost); background:#fff; padding:10px 16px; margin:10px 0; border-radius:0 8px 8px 0}
+  .def b{color:var(--ost)}
+  table{border-collapse:collapse; width:100%; margin:10px 0; font-size:.86rem; background:#fff}
+  th,td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top}
+  th{background:var(--ost-light); color:var(--ost); font-weight:700}
+  .pill{display:inline-block; background:var(--ost-light); color:var(--ost); font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:20px; margin:2px 4px 2px 0}
+  .ex{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:8px 14px; margin:8px 0; font-size:.86rem}
+  .ex b{color:var(--accent)}
+  .exam{background:#fdf1ec; border:1px solid #f3d3c4; border-radius:8px; padding:10px 14px; margin:10px 0; font-size:.86rem}
+  .exam b{color:var(--warn)}
+  .exam::before{content:"🎯 Prüfungsrelevanz"; display:block; font-weight:700; color:var(--warn); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px}
+  .big{background:#fbe9e0; border:2px solid var(--warn)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px}
+  .formula{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace; background:#1d1d1f; color:#f3e6ef; padding:8px 12px; border-radius:6px; font-size:.82rem; margin:6px 0; display:inline-block}
+  .ask{margin-top:34px; padding:14px 18px; background:var(--ost-light); border-radius:10px; font-size:.9rem}
+  .ask b{color:var(--ost)}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; color:var(--muted)}
+  a.ref{color:var(--accent); font-size:.8rem}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;padding:1px 7px;border-radius:5px;white-space:nowrap}
+  .tag-1{background:#e9f0fb;border:1px solid #c4d6f3;color:#1d4ed8}
+  .tag-2{background:#eef7ec;border:1px solid #c8e3c0;color:#1a7f4b}
+  .tag-3{background:#fbf0e9;border:1px solid #f3d8c4;color:#b5491f}
+  @media print{
+    body{background:#fff} .wrap{padding:0 12px} h2{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    th, .pill, .def, .ex, .exam, h2, .tag, .formula{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .ask{display:none}
+  }
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div class="kicker">DigiBusI · Studienblatt 9 von 11 · Lernblock 3 (Anwendungsbereiche)</div>
+  <h1>Digital Marketing &amp; Social CRM</h1>
+  <div class="sub">Digital Marketing = <b>Teilbereich des Marketings, der digitale Kanäle und Technologien nutzt</b>, um Kunden anzusprechen — mit <b>Messbarkeit, Zielgruppenausrichtung und Echtzeitoptimierung</b>. Vier Themen: <b>Wandel des Marketings · Ausprägungen · Erfolgsmessung (KPIs) · Social CRM</b>.</div>
+  <nav class="toc">
+    Inhalt:
+    <a href="#grund">Grundlagen &amp; 4P</a>·
+    <a href="#kanal">Channels (Omni) ⭐</a>·
+    <a href="#kunde">Kundenzentrierung</a>·
+    <a href="#indiv">Individualisierung</a>·
+    <a href="#automation">Automation &amp; KI</a>·
+    <a href="#werbung">Werbenetzwerke</a>·
+    <a href="#auspraegung">Ausprägungen ⭐</a>·
+    <a href="#kpi">KPIs ⭐</a>·
+    <a href="#crm">CRM &amp; Social CRM ⭐</a>·
+    <a href="#exam">Prüfungsfokus</a>
+  </nav>
+</header>
+
+<div class="exam big">
+  <b>Schwerpunkte (laut Zusammenfassung, 4 Folien!):</b> die Channel-Stufen <b>Single → Multi → Cross → Omni</b> · <b>Beschaffungs- vs. Absatzmarketing</b> + die drei Methoden (<b>Kundengewinnung/-bewertung/-bindung</b>) · die <b>KPIs</b> mit Formeln (CAC, CLV, Konversionsrate, AOV) · <b>CRM</b> (analytisch/operativ/kollaborativ) und <b>Social CRM</b>. <span class="pill">Grosse, breite Lektion — eher viele kleine Definitionen als eine grosse Frage.</span>
+</div>
+
+<!-- ============ GRUNDLAGEN ============ -->
+<h2 id="grund">1 · Grundlagen: Marketing, 4P &amp; Digital Marketing</h2>
+<div class="def"><b>Marketing</b> — die <b>konsequente Ausrichtung des gesamten Unternehmens an den Bedürfnissen des Marktes</b>. Die Bedürfnisse der Nachfrager stehen im Zentrum. Marketing ist eine <b>unternehmerische Denk- und Aufgabenhaltung</b> (Marktveränderungen erkennen, Kundennutzen erhöhen).</div>
+
+<h3>Die 4P — die Marketing-Instrumente</h3>
+<p>Marketingstrategien werden operativ mit den <b>4 P</b> umgesetzt:</p>
+<table>
+  <tr><th style="width:24%">Instrument</th><th>Inhalt</th></tr>
+  <tr><td><b>Product</b> (Produktpolitik)</td><td>Gestaltung des Leistungsprogramms: Produkte/Services, Markenpolitik, Namen, Verpackung.</td></tr>
+  <tr><td><b>Price</b> (Preispolitik)</td><td>Konditionen: Grundpreis, Rabatte, Boni, Skonti.</td></tr>
+  <tr><td><b>Promotion</b> (Kommunikationspolitik)</td><td>Alle Massnahmen der Kommunikation mit (potenziellen) Kunden &amp; Bezugsgruppen.</td></tr>
+  <tr><td><b>Place</b> (Vertriebspolitik)</td><td>Gestaltung des Absatzkanalsystems; überwindet räumliche/zeitliche Distanz (oft via Händler = indirekter Vertrieb).</td></tr>
+</table>
+
+<div class="def"><b>Digitales Marketing</b> — Teilgebiet des Marketings, das <b>digitale Kanäle und Technologien</b> (Websites, soziale Medien, Suchmaschinen, mobile Apps) zur Kundenansprache nutzt. Kennzeichen: <b>präzise Messbarkeit, Zielgruppenausrichtung, Echtzeitoptimierung</b> von Kampagnen.</div>
+<h3>Typische Strategien des Digital Marketing</h3>
+<table>
+  <tr><th style="width:26%">Strategie</th><th>Kurz</th></tr>
+  <tr><td><b>SEO</b> (Suchmaschinenopt.)</td><td>Webseiten so anpassen, dass sie für definierte Suchbegriffe vorne ranken.</td></tr>
+  <tr><td><b>Content-Marketing</b></td><td>Informierende/beratende/unterhaltende Bereitstellung von Inhalten.</td></tr>
+  <tr><td><b>Social-Media-Werbung</b></td><td>Werbung auf sozialen Plattformen.</td></tr>
+  <tr><td><b>E-Mail-Marketing</b></td><td>Direkte Ansprache per E-Mail.</td></tr>
+  <tr><td><b>Affiliate-Marketing</b></td><td>Affiliate/Publisher bewirbt fremde Produkte, erhält <b>Provision</b> bei Erfolg.</td></tr>
+  <tr><td><b>Influencer-Marketing</b></td><td>Zusammenarbeit mit glaubwürdigen Personen mit Social-Media-Publikum.</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)"><b>Historische Entwicklung:</b> undifferenziertes → differenziertes Massenmarketing → segmentorientiert → Nische → kundenindividuell → <b>Mass Customization / Digital Marketing</b>. Tendenz: <b>von Generalisierung zu Individualisierung</b>.</p>
+
+<!-- ============ KANAL ============ -->
+<h2 id="kanal">2 · Channel-Management: Single → Multi → Cross → Omni ⭐</h2>
+<div class="exam">Klassische Abgrenzungsfrage. Der rote Faden: <b>immer mehr Integration</b> der Kanäle — von «getrennt» (Single/Multi) über «verbunden» (Cross) bis «nahtlos &amp; vollständig integriert» (Omni).</div>
+<table>
+  <tr><th style="width:18%">Stufe</th><th>Kanäle</th><th>Integration</th></tr>
+  <tr><td><b>Single-Channel</b></td><td><b>Ein einziger</b> Vertriebskanal (nur Laden <i>oder</i> nur Shop)</td><td>Keine Verbindung zu anderen Kanälen.</td></tr>
+  <tr><td><b>Multi-Channel</b></td><td><b>Mehrere separate</b> Kanäle (Laden <i>und</i> Shop)</td><td>Kanäle <b>nicht verbunden</b>; Kunde hat getrennte Erfahrungen je Kanal.</td></tr>
+  <tr><td><b>Cross-Channel</b></td><td>Mehrere Kanäle, <b>miteinander verbunden</b></td><td>Übergänge fliessender (z.B. <b>Click &amp; Collect</b>), Integration aber <b>noch begrenzt</b>.</td></tr>
+  <tr><td><b>Omni-Channel</b></td><td><b>Alle</b> Kanäle <b>vollständig integriert</b></td><td><b>Nahtlos &amp; konsistent</b>: Kunde wechselt ohne Unterbruch, alle Interaktionen kanalübergreifend erfasst.</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)"><b>Eselsbrücke:</b> Single = <i>einer</i> · Multi = <i>viele, getrennt</i> · Cross = <i>viele, verbunden</i> · Omni = <i>alle, nahtlos</i>.</p>
+
+<!-- ============ KUNDE ============ -->
+<h2 id="kunde">3 · Trend zur Kundenzentrierung &amp; Customer Journey</h2>
+<p>Treiber: <b>soziale Trends</b> (Social), <b>technologische Trends</b>. Ziel: weg von Customer Satisfaction hin zu <b>Engaged Customers</b>.</p>
+<div class="def"><b>Customer Journey</b> — bezeichnet die <b>Zyklen/Phasen, die ein Kunde vor einem Kauf durchläuft</b>, inkl. aller Berührungspunkte (<b>Touchpoints</b>) mit dem Anbieter. Relevanz: Grundlage für kundenzentriertes, individualisiertes Marketing.</div>
+<p style="font-size:.84rem;color:var(--muted)">Eigenschaften des digitalen Marketings (Folie 21): <b>Market-Pull / Customized Push</b> (Initiative beim Kunden) · <b>Kundenintegration</b> (Kunde als <b>Prosumer</b>/Ko-Produzent) · <b>One-to-One</b> (Individualisierung) · <b>Ubiquität</b> (Standortunabhängigkeit).</p>
+
+<!-- ============ INDIVIDUALISIERUNG ============ -->
+<h2 id="indiv">4 · Individualisiertes Marketing — Erfolgsfaktoren</h2>
+<div class="grid2">
+  <div class="card"><ul>
+    <li><b>Relevante, unerwartete Informationen</b> (z.B. Retargeting mit intelligenten Empfehlungen)</li>
+    <li><b>Richtiger Zeitpunkt</b> der Ansprache («Shopping Mode») — basierend auf Verhaltensanalyse</li>
+    <li><b>Relevante Infos, die der Kunde nicht aktiv beobachtet</b> (Produkt wieder lieferbar, neue Produkte in bekannter Kategorie)</li>
+  </ul></div>
+  <div class="card"><ul>
+    <li><b>Kombination von On- &amp; Offline-Informationen</b> für ein komplettes Kundenprofil → erfordert <b>Omni-Channel</b></li>
+    <li><b>Echter Mehrwert</b> (individuelle Angebote, Loyalitäts-Programme, Gamification) → erhöht Loyalität, senkt Abwanderung</li>
+  </ul></div>
+</div>
+<div class="def">«Berechnung» des <b>Kundennutzens</b>: eine Funktion von <b>Relevanz</b> und <b>Timeliness</b> in Relation zu den <b>Kosten</b> (in Form persönlicher Daten), unter Berücksichtigung des <b>Vertrauens</b> in den Anbieter. <span style="font-size:.84rem">→ Kundennutzen ↑ bei hoher Relevanz &amp; Timeliness, niedrigen Datenkosten, hohem Vertrauen.</span></div>
+
+<!-- ============ AUTOMATION ============ -->
+<h2 id="automation">5 · Marketing Automation &amp; KI</h2>
+<div class="def"><b>Marketing Automation</b> — eine <b>softwaregestützte Methode</b>, um Marketing- und Vertriebsprozesse <b>kundenorientiert zu definieren, zu automatisieren, effizienter zu gestalten und zu personalisieren</b>. Nutzerprofile werden über Klick-, Lese- und Interaktionsverhalten angereichert; auf dieser Basis laufen <b>automatisierte Kampagnen</b>. Ziel u.a.: Optimierung des Ressourceneinsatzes (repetitive Aufgaben sparen Zeit/Geld).</div>
+<p style="font-size:.84rem">Kombiniert Funktionen aus <b>Digital Analytics, E-Mail-, Social-Media-Marketing, Retargeting</b> mit Schwerpunkt auf <b>Workflows</b> für das Lead Management.</p>
+<div class="ex"><b>KI &amp; neue Herausforderung — GEO:</b> <b>Generative Engine Optimization</b> (auch LLMO / AEO) = Inhalte/Angebote so aufbereiten, dass sie in den Antworten von KI-Plattformen (ChatGPT, Perplexity …) erscheinen. Voraussetzung: Bots/User-Agents generativer Engines im Shop zulassen und im Digital Analytics auswerten. <i>Das «neue SEO» für die LLM-Ära.</i></div>
+
+<!-- ============ WERBUNG ============ -->
+<h2 id="werbung">6 · Werbenetzwerke, RTB &amp; Tracking</h2>
+<div class="def"><b>Online-Werbenetzwerk (Ad Network)</b> — eine technologische Plattform, die als <b>Intermediär zwischen Werbetreibenden (Advertisern) und Publishern</b> (Website-/App-Betreibern) fungiert. Sie <b>aggregiert Werbeinventar</b> und ermöglicht dessen <b>automatisierten, datengetriebenen Echtzeit-Handel</b>.</div>
+<h3>Real-Time Bidding (RTB) — der Ablauf in &lt;150 ms</h3>
+<ol style="font-size:.86rem">
+  <li><b>Bid Request:</b> User öffnet App → <b>SSP</b> sendet Request an die <b>Exchange</b>.</li>
+  <li><b>Enrichment:</b> Anreicherung mit Kontextdaten (Device, IP, Content-Kategorie).</li>
+  <li><b>Auction:</b> Exchange leitet an mehrere <b>DSPs</b> weiter.</li>
+  <li><b>Bidding:</b> DSP prüft Kampagnen-Parameter, bietet einen Preis (CPM).</li>
+  <li><b>Selection:</b> höchstes Gebot gewinnt (Second- oder First-Price-Auktion).</li>
+  <li><b>Delivery:</b> Ad-Creative wird ausgeliefert.</li>
+</ol>
+<p style="font-size:.84rem;color:var(--muted)">Akteure: <b>SSP</b> (Sell-Side, Publisher-Seite) · <b>DSP</b> (Demand-Side, Advertiser-Seite) · <b>Ad Exchange</b> (Marktplatz). <b>Targeting:</b> «die richtige Botschaft an die richtige Person».</p>
+<h3>Nutzer-Tracking / Identifikation — die 4 Säulen</h3>
+<table>
+  <tr><th style="width:24%">Säule</th><th>Funktionsweise &amp; Status</th></tr>
+  <tr><td><b>Cookie-basiert</b></td><td>Kleine Textdateien speichern eine Kennung. <b>First-Party</b> funktionieren weiter, <b>Third-Party</b> werden zunehmend blockiert.</td></tr>
+  <tr><td><b>ID-basiert</b></td><td>Authentifizierte Kennungen (Logins, gehashte E-Mails) → höchste Präzision &amp; datenschutzkonform, aber begrenzte Reichweite.</td></tr>
+  <tr><td><b>Fingerprinting &amp; Probabilistisch</b></td><td>Geräte-/Browsermerkmale (Auflösung, Schriftarten, OS) kombiniert → Wiedererkennung ohne Cookie/Login. Effektiv, aber <b>rechtlich problematisch</b>.</td></tr>
+  <tr><td><b>Server-Side &amp; KI</b></td><td>Tracking <b>serverseitig</b> statt im Browser, durch KI ergänzt → datenschutzkonform, skalierbar, zukunftssicher.</td></tr>
+</table>
+
+<!-- ============ AUSPRÄGUNGEN ============ -->
+<h2 id="auspraegung">7 · Digital Marketing im Digital Business: Ausprägungen ⭐</h2>
+<div class="exam">Kernunterscheidung: Marketing gibt es <b>im Einkauf</b> (Beschaffungsmarketing) <b>und im Verkauf</b> (Absatzmarketing) — plus das Marketing eines Marktplatzes (kritische Masse erreichen).</div>
+<div class="grid2">
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-1">Beschaffungsmarketing</span> (Einkauf)</h3>
+    <p>Gestaltung von Geschäftsbeziehungen im Rahmen des <b>E-Procurement</b>; Aufbau dauerhafter <b>Online-Lieferantenbeziehungen</b>.</p>
+    <p><b>Supplier Relationship Management (SRM)</b> = strategisches Lieferantenmanagement. <b>Ziele:</b> Senkung der Beschaffungs<b>kosten</b> &amp; des -<b>risikos</b>, Steigerung der Beschaffungs<b>qualität</b> &amp; -<b>flexibilität</b>.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0"><span class="tag tag-2">Absatzmarketing</span> (Verkauf)</h3>
+    <p>Zentrales Ziel: <b>Erreichung und Zuführung der Online-Käufergruppe</b>. Gestaltet die 4P mit digitalen Technologien; nutzt <b>Virtualität, Multimedialität, Interaktivität, Individualität</b>.</p>
+    <p>Drei Methoden: <b>Kundengewinnung · Kundenbewertung · Kundenbindung</b>.</p>
+  </div>
+</div>
+<h3>Die drei Methoden des Absatzmarketings</h3>
+<table>
+  <tr><th style="width:22%">Methode</th><th>Was</th></tr>
+  <tr><td><b>Kundengewinnung</b></td><td>Akquise <b>neuer</b> Käufer (noch wenig/kein Kontakt) → Instrumente der Kommunikationspolitik.</td></tr>
+  <tr><td><b>Kundenbewertung</b></td><td>Umfassendes Kundenbild durch <b>Analyse von Kundendaten</b> (Kontakt, Erstkauf, alle Interaktionen) → automatisierte Datensammlung + Kundenprofile. Aus Daten → Information/Wissen via <b>Klassifizierung, Schätzung, Vorhersage, Gruppierung, Clusterung/Segmentierung</b>.</td></tr>
+  <tr><td><b>Kundenbindung</b></td><td>Pflege des bestehenden Kundenstamms; Förderung von Zufriedenheit &amp; Loyalität.</td></tr>
+</table>
+
+<!-- ============ KPI ============ -->
+<h2 id="kpi">8 · Erfolgsmessung — KPIs &amp; Digital Analytics ⭐</h2>
+<div class="exam"><b>KPI = Key Performance Indicator.</b> Die Formeln solltest du parat haben — sie sind die naheliegendste Rechen-/Definitionsfrage.</div>
+<table>
+  <tr><th style="width:30%">KPI</th><th>Frage &amp; Formel</th></tr>
+  <tr><td><b>CAC</b> — Customer Acquisition Cost</td><td>«Was kostet ein neuer Kunde?» <span class="formula">CAC = Marketingkosten ÷ Anzahl neuer Kunden</span></td></tr>
+  <tr><td><b>CLV</b> — Customer Lifetime Value</td><td>«Wie viel verdiene ich langfristig an einem Kunden?» <span class="formula">CLV = Umsatz pro Kunde − CAC</span> Erlaubt Werbung, die erst beim 2./3. Kauf profitabel wird.</td></tr>
+  <tr><td><b>Konversionsrate</b></td><td>«Welcher Anteil der Besucher wird zu Kunden?» <span class="formula">Konversionsrate = Bestellungen ÷ Besucher</span> Branchenschnitt E-Commerce ≈ 1,33 %, Top ≈ 3,6 %.</td></tr>
+  <tr><td><b>AOV</b> — Average Order Value</td><td>Durchschnittlicher Warenkorbwert. <span class="formula">AOV = Gesamtumsatz ÷ Anzahl Bestellungen</span></td></tr>
+  <tr><td><b>Retourenquote</b></td><td>Verhältnis retournierter zu verkaufter Ware (monetär oder mengenmässig).</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)"><b>Conversion Funnel:</b> die Konversion ist Hauptziel — in allen Kaufphasen die Abschlusswahrscheinlichkeit erhöhen. Social-Media-KPIs gibt es zusätzlich (Reichweite, Engagement …).</p>
+<div class="def"><b>Digital Analytics</b> — <b>Analysemethoden zur Erkennung und Auswertung von Mustern, Zusammenhängen und Bedeutung in (grossen) Datenmengen</b>; wegen Volume/Variety/Velocity stark <b>automatisiert</b> (Statistik, Prognosen, Data Mining, Data Warehousing …). «Digital Analytics misst den Erfolg digitaler Aktivitäten und liefert fundierte Entscheidungshilfen» (Haberich 2020).</div>
+
+<!-- ============ CRM ============ -->
+<h2 id="crm">9 · CRM &amp; Social CRM ⭐</h2>
+<div class="def"><b>Customer Relationship Management (CRM)</b> — ein <b>strategischer Ansatz</b> zur vollständigen <b>Planung, Steuerung und Durchführung aller interaktiven Prozesse mit den Kunden</b>. Umfasst das <b>gesamte Unternehmen</b> und den <b>gesamten Kundenlebenszyklus</b>; beinhaltet Database Marketing und CRM-Software als Steuerungsinstrument.</div>
+<h3>Die drei CRM-Komponenten</h3>
+<table>
+  <tr><th style="width:22%">Komponente</th><th>Aufgabe</th></tr>
+  <tr><td><b>Analytisches CRM</b></td><td>Kunden-/marktbezogene Daten <b>analysieren</b> und Schlüsse ziehen: Sortimentsoptimierung, Warenkorbanalyse, Kundenverhalten (<b>Data Mining</b>), Segmentierung.</td></tr>
+  <tr><td><b>Operatives CRM</b></td><td>Daten <b>pflegen</b>, Kundengesamtsicht erstellen, <b>Kampagnen</b> durchführen (Multistep/Multichannel), <b>Service</b> (Pre-/Aftersales).</td></tr>
+  <tr><td><b>Kollaboratives CRM</b> (kommunikativ)</td><td>Direkte <b>kommunikative Schnittstellen</b> zum Kunden — <b>synchron</b> (Telefon, Chat, Face-to-Face, POS) &amp; <b>asynchron</b> (E-Mail, SMS, Brief, Fax).</td></tr>
+</table>
+
+<h3>Vom CRM zum Social CRM</h3>
+<div class="def"><b>Social CRM</b> — «the process of <b>managing customer-to-customer conversations</b> to engage existing customers and prospects with a brand and so enhance CRM» (Chaffey 2013). Also: Kunde-zu-Kunde-Gespräche steuern, um Kunden zu binden und das CRM zu <b>verbessern</b>.</div>
+<h3>Spezifische Eigenschaften von Social Media (für Social CRM)</h3>
+<table>
+  <tr><th style="width:28%">Eigenschaft</th><th>Bedeutung</th></tr>
+  <tr><td><b>Themenbezogene Community</b></td><td>Interaktion oft themenbezogen &amp; <b>partizipativ</b> (auch direkt zwischen Nutzern); Zugang zu Gruppen ähnlich Interessierter.</td></tr>
+  <tr><td><b>Bidirektionale Interaktion</b></td><td>Derselbe Kanal von Kunden- &amp; Unternehmensseite; auch <b>synchrone</b> Elemente (Chat), nicht nur asynchron wie E-Mail.</td></tr>
+  <tr><td><b>Individualisierte Ansprache</b></td><td>Schritt von «One-to-many» zu <b>«One-to-one»</b>; emotionalere, nähere Botschaften.</td></tr>
+  <tr><td><b>Digitalisierte Kommunikation</b></td><td>Bidirektional in Echtzeit; Infos sind <b>persistent</b> &amp; weiterverwendbar (oft ohne realen Namen).</td></tr>
+</table>
+<p style="font-size:.84rem;color:var(--muted)"><b>Kernfunktionen eines Social-CRM-Systems:</b> 1) Social Media als Basis · 2) <b>Analytics &amp; Monitoring</b> (Wissen aus User-Generated-Content, Sentiment-Analyse, <b>Social Network Analysis / SNA</b>) · 3) Interaktion (Content-Planung, Tracking) · 4) <b>Verknüpfung mit traditionellem CRM</b> (Leads, Service-Tickets) · 5) Management &amp; Integration.</p>
+
+<!-- ============ EXAM ============ -->
+<h2 id="exam">10 · Prüfungsfokus</h2>
+<div class="card">
+  <p><b>Definitionen:</b> Marketing · Digital Marketing (+ Kennzeichen Messbarkeit/Zielgruppe/Echtzeit) · 4P · Marketing Automation · CRM · Social CRM · Digital Analytics.</p>
+  <p><b>Abgrenzungen/Stufen:</b> <b>Single → Multi → Cross → Omni</b> (Grad der Integration) · die <b>3 CRM-Komponenten</b> (analytisch/operativ/kollaborativ) · Beschaffungs- vs. Absatzmarketing.</p>
+  <p><b>Rechnen/Formeln:</b> CAC, CLV, Konversionsrate, AOV (+ Retourenquote).</p>
+  <p><b>Listen können:</b> die 3 Methoden des Absatzmarketings (Gewinnung/Bewertung/Bindung) · die 4 Social-Media-Eigenschaften · die 4 Tracking-Säulen · Erfolgsfaktoren des individualisierten Marketings.</p>
+</div>
+
+<div class="ask">
+  <b>Frag deinen Tutor (mich!):</b> Worin unterscheidet sich Cross- von Omni-Channel genau? Wie hängen CLV und CAC zusammen (wann lohnt sich teure Akquise)? Was ist der Unterschied zwischen analytischem CRM und Digital Analytics? <b>Frag im Chat.</b> Übe danach mit der <a href="../lessons/09-digital-marketing-quiz.html">Quiz-Lektion 9</a>.
+</div>
+
+<footer>
+  Studienblatt 9 von 11 · DigiBusI FS2026 · gegründet auf <i>DigiBusI_09_DigitalMarketing 2026</i> (Kollmann 2022; Meier/Stormer 2012; Zumstein &amp; Oehninger 2024; Alt &amp; Reinhold 2020; Chaffey 2013; Boudet et al. 2017) + Zusammenfassungsfolien.
+  Querverweise: <a class="ref" href="08-digital-contracting.html">← Blatt 8 (Digital Contracting)</a> · <a class="ref" href="07-digital-procurement.html">Blatt 7</a> — Beschaffungsmarketing/SRM knüpft an Digital Procurement an.
+</footer>
+</div>
+</body>
+</html>

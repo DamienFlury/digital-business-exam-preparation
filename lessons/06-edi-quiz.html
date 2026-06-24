@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz-Lektion 6 — Electronic Data Interchange (EDI)</title>
+<style>
+  :root{--ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66; --line:#e3e3ea; --bg:#fbfafc; --ok:#1a7f4b; --no:#b5491f; --accent:#0a7c7c;}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); margin:0; line-height:1.55}
+  .wrap{max-width:820px; margin:0 auto; padding:36px 24px 90px}
+  header.q{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:18px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.6rem; margin:.15em 0}
+  .sub{color:var(--muted); font-size:.92rem}
+  .progress{font-size:.8rem; color:var(--muted); margin-top:8px}
+  .q-card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin:20px 0; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .q-num{font-size:.74rem; font-weight:700; color:var(--ost); letter-spacing:.08em; text-transform:uppercase}
+  .pts{float:right; font-size:.74rem; color:var(--muted); font-weight:600}
+  .q-text{font-size:1.05rem; font-weight:600; margin:6px 0 14px}
+  .opt{display:block; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:7px 0; cursor:pointer; background:#fff; transition:.12s}
+  .opt:hover{border-color:var(--ost)}
+  .opt input{margin-right:9px}
+  .opt.correct{background:#e9f7ef; border-color:var(--ok)}
+  .opt.wrong{background:#fdeee7; border-color:var(--no)}
+  textarea{width:100%; border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:inherit; font-size:.95rem; min-height:90px; resize:vertical}
+  button{background:var(--ost); color:#fff; border:0; border-radius:8px; padding:9px 18px; font-size:.9rem; font-weight:600; cursor:pointer; margin-top:10px}
+  button.ghost{background:#fff; color:var(--ost); border:1px solid var(--ost)}
+  button:hover{opacity:.92}
+  .feedback{display:none; margin-top:14px; padding:13px 16px; border-radius:8px; font-size:.9rem; background:var(--ost-light); border-left:4px solid var(--ost)}
+  .feedback.show{display:block}
+  .feedback h4{margin:0 0 6px; color:var(--ost); font-size:.82rem; text-transform:uppercase; letter-spacing:.06em}
+  .model{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:.88rem}
+  .model b{color:var(--accent)}
+  .tag{display:inline-block; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--ost-light); color:var(--ost); margin-bottom:6px}
+  .self{font-size:.84rem; color:var(--muted); margin-top:10px}
+  .self button{font-size:.8rem; padding:5px 12px; margin:4px 6px 0 0}
+  .checklist{margin-top:12px; font-size:.85rem; background:#fff; border:1px dashed var(--ost); border-radius:8px; padding:10px 14px}
+  .checklist label{display:block; margin:4px 0; cursor:pointer}
+  .checklist input{margin-right:8px}
+  .match-row{border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:8px 0}
+  .match-row .stmt{font-weight:600; font-size:.92rem; margin-bottom:6px}
+  .match-opts{display:flex; flex-wrap:wrap; gap:6px}
+  .match-opts label{font-size:.8rem; border:1px solid var(--line); border-radius:6px; padding:4px 9px; cursor:pointer}
+  .match-opts label.correct{background:#e9f7ef; border-color:var(--ok)}
+  .match-opts label.wrong{background:#fdeee7; border-color:var(--no)}
+  .match-opts input{margin-right:5px}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted)}
+  a{color:var(--accent)}
+  .intro{background:var(--ost-light); border-radius:10px; padding:14px 18px; font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="q">
+  <div class="kicker">DigiBusI · Quiz-Lektion 6 von 11</div>
+  <h1>Electronic Data Interchange (EDI)</h1>
+  <div class="sub">Aktives Abfragen im Prüfungsformat. Antworte zuerst selbst — <b>in ganzen Sätzen</b> — dann aufdecken.</div>
+  <div class="progress">Kern: <b>EDI = Konzept</b> (kein Standard/Technologie) · <b>5 Varianten</b> · <b>VAN/Clearing-Center</b> · <b>Web-EDI</b> · <b>Rolle der Standards</b>. Die Fragen 1–4 bilden die <b>12-Punkte-Musterfrage</b> direkt nach!</div>
+</header>
+
+<div class="intro">
+  <b>So funktioniert's:</b> Bei MC/Zuordnung anklicken → «Antwort prüfen». Bei offenen Fragen erst selbst tippen, dann «Musterantwort zeigen» und ehrlich selbst bewerten. <b>Tipp:</b> Schreib deine offene Antwort auch in den Chat — ich benote sie nach Rubrik. Begleitendes <a href="../reference/06-edi.html">Studienblatt 6</a>.
+</div>
+
+<!-- Q1 R/F (Musterfrage a) -->
+<div class="q-card" id="q1">
+  <div class="q-num">Frage 1 · Richtig / Falsch <span class="pts">3 P · Musterfrage</span></div>
+  <div class="q-text">Bewerten Sie die folgenden Aussagen zu EDI mit <b>Richtig</b> oder <b>Falsch</b>. Genau ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="F">
+    <div class="stmt">Bei EDI handelt es sich um einen wichtigen Standard zum Dokumentenaustausch im Digital Business.</div>
+    <div class="match-opts"><label><input type="radio" name="r1" value="R">Richtig</label><label><input type="radio" name="r1" value="F">Falsch</label></div>
+  </div>
+  <div class="match-row" data-correct="F">
+    <div class="stmt">EDI ist eine spezifische Technologie, welche die Automation im Digital Business ermöglicht.</div>
+    <div class="match-opts"><label><input type="radio" name="r2" value="R">Richtig</label><label><input type="radio" name="r2" value="F">Falsch</label></div>
+  </div>
+  <div class="match-row" data-correct="F">
+    <div class="stmt">EDI ermöglicht den standardisierten Austausch von Geschäftsdokumenten einschliesslich E-Mails und multimedialer Dokumente.</div>
+    <div class="match-opts"><label><input type="radio" name="r3" value="R">Richtig</label><label><input type="radio" name="r3" value="F">Falsch</label></div>
+  </div>
+  <div class="match-row" data-correct="R">
+    <div class="stmt">Die Implementierung von EDI erfordert eine vorgängige Verständigung der Geschäftspartner, z.B. über zu nutzende Standards.</div>
+    <div class="match-opts"><label><input type="radio" name="r4" value="R">Richtig</label><label><input type="radio" name="r4" value="F">Falsch</label></div>
+  </div>
+  <div class="match-row" data-correct="R">
+    <div class="stmt">Im Zusammenhang mit EDI besteht eine Vielzahl unterschiedlicher Standards.</div>
+    <div class="match-opts"><label><input type="radio" name="r5" value="R">Richtig</label><label><input type="radio" name="r5" value="F">Falsch</label></div>
+  </div>
+
+  <button onclick="checkMatch('q1',5)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q1"><h4>Auflösung</h4>
+    <span id="score-q1"></span> Die ersten drei sind <b>falsch</b>: EDI ist <b>kein Standard</b> und <b>keine spezifische Technologie</b>, sondern ein <b>Konzept</b>; und es überträgt <b>keine E-Mails/Multimedia</b>, nur strukturierte Geschäftsdokumente. Die letzten zwei sind <b>richtig</b>: EDI erfordert eine vorgängige Verständigung (Interchange Agreement) und es gibt tatsächlich viele Standards (EDIFACT, ANSI X12, VDA, SWIFT …).
+  </div>
+</div>
+
+<!-- Q2 open — begründen (Musterfrage b) -->
+<div class="q-card" id="q2">
+  <div class="q-num">Frage 2 · Offen <span class="pts">4 P · Musterfrage</span></div>
+  <div class="q-text">Begründen Sie, <b>warum</b> die Aussage «EDI ist ein Standard bzw. eine spezifische Technologie» <b>falsch</b> ist — und was EDI stattdessen ist.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> EDI ist ein Konzept / Rahmenwerk?</label>
+    <label><input type="checkbox"> Technologie-unabhängig (mit verschiedenen Technologien umsetzbar)?</label>
+    <label><input type="checkbox"> Ein Standard ist z.B. EDIFACT (EDI ≠ Standard)?</label>
+    <label><input type="checkbox"> Zweck: standardisierter, automatisierter Austausch strukturierter Geschäftsdaten?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q2')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q2">
+    <h4>Musterantwort</h4>
+    <p>EDI ist <b>weder ein Standard noch eine spezifische Technologie oder Software</b>, sondern ein <b>Konzept</b> (Rahmenwerk) für den <b>standardisierten, automatisierten Austausch strukturierter Geschäftsdaten</b> zwischen verschiedenen Informationssystemen — <b>unabhängig von der eingesetzten Technologie</b>. EDI kann also mit unterschiedlichen Technologien umgesetzt werden. Ein konkreter <b>Standard</b> innerhalb des EDI-Konzepts ist z.B. <b>EDIFACT</b> oder ANSI X12.</p>
+  </div>
+</div>
+
+<!-- Q3 MC — Web-EDI (Musterfrage c) -->
+<div class="q-card" id="q3">
+  <div class="q-num">Frage 3 · Multiple Choice <span class="pts">3 P · Musterfrage</span></div>
+  <div class="q-text">Welche Aussage zu <b>Web-EDI</b> ist <b>richtig</b>?</div>
+  <label class="opt"><input type="radio" name="q3"> A) Web-EDI ist eine veraltete Technologie, die heute nicht mehr verwendet wird</label>
+  <label class="opt"><input type="radio" name="q3"> B) Web-EDI erfordert spezielle, teure Hardware und Software beim Lieferanten</label>
+  <label class="opt"><input type="radio" name="q3"> C) Web-EDI ermöglicht den Austausch über das Internet mittels Webbrowser ohne spezielle Applikation</label>
+  <label class="opt"><input type="radio" name="q3"> D) Web-EDI ist nur für grosse Unternehmen mit umfangreichen IT-Ressourcen geeignet</label>
+  <button onclick="checkMC('q3',2)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q3"><h4>Auflösung</h4><b>C</b> ist richtig. Web-EDI läuft über einen <b>Web-Browser ohne eigene Applikationsintegration</b> — der Nutzer gibt Daten manuell in ein Internetformular ein. Es senkt gerade die Einstiegshürden und ist daher <b>besonders für KMU / kleine Lieferanten</b> («Long Tail») geeignet — das Gegenteil von A, B und D.</div>
+</div>
+
+<!-- Q4 open — Rolle der Standards (Musterfrage d) -->
+<div class="q-card" id="q4">
+  <div class="q-num">Frage 4 · Offen <span class="pts">4 P · Musterfrage</span></div>
+  <div class="q-text">Welche <b>Rolle</b> spielen Standards im Zusammenhang mit EDI? Zeigen Sie auf, <b>wo</b> und <b>warum</b> EDI-Standards erforderlich werden.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Standard legt Inhalt UND Format des Dokuments fest?</label>
+    <label><input type="checkbox"> Damit kann die empfangende Maschine korrekt interpretieren (jedes Element am erwarteten Platz)?</label>
+    <label><input type="checkbox"> Ohne Standard kein automatisierter Austausch möglich?</label>
+    <label><input type="checkbox"> Zentraler Standard vermeidet bilaterale Formate: n·(n−1) → 2n?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q4')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q4">
+    <h4>Musterantwort</h4>
+    <p>Die Anwendungssysteme der Partner (z.B. ERP) verarbeiten <b>unterschiedliche interne Datenformate</b>; beim EDI werden diese in einen <b>vereinbarten Standard konvertiert</b>. Ein EDI-Standard legt <b>Inhalt und Format</b> eines Geschäftsdokuments (Bestellung, Rechnung) fest, sodass die <b>empfangende Maschine die Daten korrekt interpretieren</b> kann — jedes Datenelement steht an seinem erwarteten Platz. <b>Ohne Standard</b> wüsste das Empfängersystem nicht, welcher Teil der Nachricht was bedeutet, und ein automatisierter Austausch wäre unmöglich.</p>
+    <p>Ausserdem <b>vermeiden Standards multiple bilaterale Austauschformate</b>: Statt «jeder mit jedem» (<b>n·(n−1)</b> Kommunikationsvorschriften) genügt über ein zentrales Austauschformat «jeder mit einem» (<b>2n</b>).</p>
+  </div>
+</div>
+
+<!-- Q5 open — EDI Definition -->
+<div class="q-card" id="q5">
+  <div class="q-num">Frage 5 · Offen <span class="pts">4 P</span></div>
+  <div class="q-text">Definieren Sie <b>EDI</b>. Gehen Sie auf vier Merkmale ein: <b>was</b> ausgetauscht wird, <b>zwischen wem</b>, <b>wie</b> und mit welchem <b>Ziel</b>.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> WAS: strukturierte Geschäftsdokumente (Bestellungen, Rechnungen, Lieferscheine)?</label>
+    <label><input type="checkbox"> ZWISCHEN WEM: zwischenbetrieblich, Anwendung zu Anwendung?</label>
+    <label><input type="checkbox"> WIE: automatisiert, ohne menschliches Eingreifen, standardisiert?</label>
+    <label><input type="checkbox"> ZIEL: schneller, fehlerfreier Austausch / Vermeidung von Medienbrüchen?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q5')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q5">
+    <h4>Musterantwort</h4>
+    <p>EDI (Electronic Data Interchange) bezeichnet den <b>automatisierten, zwischenbetrieblichen Austausch</b> von <b>strukturierten Geschäftsdokumenten</b> wie Bestellungen, Lieferscheinen und Rechnungen zwischen den <b>Anwendungssystemen</b> der Geschäftspartner — also <b>von Anwendung zu Anwendung, ohne menschliches Eingreifen</b>, auf Basis <b>standardisierter Nachrichtenformate</b>. Ziel ist ein <b>schneller, fehlerfreier</b> Datenaustausch, der <b>Medienbrüche und Mehrfacheingaben vermeidet</b>. EDI gilt als zentrale Grundlage des Digital Business.</p>
+  </div>
+</div>
+
+<!-- Q6 Zuordnung — Variante -->
+<div class="q-card" id="q6">
+  <div class="q-num">Frage 6 · Zuordnung <span class="pts">4 P</span></div>
+  <div class="q-text">Ordnen Sie jede Beschreibung der richtigen EDI-Variante zu. Genau ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="PP">
+    <div class="stmt">Direkte Verbindung zweier Unternehmen über ein EDI-Softwarepaket (AS2/OFTP/SFTP) — die älteste Form.</div>
+    <div class="match-opts"><label><input type="radio" name="v1" value="PP">Punkt-zu-Punkt</label><label><input type="radio" name="v1" value="VAN">VAN/Clearing</label><label><input type="radio" name="v1" value="WEB">Web-EDI</label></div>
+  </div>
+  <div class="match-row" data-correct="VAN">
+    <div class="stmt">Ein Drittanbieter dient als zentrale Drehscheibe (Routing, Konvertierung, Archivierung) — heute am häufigsten.</div>
+    <div class="match-opts"><label><input type="radio" name="v2" value="PP">Punkt-zu-Punkt</label><label><input type="radio" name="v2" value="VAN">VAN/Clearing</label><label><input type="radio" name="v2" value="WEB">Web-EDI</label></div>
+  </div>
+  <div class="match-row" data-correct="WEB">
+    <div class="stmt">Manuelle Dateneingabe in ein Internetformular im Browser, ohne eigene EDI-Infrastruktur — ideal für KMU.</div>
+    <div class="match-opts"><label><input type="radio" name="v3" value="PP">Punkt-zu-Punkt</label><label><input type="radio" name="v3" value="VAN">VAN/Clearing</label><label><input type="radio" name="v3" value="WEB">Web-EDI</label></div>
+  </div>
+  <div class="match-row" data-correct="VAN">
+    <div class="stmt">Nur eine technische Verbindung statt zu jedem Partner; Vorteil: Komplexitäts- und Kostenreduktion durch Outsourcing.</div>
+    <div class="match-opts"><label><input type="radio" name="v4" value="PP">Punkt-zu-Punkt</label><label><input type="radio" name="v4" value="VAN">VAN/Clearing</label><label><input type="radio" name="v4" value="WEB">Web-EDI</label></div>
+  </div>
+
+  <button onclick="checkMatch('q6',4)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q6"><h4>Auflösung</h4>
+    <span id="score-q6"></span> <b>Punkt-zu-Punkt</b> (klassisch/direkt) = älteste Form, direkte Software-Verbindung. <b>VAN/Clearing-Center</b> = zentrale Drehscheibe eines Drittanbieters, heute am häufigsten, eine Verbindung statt viele. <b>Web-EDI</b> = manuelles Browser-Formular für KMU ohne eigene Infrastruktur.
+  </div>
+</div>
+
+<!-- Q7 open — Vorteile -->
+<div class="q-card" id="q7">
+  <div class="q-num">Frage 7 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Nennen und erläutern Sie <b>drei Vorteile</b> von EDI gegenüber dem papierbasierten Dokumentenaustausch.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="self"><button class="ghost" onclick="reveal('q7')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q7">
+    <h4>Musterantwort (drei genügen)</h4>
+    <div class="model"><b>Geschwindigkeit:</b> Automatisierte Prozesse laufen in Sekundenschnelle und unabhängig von Arbeitszeiten ab — viel schneller als manuelle.</div>
+    <div class="model"><b>Niedrige Fehlerquote:</b> Jeder manuelle Arbeitsschritt ist eine potenzielle Fehlerquelle; durch Wegfall der Mehrfacheingabe sinkt die Fehleranfälligkeit.</div>
+    <div class="model"><b>Skalierbarkeit / Kosteneinsparung:</b> Dasselbe Setup bewältigt ein Vielfaches an Aufträgen ohne zusätzliches Personal; zudem entfallen Druck-, Papier- und Personalkosten.</div>
+    <p style="font-size:.84rem">Weitere möglich: Transparenz, einfachere Internationalisierung, Supply-Chain-Optimierung, Grundlage für Industrie 4.0 / Business Intelligence.</p>
+  </div>
+</div>
+
+<footer>
+  Fertig mit Quiz 6? Sag mir Bescheid — dann geht's zu <b>Thema 7 — Digital Procurement</b> (digitale Beschaffung; knüpft an die EDI-Standards an).
+  Schreib offene Antworten gern in den Chat — ich benote sie nach Rubrik.<br>
+  ← <a href="../reference/06-edi.html">Studienblatt 6</a> · <a href="05-unternehmensgruendung-quiz.html">Quiz 5</a>
+</footer>
+</div>
+
+<script>
+function checkMC(q, correctIdx){
+  const opts = document.querySelectorAll('#'+q+' .opt');
+  let chosen = -1;
+  opts.forEach((o,i)=>{ if(o.querySelector('input').checked) chosen=i; });
+  if(chosen<0){ alert('Bitte zuerst eine Antwort wählen.'); return; }
+  opts.forEach((o,i)=>{
+    o.classList.remove('correct','wrong');
+    if(i===correctIdx) o.classList.add('correct');
+    else if(i===chosen) o.classList.add('wrong');
+  });
+  document.getElementById('fb-'+q).classList.add('show');
+}
+function reveal(q){ document.getElementById('fb-'+q).classList.add('show'); }
+function checkMatch(q, total){
+  const rows = document.querySelectorAll('#'+q+' .match-row');
+  let score = 0, answered = 0;
+  rows.forEach(row=>{
+    const correct = row.dataset.correct;
+    const labels = row.querySelectorAll('.match-opts label');
+    labels.forEach(l=>{
+      l.classList.remove('correct','wrong');
+      const inp = l.querySelector('input');
+      if(inp.checked){ answered++; if(inp.value===correct) score++; else l.classList.add('wrong'); }
+      if(inp.value===correct) l.classList.add('correct');
+    });
+  });
+  if(answered===0){ alert('Bitte mindestens eine Zeile beantworten.'); return; }
+  document.getElementById('score-'+q).innerHTML = '<b>'+score+' von '+total+' richtig.</b> ';
+  document.getElementById('fb-'+q).classList.add('show');
+}
+</script>
+</body>
+</html>

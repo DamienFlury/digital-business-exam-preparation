@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz-Lektion 9 — Digital Marketing &amp; Social CRM</title>
+<style>
+  :root{--ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66; --line:#e3e3ea; --bg:#fbfafc; --ok:#1a7f4b; --no:#b5491f; --accent:#0a7c7c;}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); margin:0; line-height:1.55}
+  .wrap{max-width:820px; margin:0 auto; padding:36px 24px 90px}
+  header.q{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:18px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.6rem; margin:.15em 0}
+  .sub{color:var(--muted); font-size:.92rem}
+  .progress{font-size:.8rem; color:var(--muted); margin-top:8px}
+  .q-card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin:20px 0; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .q-num{font-size:.74rem; font-weight:700; color:var(--ost); letter-spacing:.08em; text-transform:uppercase}
+  .pts{float:right; font-size:.74rem; color:var(--muted); font-weight:600}
+  .q-text{font-size:1.05rem; font-weight:600; margin:6px 0 14px}
+  .opt{display:block; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:7px 0; cursor:pointer; background:#fff; transition:.12s}
+  .opt:hover{border-color:var(--ost)}
+  .opt input{margin-right:9px}
+  .opt.correct{background:#e9f7ef; border-color:var(--ok)}
+  .opt.wrong{background:#fdeee7; border-color:var(--no)}
+  textarea{width:100%; border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:inherit; font-size:.95rem; min-height:90px; resize:vertical}
+  button{background:var(--ost); color:#fff; border:0; border-radius:8px; padding:9px 18px; font-size:.9rem; font-weight:600; cursor:pointer; margin-top:10px}
+  button.ghost{background:#fff; color:var(--ost); border:1px solid var(--ost)}
+  button:hover{opacity:.92}
+  .feedback{display:none; margin-top:14px; padding:13px 16px; border-radius:8px; font-size:.9rem; background:var(--ost-light); border-left:4px solid var(--ost)}
+  .feedback.show{display:block}
+  .feedback h4{margin:0 0 6px; color:var(--ost); font-size:.82rem; text-transform:uppercase; letter-spacing:.06em}
+  .model{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:.88rem}
+  .model b{color:var(--accent)}
+  .tag{display:inline-block; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--ost-light); color:var(--ost); margin-bottom:6px}
+  .self{font-size:.84rem; color:var(--muted); margin-top:10px}
+  .self button{font-size:.8rem; padding:5px 12px; margin:4px 6px 0 0}
+  .checklist{margin-top:12px; font-size:.85rem; background:#fff; border:1px dashed var(--ost); border-radius:8px; padding:10px 14px}
+  .checklist label{display:block; margin:4px 0; cursor:pointer}
+  .checklist input{margin-right:8px}
+  .match-row{border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:8px 0}
+  .match-row .stmt{font-weight:600; font-size:.92rem; margin-bottom:6px}
+  .match-opts{display:flex; flex-wrap:wrap; gap:6px}
+  .match-opts label{font-size:.8rem; border:1px solid var(--line); border-radius:6px; padding:4px 9px; cursor:pointer}
+  .match-opts label.correct{background:#e9f7ef; border-color:var(--ok)}
+  .match-opts label.wrong{background:#fdeee7; border-color:var(--no)}
+  .match-opts input{margin-right:5px}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted)}
+  a{color:var(--accent)}
+  .intro{background:var(--ost-light); border-radius:10px; padding:14px 18px; font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="q">
+  <div class="kicker">DigiBusI · Quiz-Lektion 9 von 11</div>
+  <h1>Digital Marketing &amp; Social CRM</h1>
+  <div class="sub">Aktives Abfragen im Prüfungsformat. Antworte zuerst selbst — <b>in ganzen Sätzen</b> — dann aufdecken.</div>
+  <div class="progress">Kern: <b>4P</b> · Channels <b>Single→Multi→Cross→Omni</b> · <b>Beschaffungs-/Absatzmarketing</b> + 3 Methoden · <b>KPIs</b> (CAC/CLV/Konversionsrate/AOV) · <b>CRM</b> (analytisch/operativ/kollaborativ) &amp; <b>Social CRM</b>.</div>
+</header>
+
+<div class="intro">
+  <b>So funktioniert's:</b> Bei MC/Zuordnung anklicken → «Antwort prüfen». Bei offenen Fragen erst selbst tippen, dann «Musterantwort zeigen» und ehrlich selbst bewerten. <b>Merkhilfen:</b> Channels = zunehmende <i>Integration</i> · CAC = was ein Kunde kostet, CLV = was er bringt. Begleitendes <a href="../reference/09-digital-marketing.html">Studienblatt 9</a>.
+</div>
+
+<!-- Q1 open — Digital Marketing Definition -->
+<div class="q-card" id="q1">
+  <div class="q-num">Frage 1 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Definieren Sie <b>Digital Marketing</b>. Nennen Sie zwei <b>Kennzeichen</b> und zwei typische <b>Strategien</b>.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Teilbereich des Marketings, der digitale Kanäle/Technologien nutzt (Websites, Social Media, Suchmaschinen, Apps)?</label>
+    <label><input type="checkbox"> Zwei Kennzeichen: Messbarkeit, Zielgruppenausrichtung, Echtzeitoptimierung?</label>
+    <label><input type="checkbox"> Zwei Strategien: SEO, Content-, Social-Media-, E-Mail-, Affiliate-, Influencer-Marketing?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q1')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q1">
+    <h4>Musterantwort</h4>
+    <p><b>Digital Marketing</b> ist der <b>Teilbereich des Marketings, der digitale Kanäle und Technologien</b> (Websites, soziale Medien, Suchmaschinen, mobile Apps) nutzt, um Kunden anzusprechen. Es zeichnet sich durch <b>präzise Messbarkeit, Zielgruppenausrichtung und Echtzeitoptimierung</b> aus. Typische Strategien sind u.a. <b>SEO, Content-Marketing, Social-Media-Werbung, E-Mail-, Affiliate- und Influencer-Marketing</b>.</p>
+  </div>
+</div>
+
+<!-- Q2 Zuordnung — Channels (scrambled: CROSS, OMNI, SINGLE, MULTI) -->
+<div class="q-card" id="q2">
+  <div class="q-num">Frage 2 · Zuordnung <span class="pts">4 P</span></div>
+  <div class="q-text">Ordnen Sie jede Beschreibung der richtigen Channel-Stufe zu. Ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="CROSS">
+    <div class="stmt">Mehrere Kanäle, die <b>miteinander verbunden</b> sind (z.B. online bestellen, im Laden abholen — «Click &amp; Collect») — Integration aber noch begrenzt.</div>
+    <div class="match-opts"><label><input type="radio" name="c1" value="SINGLE">Single</label><label><input type="radio" name="c1" value="MULTI">Multi</label><label><input type="radio" name="c1" value="CROSS">Cross</label><label><input type="radio" name="c1" value="OMNI">Omni</label></div>
+  </div>
+  <div class="match-row" data-correct="OMNI">
+    <div class="stmt"><b>Alle</b> Kanäle vollständig integriert, nahtloses und konsistentes Erlebnis; Wechsel ohne Unterbruch, alle Interaktionen kanalübergreifend erfasst.</div>
+    <div class="match-opts"><label><input type="radio" name="c2" value="SINGLE">Single</label><label><input type="radio" name="c2" value="MULTI">Multi</label><label><input type="radio" name="c2" value="CROSS">Cross</label><label><input type="radio" name="c2" value="OMNI">Omni</label></div>
+  </div>
+  <div class="match-row" data-correct="SINGLE">
+    <div class="stmt">Ein <b>einziger</b> Vertriebskanal, ohne Verbindung zu anderen Kanälen.</div>
+    <div class="match-opts"><label><input type="radio" name="c3" value="SINGLE">Single</label><label><input type="radio" name="c3" value="MULTI">Multi</label><label><input type="radio" name="c3" value="CROSS">Cross</label><label><input type="radio" name="c3" value="OMNI">Omni</label></div>
+  </div>
+  <div class="match-row" data-correct="MULTI">
+    <div class="stmt">Mehrere <b>separate</b> Kanäle, die <b>nicht verbunden</b> sind; der Kunde hat getrennte Erfahrungen je Kanal.</div>
+    <div class="match-opts"><label><input type="radio" name="c4" value="SINGLE">Single</label><label><input type="radio" name="c4" value="MULTI">Multi</label><label><input type="radio" name="c4" value="CROSS">Cross</label><label><input type="radio" name="c4" value="OMNI">Omni</label></div>
+  </div>
+
+  <button onclick="checkMatch('q2',4)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q2"><h4>Auflösung</h4>
+    <span id="score-q2"></span> Logik = zunehmende <b>Integration</b>: <b>Single</b> (einer) → <b>Multi</b> (viele, getrennt) → <b>Cross</b> (viele, verbunden) → <b>Omni</b> (alle, nahtlos).
+  </div>
+</div>
+
+<!-- Q3 open — Beschaffungs- vs Absatzmarketing -->
+<div class="q-card" id="q3">
+  <div class="q-num">Frage 3 · Offen <span class="pts">4 P</span></div>
+  <div class="q-text">Unterscheiden Sie <b>Beschaffungs-</b> und <b>Absatzmarketing</b> im Digital Business. Nennen Sie ausserdem die <b>drei Methoden</b> des Absatzmarketings.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Beschaffungsmarketing = im Einkauf (E-Procurement, SRM); Ziele: Kosten/Risiko senken, Qualität/Flexibilität steigern?</label>
+    <label><input type="checkbox"> Absatzmarketing = im Verkauf; Ziel: Erreichung/Zuführung der Online-Käufergruppe?</label>
+    <label><input type="checkbox"> Drei Methoden: Kundengewinnung, Kundenbewertung, Kundenbindung?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q3')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q3">
+    <h4>Musterantwort</h4>
+    <p><b>Beschaffungsmarketing</b> betrifft die <b>Einkaufsseite</b>: Gestaltung von Online-Lieferantenbeziehungen im Rahmen des E-Procurement, gesteuert über das <b>Supplier Relationship Management (SRM)</b>. Ziele: Senkung der Beschaffungs<b>kosten</b> und des -<b>risikos</b>, Steigerung von <b>Qualität</b> und <b>Flexibilität</b>.</p>
+    <p><b>Absatzmarketing</b> betrifft die <b>Verkaufsseite</b>: zentrales Ziel ist die <b>Erreichung und Zuführung der Online-Käufergruppe</b>; es gestaltet die 4P mit digitalen Technologien. Seine <b>drei Methoden</b>: <b>Kundengewinnung, Kundenbewertung, Kundenbindung</b>.</p>
+  </div>
+</div>
+
+<!-- Q4 Zuordnung — CRM-Komponenten (scrambled: KOL, ANA, OP) -->
+<div class="q-card" id="q4">
+  <div class="q-num">Frage 4 · Zuordnung <span class="pts">3 P</span></div>
+  <div class="q-text">Ordnen Sie jede Aufgabe der richtigen CRM-Komponente zu.</div>
+
+  <div class="match-row" data-correct="KOL">
+    <div class="stmt">Direkte kommunikative Schnittstellen zum Kunden — <b>synchron</b> (Telefon, Chat, POS) und <b>asynchron</b> (E-Mail, SMS, Brief).</div>
+    <div class="match-opts"><label><input type="radio" name="r1" value="ANA">Analytisch</label><label><input type="radio" name="r1" value="OP">Operativ</label><label><input type="radio" name="r1" value="KOL">Kollaborativ</label></div>
+  </div>
+  <div class="match-row" data-correct="ANA">
+    <div class="stmt">Kunden-/marktbezogene Daten <b>analysieren</b>: Warenkorbanalyse, Segmentierung, Kundenverhalten (Data Mining).</div>
+    <div class="match-opts"><label><input type="radio" name="r2" value="ANA">Analytisch</label><label><input type="radio" name="r2" value="OP">Operativ</label><label><input type="radio" name="r2" value="KOL">Kollaborativ</label></div>
+  </div>
+  <div class="match-row" data-correct="OP">
+    <div class="stmt">Daten <b>pflegen</b>, Kundengesamtsicht erstellen, <b>Kampagnen</b> durchführen (Multistep/Multichannel), Pre-/Aftersales-Service.</div>
+    <div class="match-opts"><label><input type="radio" name="r3" value="ANA">Analytisch</label><label><input type="radio" name="r3" value="OP">Operativ</label><label><input type="radio" name="r3" value="KOL">Kollaborativ</label></div>
+  </div>
+
+  <button onclick="checkMatch('q4',3)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q4"><h4>Auflösung</h4>
+    <span id="score-q4"></span> <b>Analytisch</b> = Daten analysieren (Data Mining). <b>Operativ</b> = Daten pflegen, Kampagnen, Service. <b>Kollaborativ</b> (kommunikativ) = direkte Kanäle zum Kunden (synchron/asynchron).
+  </div>
+</div>
+
+<!-- Q5 Zuordnung — KPI ↔ Formel (scrambled: AOV, CAC, KONV, CLV) -->
+<div class="q-card" id="q5">
+  <div class="q-num">Frage 5 · Zuordnung <span class="pts">4 P</span></div>
+  <div class="q-text">Ordnen Sie jede Formel/Beschreibung dem richtigen KPI zu.</div>
+
+  <div class="match-row" data-correct="AOV">
+    <div class="stmt">Gesamtumsatz ÷ Anzahl Bestellungen</div>
+    <div class="match-opts"><label><input type="radio" name="k1" value="CAC">CAC</label><label><input type="radio" name="k1" value="CLV">CLV</label><label><input type="radio" name="k1" value="KONV">Konversionsrate</label><label><input type="radio" name="k1" value="AOV">AOV</label></div>
+  </div>
+  <div class="match-row" data-correct="CAC">
+    <div class="stmt">Marketingkosten ÷ Anzahl neuer Kunden («Was kostet ein neuer Kunde?»)</div>
+    <div class="match-opts"><label><input type="radio" name="k2" value="CAC">CAC</label><label><input type="radio" name="k2" value="CLV">CLV</label><label><input type="radio" name="k2" value="KONV">Konversionsrate</label><label><input type="radio" name="k2" value="AOV">AOV</label></div>
+  </div>
+  <div class="match-row" data-correct="KONV">
+    <div class="stmt">Bestellungen ÷ Besucher («Welcher Anteil der Besucher wird zu Kunden?»)</div>
+    <div class="match-opts"><label><input type="radio" name="k3" value="CAC">CAC</label><label><input type="radio" name="k3" value="CLV">CLV</label><label><input type="radio" name="k3" value="KONV">Konversionsrate</label><label><input type="radio" name="k3" value="AOV">AOV</label></div>
+  </div>
+  <div class="match-row" data-correct="CLV">
+    <div class="stmt">Umsatz pro Kunde − CAC (langfristiger Wert eines Kunden)</div>
+    <div class="match-opts"><label><input type="radio" name="k4" value="CAC">CAC</label><label><input type="radio" name="k4" value="CLV">CLV</label><label><input type="radio" name="k4" value="KONV">Konversionsrate</label><label><input type="radio" name="k4" value="AOV">AOV</label></div>
+  </div>
+
+  <button onclick="checkMatch('q5',4)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q5"><h4>Auflösung</h4>
+    <span id="score-q5"></span> <b>AOV</b> = Umsatz ÷ Bestellungen. <b>CAC</b> = Marketingkosten ÷ neue Kunden. <b>Konversionsrate</b> = Bestellungen ÷ Besucher. <b>CLV</b> = Umsatz pro Kunde − CAC.
+  </div>
+</div>
+
+<!-- Q6 MC — Werbenetzwerke / RTB -->
+<div class="q-card" id="q6">
+  <div class="q-num">Frage 6 · Multiple Choice <span class="pts">2 P</span></div>
+  <div class="q-text">Welche Aussage zu <b>Online-Werbenetzwerken (Ad Networks)</b> ist <b>richtig</b>?</div>
+  <label class="opt"><input type="radio" name="q6"> A) Ein Ad Network ist die Software, mit der ein einzelnes Unternehmen nur seine eigene Website verwaltet</label>
+  <label class="opt"><input type="radio" name="q6"> B) Ein Ad Network fungiert als Intermediär zwischen Advertisern und Publishern und ermöglicht den automatisierten, datengetriebenen Echtzeit-Handel von Werbeinventar</label>
+  <label class="opt"><input type="radio" name="q6"> C) Beim Real-Time Bidding wählt die Exchange immer das niedrigste Gebot aus</label>
+  <label class="opt"><input type="radio" name="q6"> D) SSP steht für die Advertiser-Seite, DSP für die Publisher-Seite</label>
+  <button onclick="checkMC('q6',1)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q6"><h4>Auflösung</h4><b>B</b> ist richtig. Ein Ad Network ist ein <b>Intermediär zwischen Advertisern und Publishern</b>, der Werbeinventar aggregiert und in Echtzeit datengetrieben handelt. Falsch: beim RTB gewinnt das <b>höchste</b> Gebot (C); <b>SSP</b> = Sell-Side/Publisher, <b>DSP</b> = Demand-Side/Advertiser (D ist vertauscht); A beschreibt kein Netzwerk.</div>
+</div>
+
+<!-- Q7 open — Social CRM -->
+<div class="q-card" id="q7">
+  <div class="q-num">Frage 7 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Was ist <b>Social CRM</b>? Nennen Sie <b>zwei spezifische Eigenschaften</b> von Social Media, die es dafür nutzbar machen.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Steuerung von Kunde-zu-Kunde-Gesprächen, um Kunden/Interessenten an die Marke zu binden und das CRM zu verbessern?</label>
+    <label><input type="checkbox"> Zwei Eigenschaften aus: themenbezogene Community, bidirektionale Interaktion, individualisierte Ansprache, digitalisierte/persistente Kommunikation?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q7')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q7">
+    <h4>Musterantwort</h4>
+    <p><b>Social CRM</b> ist der <b>Prozess zur Steuerung von Kunde-zu-Kunde-Gesprächen («customer-to-customer conversations»)</b>, um bestehende Kunden und Interessenten an eine Marke zu binden und so das <b>klassische CRM zu verbessern</b> (Chaffey 2013).</p>
+    <p><b>Eigenschaften (zwei genügen):</b> <b>themenbezogene Community</b> (partizipative Interaktion, auch direkt zwischen Nutzern); <b>bidirektionale Interaktion</b> (gleicher Kanal beidseitig, auch synchron); <b>individualisierte Ansprache</b> (One-to-one statt One-to-many); <b>digitalisierte, persistente Kommunikation</b> (Echtzeit, weiterverwendbar).</p>
+  </div>
+</div>
+
+<footer>
+  Fertig mit Quiz 9? Sag mir Bescheid — danach folgen <b>Blatt 10 (Digital Fulfillment)</b> und <b>Blatt 11 (Digital Payment)</b>.
+  Schreib offene Antworten gern in den Chat — ich benote sie nach Rubrik.<br>
+  ← <a href="../reference/09-digital-marketing.html">Studienblatt 9</a> · <a href="08-digital-contracting-quiz.html">Quiz 8</a>
+</footer>
+</div>
+
+<script>
+function checkMC(q, correctIdx){
+  const opts = document.querySelectorAll('#'+q+' .opt');
+  let chosen = -1;
+  opts.forEach((o,i)=>{ if(o.querySelector('input').checked) chosen=i; });
+  if(chosen<0){ alert('Bitte zuerst eine Antwort wählen.'); return; }
+  opts.forEach((o,i)=>{
+    o.classList.remove('correct','wrong');
+    if(i===correctIdx) o.classList.add('correct');
+    else if(i===chosen) o.classList.add('wrong');
+  });
+  document.getElementById('fb-'+q).classList.add('show');
+}
+function reveal(q){ document.getElementById('fb-'+q).classList.add('show'); }
+function checkMatch(q, total){
+  const rows = document.querySelectorAll('#'+q+' .match-row');
+  let score = 0, answered = 0;
+  rows.forEach(row=>{
+    const correct = row.dataset.correct;
+    const labels = row.querySelectorAll('.match-opts label');
+    labels.forEach(l=>{
+      l.classList.remove('correct','wrong');
+      const inp = l.querySelector('input');
+      if(inp.checked){ answered++; if(inp.value===correct) score++; else l.classList.add('wrong'); }
+      if(inp.value===correct) l.classList.add('correct');
+    });
+  });
+  if(answered===0){ alert('Bitte mindestens eine Zeile beantworten.'); return; }
+  document.getElementById('score-'+q).innerHTML = '<b>'+score+' von '+total+' richtig.</b> ';
+  document.getElementById('fb-'+q).classList.add('show');
+}
+</script>
+</body>
+</html>

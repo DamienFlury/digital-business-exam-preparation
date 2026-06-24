@@ -1,5 +1,8 @@
 # Teaching Notes — DigiBusI exam prep
 
+## Open questions to revisit (raised by Damien)
+- **Industrie 4.0** — Damien wants to dig into this later. It surfaced in Topic 6 (EDI advantages: "optimierte Lieferkette ist Voraussetzung für Industrie 4.0") and in Topic 4 (Amazon Physical AI). Surface this proactively — likely best slotted alongside a topic where it recurs (Fulfillment/Procurement), or as a standalone mini-lesson before the exam.
+
 ## User preferences
 - **Format:** Concise one-page study sheets FIRST (beautiful reference docs per topic), then active-recall quizzing on top.
 - **Starting point:** Hasn't started revising — cover everything, start from topic 1 and work down.

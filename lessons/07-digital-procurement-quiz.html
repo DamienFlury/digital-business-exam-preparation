@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz-Lektion 7 — Digital Procurement</title>
+<style>
+  :root{--ost:#A5006D; --ost-light:#f3e6ef; --ink:#1d1d1f; --muted:#5c5c66; --line:#e3e3ea; --bg:#fbfafc; --ok:#1a7f4b; --no:#b5491f; --accent:#0a7c7c;}
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); margin:0; line-height:1.55}
+  .wrap{max-width:820px; margin:0 auto; padding:36px 24px 90px}
+  header.q{border-bottom:3px solid var(--ost); padding-bottom:14px; margin-bottom:18px}
+  .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ost); font-weight:700}
+  h1{font-size:1.6rem; margin:.15em 0}
+  .sub{color:var(--muted); font-size:.92rem}
+  .progress{font-size:.8rem; color:var(--muted); margin-top:8px}
+  .q-card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin:20px 0; box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .q-num{font-size:.74rem; font-weight:700; color:var(--ost); letter-spacing:.08em; text-transform:uppercase}
+  .pts{float:right; font-size:.74rem; color:var(--muted); font-weight:600}
+  .q-text{font-size:1.05rem; font-weight:600; margin:6px 0 14px}
+  .opt{display:block; border:1px solid var(--line); border-radius:8px; padding:10px 14px; margin:7px 0; cursor:pointer; background:#fff; transition:.12s}
+  .opt:hover{border-color:var(--ost)}
+  .opt input{margin-right:9px}
+  .opt.correct{background:#e9f7ef; border-color:var(--ok)}
+  .opt.wrong{background:#fdeee7; border-color:var(--no)}
+  textarea{width:100%; border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-family:inherit; font-size:.95rem; min-height:90px; resize:vertical}
+  button{background:var(--ost); color:#fff; border:0; border-radius:8px; padding:9px 18px; font-size:.9rem; font-weight:600; cursor:pointer; margin-top:10px}
+  button.ghost{background:#fff; color:var(--ost); border:1px solid var(--ost)}
+  button:hover{opacity:.92}
+  .feedback{display:none; margin-top:14px; padding:13px 16px; border-radius:8px; font-size:.9rem; background:var(--ost-light); border-left:4px solid var(--ost)}
+  .feedback.show{display:block}
+  .feedback h4{margin:0 0 6px; color:var(--ost); font-size:.82rem; text-transform:uppercase; letter-spacing:.06em}
+  .model{background:#eef7f7; border:1px solid #cfe7e7; border-radius:8px; padding:10px 14px; margin-top:8px; font-size:.88rem}
+  .model b{color:var(--accent)}
+  .tag{display:inline-block; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--ost-light); color:var(--ost); margin-bottom:6px}
+  .self{font-size:.84rem; color:var(--muted); margin-top:10px}
+  .self button{font-size:.8rem; padding:5px 12px; margin:4px 6px 0 0}
+  .checklist{margin-top:12px; font-size:.85rem; background:#fff; border:1px dashed var(--ost); border-radius:8px; padding:10px 14px}
+  .checklist label{display:block; margin:4px 0; cursor:pointer}
+  .checklist input{margin-right:8px}
+  .match-row{border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:8px 0}
+  .match-row .stmt{font-weight:600; font-size:.92rem; margin-bottom:6px}
+  .match-opts{display:flex; flex-wrap:wrap; gap:6px}
+  .match-opts label{font-size:.8rem; border:1px solid var(--line); border-radius:6px; padding:4px 9px; cursor:pointer}
+  .match-opts label.correct{background:#e9f7ef; border-color:var(--ok)}
+  .match-opts label.wrong{background:#fdeee7; border-color:var(--no)}
+  .match-opts input{margin-right:5px}
+  footer{margin-top:40px; padding-top:14px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted)}
+  a{color:var(--accent)}
+  .intro{background:var(--ost-light); border-radius:10px; padding:14px 18px; font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="q">
+  <div class="kicker">DigiBusI · Quiz-Lektion 7 von 11</div>
+  <h1>Digital Procurement</h1>
+  <div class="sub">Aktives Abfragen im Prüfungsformat. Antworte zuerst selbst — <b>in ganzen Sätzen</b> — dann aufdecken.</div>
+  <div class="progress">Kern: <b>Vorteile ggü. traditioneller Beschaffung</b> · <b>3 Lösungstypen</b> (Sell-/Buy-Side/Marktplatz) · <b>ABC-Analyse</b> · <b>4 Phasen</b> · <b>strukturiert/unstrukturiert</b>. Die Fragen 1–2 bilden die <b>10-Punkte-Musterfrage Q8</b> direkt nach!</div>
+</header>
+
+<div class="intro">
+  <b>So funktioniert's:</b> Bei MC/Zuordnung anklicken → «Antwort prüfen». Bei offenen Fragen erst selbst tippen, dann «Musterantwort zeigen» und ehrlich selbst bewerten. <b>Merksatz für Q2:</b> <i>Wer betreibt das System?</i> Verkäufer → Sell · Käufer → Buy · Dritter → Marktplatz. Begleitendes <a href="../reference/07-digital-procurement.html">Studienblatt 7</a>.
+</div>
+
+<!-- Q1 open — zwei Vorteile (Musterfrage 8a) -->
+<div class="q-card" id="q1">
+  <div class="q-num">Frage 1 · Offen <span class="pts">4 P · Musterfrage 8a</span></div>
+  <div class="q-text">Nennen <b>und beschreiben</b> Sie <b>zwei Vorteile</b> des Digital Procurement gegenüber der traditionellen Beschaffung.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Genau zwei Vorteile gewählt — und jeder <b>benannt UND beschrieben</b> (je ein Punktblock)?</label>
+    <label><input type="checkbox"> In ganzen Sätzen, nicht nur Stichworte?</label>
+    <label><input type="checkbox"> Bezug zur traditionellen Beschaffung erkennbar (z.B. Durchlaufzeit 9 → 1,5 Tage)?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q1')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q1">
+    <h4>Musterantwort (zwei genügen)</h4>
+    <div class="model"><b>Zeiteinsparung:</b> Durch die Automatisierung manueller Aufgaben und die direkte ERP-Integration verkürzt sich die Durchlaufzeit einer Bestellung erheblich (Beispiel: von 9 auf 1,5 Tage, ≈ −83 %).</div>
+    <div class="model"><b>Kostensenkung:</b> Effizientere Prozesse, bessere Preisverhandlungen und weniger Fehlkäufe senken die Beschaffungskosten.</div>
+    <div class="model"><b>Erhöhte Transparenz:</b> Alle Beschaffungsdaten werden zentral und in Echtzeit erfasst, was Überblick und Steuerung verbessert.</div>
+    <p style="font-size:.84rem">Weitere möglich: verbesserte Compliance, Reduzierung von Fehlern, bessere Zusammenarbeit mit Lieferanten. Drei Stossrichtungen (Siemens): <b>Effizienz · Wirksamkeit · Kontrolle</b>.</p>
+  </div>
+</div>
+
+<!-- Q2 Zuordnung — 6 Aussagen (Musterfrage 8b) -->
+<div class="q-card" id="q2">
+  <div class="q-num">Frage 2 · Zuordnung <span class="pts">6 P · Musterfrage 8b</span></div>
+  <div class="q-text">Ordnen Sie jede Vorteils-Aussage genau einem der drei Lösungstypen zu: <b>Sell-Side · Buy-Side · Marktplatz</b>. Ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="MKT">
+    <div class="stmt">Vergleichbarkeit von verschiedenen Angeboten.</div>
+    <div class="match-opts"><label><input type="radio" name="a5" value="SELL">Sell-Side</label><label><input type="radio" name="a5" value="BUY">Buy-Side</label><label><input type="radio" name="a5" value="MKT">Marktplatz</label></div>
+  </div>
+  <div class="match-row" data-correct="SELL">
+    <div class="stmt">Keine Investitionskosten für ein eigenes Bestellsystem.</div>
+    <div class="match-opts"><label><input type="radio" name="a1" value="SELL">Sell-Side</label><label><input type="radio" name="a1" value="BUY">Buy-Side</label><label><input type="radio" name="a1" value="MKT">Marktplatz</label></div>
+  </div>
+  <div class="match-row" data-correct="BUY">
+    <div class="stmt">Interne Berechtigungs- und Genehmigungsverfahren werden gut unterstützt.</div>
+    <div class="match-opts"><label><input type="radio" name="a4" value="SELL">Sell-Side</label><label><input type="radio" name="a4" value="BUY">Buy-Side</label><label><input type="radio" name="a4" value="MKT">Marktplatz</label></div>
+  </div>
+  <div class="match-row" data-correct="MKT">
+    <div class="stmt">Verkürzung der Suchzeiten.</div>
+    <div class="match-opts"><label><input type="radio" name="a6" value="SELL">Sell-Side</label><label><input type="radio" name="a6" value="BUY">Buy-Side</label><label><input type="radio" name="a6" value="MKT">Marktplatz</label></div>
+  </div>
+  <div class="match-row" data-correct="SELL">
+    <div class="stmt">Konfiguration von komplexen Produkten ist möglich.</div>
+    <div class="match-opts"><label><input type="radio" name="a2" value="SELL">Sell-Side</label><label><input type="radio" name="a2" value="BUY">Buy-Side</label><label><input type="radio" name="a2" value="MKT">Marktplatz</label></div>
+  </div>
+  <div class="match-row" data-correct="BUY">
+    <div class="stmt">Der Beschaffungsprozess kann unternehmensspezifisch gestaltet werden.</div>
+    <div class="match-opts"><label><input type="radio" name="a3" value="SELL">Sell-Side</label><label><input type="radio" name="a3" value="BUY">Buy-Side</label><label><input type="radio" name="a3" value="MKT">Marktplatz</label></div>
+  </div>
+
+  <button onclick="checkMatch('q2',6)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q2"><h4>Auflösung</h4>
+    <span id="score-q2"></span> <b>Logik:</b> System kommt vom Lieferanten → keine eigenen Kosten + Produktkonfiguration = <b>Sell-Side</b>. Eigenes System → eigene Workflows/Berechtigungen, unternehmensspezifisch = <b>Buy-Side</b>. Viele Anbieter an einem Ort → vergleichen + schneller suchen = <b>Marktplatz</b>. Eselsbrücke: <i>Wer betreibt das System?</i>
+  </div>
+</div>
+
+<!-- Q3 Zuordnung — Topologie/Betreiber der drei Typen -->
+<div class="q-card" id="q3">
+  <div class="q-num">Frage 3 · Zuordnung <span class="pts">3 P</span></div>
+  <div class="q-text">Ordnen Sie jede Beschreibung dem richtigen Lösungstyp zu. Ein Kreuz pro Zeile.</div>
+
+  <div class="match-row" data-correct="BUY">
+    <div class="stmt">Das <b>beschaffende Unternehmen</b> betreibt das System und integriert die Kataloge mehrerer Lieferanten in seine eigene Umgebung (z.B. VW Group Supply).</div>
+    <div class="match-opts"><label><input type="radio" name="t2" value="SELL">Sell-Side</label><label><input type="radio" name="t2" value="BUY">Buy-Side</label><label><input type="radio" name="t2" value="MKT">Marktplatz</label></div>
+  </div>
+  <div class="match-row" data-correct="MKT">
+    <div class="stmt">Many-to-One-to-Many: Ein <b>neutraler Dritter (Intermediär)</b> betreibt die Plattform und vermittelt zwischen vielen Käufern und Lieferanten (z.B. Mercateo).</div>
+    <div class="match-opts"><label><input type="radio" name="t3" value="SELL">Sell-Side</label><label><input type="radio" name="t3" value="BUY">Buy-Side</label><label><input type="radio" name="t3" value="MKT">Marktplatz</label></div>
+  </div>
+  <div class="match-row" data-correct="SELL">
+    <div class="stmt">One-to-Many: Der <b>Lieferant</b> stellt System und Online-Katalog bereit — im Grunde ein B2B-E-Shop (z.B. Conrad, Würth).</div>
+    <div class="match-opts"><label><input type="radio" name="t1" value="SELL">Sell-Side</label><label><input type="radio" name="t1" value="BUY">Buy-Side</label><label><input type="radio" name="t1" value="MKT">Marktplatz</label></div>
+  </div>
+
+  <button onclick="checkMatch('q3',3)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q3"><h4>Auflösung</h4>
+    <span id="score-q3"></span> Typologisiert nach der <b>Zahl der Transaktionspartner</b> und der Frage <b>«wer betreibt das System»</b>: <b>Sell</b> = Verkäufer/Lieferant; <b>Buy</b> = Käufer/beschaffendes Unternehmen; <b>Marktplatz</b> = neutraler Dritter in der Mitte.
+  </div>
+</div>
+
+<!-- Q4 open — ABC-Analyse -->
+<div class="q-card" id="q4">
+  <div class="q-num">Frage 4 · Offen <span class="pts">4 P</span></div>
+  <div class="q-text">Was ist die <b>ABC-Analyse</b> in der Beschaffung, und warum haben gerade <b>C-Güter</b> das höchste E-Procurement-Potenzial?</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> ABC = Klassifizierung der Güter nach Wert/Volumen/Häufigkeit, Ziel: Beschaffungskosten minimieren?</label>
+    <label><input type="checkbox"> A-Güter: hoher Wertanteil (~80 %), geringe Menge (~10 %) → Verhandlung/Sourcing, niedriges E-Proc-Potenzial?</label>
+    <label><input type="checkbox"> C-Güter: geringer Wert (~5 %), hohe Menge (~70 %) → Automatisierung lohnt am meisten?</label>
+    <label><input type="checkbox"> Begründung C: viele günstige Transaktionen → Prozesskostensenkung durch Automatisierung?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q4')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q4">
+    <h4>Musterantwort</h4>
+    <p>Die <b>ABC-Analyse</b> klassifiziert alle einzukaufenden Güter nach <b>Beschaffungskomplexität, -volumen und -häufigkeit</b> in die Klassen A, B und C, mit dem Ziel, die <b>Beschaffungskosten zu minimieren</b>. <b>A-Güter</b> machen rund <b>80 % des Werts bei nur ~10 % der Menge</b> aus — hier lohnt sich intensive Preisverhandlung und Sourcing, das Automatisierungspotenzial ist niedrig. <b>C-Güter</b> sind umgekehrt: nur <b>~5 % des Werts, aber ~70 % der Menge</b>. Weil es sich um sehr viele, geringwertige und wiederkehrende Bestellungen handelt, zahlt sich hier die <b>Automatisierung (Prozesskostensenkung)</b> am stärksten aus — daher das höchste E-Procurement-Potenzial.</p>
+  </div>
+</div>
+
+<!-- Q5 Zuordnung — 4 Phasen -->
+<div class="q-card" id="q5">
+  <div class="q-num">Frage 5 · Zuordnung <span class="pts">4 P</span></div>
+  <div class="q-text">Ordnen Sie jede Tätigkeit der richtigen Phase des Beschaffungsprozesses zu.</div>
+
+  <div class="match-row" data-correct="VA">
+    <div class="stmt">Auftragsüberwachung, Wareneingang, Warenprüfung und Bezahlung.</div>
+    <div class="match-opts"><label><input type="radio" name="p4" value="AN">Analyse</label><label><input type="radio" name="p4" value="IN">Initiierung</label><label><input type="radio" name="p4" value="VE">Vereinbarung</label><label><input type="radio" name="p4" value="VA">Verarbeitung/Abrechnung</label></div>
+  </div>
+  <div class="match-row" data-correct="AN">
+    <div class="stmt">Bedarf ermitteln, Markt und Lieferanten analysieren, Anforderungen festlegen.</div>
+    <div class="match-opts"><label><input type="radio" name="p1" value="AN">Analyse</label><label><input type="radio" name="p1" value="IN">Initiierung</label><label><input type="radio" name="p1" value="VE">Vereinbarung</label><label><input type="radio" name="p1" value="VA">Verarbeitung/Abrechnung</label></div>
+  </div>
+  <div class="match-row" data-correct="VE">
+    <div class="stmt">Verhandlung, Genehmigung, verbindliche Bestellung.</div>
+    <div class="match-opts"><label><input type="radio" name="p3" value="AN">Analyse</label><label><input type="radio" name="p3" value="IN">Initiierung</label><label><input type="radio" name="p3" value="VE">Vereinbarung</label><label><input type="radio" name="p3" value="VA">Verarbeitung/Abrechnung</label></div>
+  </div>
+  <div class="match-row" data-correct="IN">
+    <div class="stmt">Bezugsquellen identifizieren, Angebote einholen, Lieferanten ansprechen.</div>
+    <div class="match-opts"><label><input type="radio" name="p2" value="AN">Analyse</label><label><input type="radio" name="p2" value="IN">Initiierung</label><label><input type="radio" name="p2" value="VE">Vereinbarung</label><label><input type="radio" name="p2" value="VA">Verarbeitung/Abrechnung</label></div>
+  </div>
+
+  <button onclick="checkMatch('q5',4)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q5"><h4>Auflösung</h4>
+    <span id="score-q5"></span> Reihenfolge: <b>Analyse → Initiierung → Vereinbarung → Verarbeitung/Abrechnung</b>. Merke das Ende der Kette: <b>überwachen → empfangen → prüfen → zahlen</b>.
+  </div>
+</div>
+
+<!-- Q6 MC — strukturiert/unstrukturiert + MRO -->
+<div class="q-card" id="q6">
+  <div class="q-num">Frage 6 · Multiple Choice <span class="pts">2 P</span></div>
+  <div class="q-text">Bei welcher Konstellation ist das Potenzial für digitale Beschaffungslösungen <b>am höchsten</b>?</div>
+  <label class="opt"><input type="radio" name="q6"> A) Unstrukturierte Beschaffung hochwertiger, einmaliger A-Güter mit individueller Verhandlung</label>
+  <label class="opt"><input type="radio" name="q6"> B) Strukturierte Beschaffung von MRO-/C-Gütern über Kataloge mit regelmässigem Bedarf</label>
+  <label class="opt"><input type="radio" name="q6"> C) Sporadische Projektbeschaffung mit hoher Unsicherheit und Einzelentscheidungen</label>
+  <label class="opt"><input type="radio" name="q6"> D) Strategische Sourcing-Entscheidungen mit intensiver Preisverhandlung</label>
+  <button onclick="checkMC('q6',1)">Antwort prüfen</button>
+  <div class="feedback" id="fb-q6"><h4>Auflösung</h4><b>B</b> ist richtig. <b>Strukturierte Beschaffung</b> (reguläre, standardisierte, wiederkehrende Bedarfe — typisch <b>MRO-/C-Güter</b> über Kataloge) ist klar definiert und automatisierbar → hohes E-Procurement-Potenzial. A, C und D beschreiben unstrukturierte bzw. strategische Beschaffung, die manuell und verhandlungsintensiv bleibt.</div>
+</div>
+
+<!-- Q7 open — Sourcing vs Ordering + Maverick Buying -->
+<div class="q-card" id="q7">
+  <div class="q-num">Frage 7 · Offen <span class="pts">3 P</span></div>
+  <div class="q-text">Erläutern Sie den Unterschied zwischen <b>strategischer</b> und <b>operativer</b> Beschaffung (Sourcing vs. Ordering) und erklären Sie den Begriff <b>Maverick Buying</b>.</div>
+  <textarea placeholder="Deine Antwort in ganzen Sätzen…"></textarea>
+  <div class="checklist">
+    <b style="font-size:.78rem; color:var(--ost); text-transform:uppercase; letter-spacing:.05em">Selbstcheck</b>
+    <label><input type="checkbox"> Strategisch/Sourcing: langfristig — Lieferantenwahl, Rahmenverträge, Marktanalyse?</label>
+    <label><input type="checkbox"> Operativ/Ordering: kurzfristig — konkrete Bestellungen, Abwicklung, Wareneingang?</label>
+    <label><input type="checkbox"> Maverick Buying: ~1/3 läuft ausserhalb der formalen Prozesse → teuer, intransparent?</label>
+    <label><input type="checkbox"> Digital Procurement kanalisiert diese Bestellungen zurück in den Standardprozess?</label>
+  </div>
+  <div class="self"><button class="ghost" onclick="reveal('q7')">Musterantwort zeigen</button></div>
+  <div class="feedback" id="fb-q7">
+    <h4>Musterantwort</h4>
+    <p>Die <b>strategische Beschaffung (Sourcing)</b> ist langfristig ausgerichtet: Lieferantenwahl, Rahmenverträge, Sourcing-Strategie und Marktanalyse — es geht darum, die richtige <b>Quelle zu finden</b>. Die <b>operative Beschaffung (Ordering)</b> ist kurzfristig: konkrete <b>Bestellungen</b>, deren Abwicklung, Wareneingang und Rechnung.</p>
+    <p><b>Maverick Buying</b> bezeichnet das «wilde», unkontrollierte Einkaufen <b>ausserhalb der formalen Prozesse</b> — rund <b>ein Drittel</b> der Beschaffung. Es ist teuer und intransparent; Digital Procurement <b>kanalisiert</b> solche Bestellungen zurück in den Standardprozess.</p>
+  </div>
+</div>
+
+<footer>
+  Fertig mit Quiz 7? Sag mir Bescheid — dann geht's zu <b>Thema 8 — Digital Contracting</b> (Vertragsverhandlung &amp; -abschluss; Prozess- vs. Objekt-Perspektive).
+  Schreib offene Antworten gern in den Chat — ich benote sie nach Rubrik.<br>
+  ← <a href="../reference/07-digital-procurement.html">Studienblatt 7</a> · <a href="06-edi-quiz.html">Quiz 6</a>
+</footer>
+</div>
+
+<script>
+function checkMC(q, correctIdx){
+  const opts = document.querySelectorAll('#'+q+' .opt');
+  let chosen = -1;
+  opts.forEach((o,i)=>{ if(o.querySelector('input').checked) chosen=i; });
+  if(chosen<0){ alert('Bitte zuerst eine Antwort wählen.'); return; }
+  opts.forEach((o,i)=>{
+    o.classList.remove('correct','wrong');
+    if(i===correctIdx) o.classList.add('correct');
+    else if(i===chosen) o.classList.add('wrong');
+  });
+  document.getElementById('fb-'+q).classList.add('show');
+}
+function reveal(q){ document.getElementById('fb-'+q).classList.add('show'); }
+function checkMatch(q, total){
+  const rows = document.querySelectorAll('#'+q+' .match-row');
+  let score = 0, answered = 0;
+  rows.forEach(row=>{
+    const correct = row.dataset.correct;
+    const labels = row.querySelectorAll('.match-opts label');
+    labels.forEach(l=>{
+      l.classList.remove('correct','wrong');
+      const inp = l.querySelector('input');
+      if(inp.checked){ answered++; if(inp.value===correct) score++; else l.classList.add('wrong'); }
+      if(inp.value===correct) l.classList.add('correct');
+    });
+  });
+  if(answered===0){ alert('Bitte mindestens eine Zeile beantworten.'); return; }
+  document.getElementById('score-'+q).innerHTML = '<b>'+score+' von '+total+' richtig.</b> ';
+  document.getElementById('fb-'+q).classList.add('show');
+}
+</script>
+</body>
+</html>
